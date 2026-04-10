@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawson Russell — AI Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F5F0E8;
+            --cream-dark: #EBE5D9;
+            --dark: #1A1A1A;
+            --dark-soft: #2A2A2A;
+            --dark-card: #222222;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B6560;
+            --text-light: #A09A93;
+            --accent: #D4714E;
+            --accent-warm: #E8845A;
+            --white: #FFFFFF;
+            --border: rgba(26, 26, 26, 0.08);
+            --border-light: rgba(255, 255, 255, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 3rem;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(245, 240, 232, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(245, 240, 232, 0.95);
+        }
+
+        .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            color: var(--white) !important;
+            background: var(--dark);
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            transition: background 0.2s ease, transform 0.2s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--dark-soft) !important;
+            transform: translateY(-1px);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 113, 78, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1rem;
+            background: rgba(26, 26, 26, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .btn-primary svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(3px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(26, 26, 26, 0.15);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(26, 26, 26, 0.3);
+            background: rgba(26, 26, 26, 0.03);
+        }
+
+        /* ─── SECTION SHARED ─── */
+        section {
+            padding: 6.5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-subtext {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 560px;
+            font-weight: 300;
+        }
+
+        /* ─── WHY ONE PERSON ─── */
+        .one-person {
+            background: var(--cream);
+            border-top: 1px solid var(--border);
+        }
+
+        .one-person-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .one-person-content .section-heading {
+            max-width: 440px;
+        }
+
+        .one-person-content .body-text {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            max-width: 460px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row.header {
+            background: rgba(26, 26, 26, 0.03);
+        }
+
+        .comparison-cell {
+            padding: 1rem 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .comparison-cell:not(:last-child) {
+            border-right: 1px solid var(--border);
+        }
+
+        .comparison-row.header .comparison-cell {
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            padding: 0.85rem 1.25rem;
+        }
+
+        .comparison-cell.highlight {
+            background: rgba(212, 113, 78, 0.04);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .advantage-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .advantage-pill {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .advantage-pill .pill-icon {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .services .section-heading {
+            color: var(--white);
+        }
+
+        .services .section-subtext {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border-light);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .service-card {
+            background: var(--dark);
+            padding: 2.75rem 2.25rem;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: var(--dark-card);
+        }
+
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .service-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent-warm);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.45);
+            font-weight: 300;
+            flex: 1;
+        }
+
+        .service-tag {
+            display: inline-block;
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            padding: 0.35rem 0.75rem;
+            background: rgba(232, 132, 90, 0.1);
+            border-radius: 6px;
+            width: fit-content;
+        }
+
+        /* ─── PROCESS ─── */
+        .process {
+            background: var(--cream);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .process-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: rgba(26, 26, 26, 0.06);
+            line-height: 1;
+            margin-bottom: 1.25rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* ─── RESULTS ─── */
+        .results {
+            background: var(--cream-dark);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--cream);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .result-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* ─── TWO PATHS / PRICING ─── */
+        .paths {
+            background: var(--cream);
+        }
+
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .path-card {
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .path-card:hover {
+            border-color: rgba(26,26,26,0.12);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+
+        .path-card.featured {
+            background: var(--dark);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        .path-card.featured:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .path-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .path-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .path-card .desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .path-card.featured .desc {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .path-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .path-features li {
+            padding: 0.6rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .path-card.featured .path-features li {
+            color: rgba(255,255,255,0.55);
+            border-color: var(--border-light);
+        }
+
+        .path-features li:last-child {
+            border-bottom: none;
+        }
+
+        .path-features .check {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(212, 113, 78, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .path-features .check svg {
+            width: 10px;
+            height: 10px;
+            stroke: var(--accent);
+        }
+
+        .path-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .path-price-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .path-card.featured .path-price-note {
+            color: rgba(255,255,255,0.35);
+        }
+
+        .btn-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            background: var(--white);
+            color: var(--dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(26,26,26,0.15);
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-primary);
+        }
+
+        /* ─── TESTIMONIAL ─── */
+        .testimonial {
+            background: var(--dark);
+            text-align: center;
+            color: var(--white);
+            padding: 7rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 113, 78, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .testimonial-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            line-height: 1;
+            color: rgba(212, 113, 78, 0.2);
+            margin-bottom: -1.5rem;
+        }
+
+        .testimonial blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 0.25rem;
+        }
+
+        /* ─── FAQ ─── */
+        .faq {
+            background: var(--cream);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .faq-item {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* ─── CTA ─── */
+        .cta {
+            background: var(--cream-dark);
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(212, 113, 78, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta .section-heading {
+            max-width: 600px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .cta .section-subtext {
+            margin: 0 auto 3rem;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.35);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.85rem;
+        }
+
+        footer a:hover {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero .reveal {
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .hero .reveal-delay-1 { animation-delay: 0.15s; }
+        .hero .reveal-delay-2 { animation-delay: 0.3s; }
+
+        /* ─── MOBILE NAV ─── */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .one-person-layout { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 1.5rem; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open { display: flex; }
+            .mobile-toggle { display: block; }
+
+            .hero { padding: 7rem 1.5rem 4rem; }
+            .hero h1 { font-size: 2.75rem; }
+            .hero-actions { flex-direction: column; width: 100%; max-width: 320px; }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+
+            section { padding: 5rem 1.5rem; }
+
+            .services-header { flex-direction: column; align-items: flex-start; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .paths-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; gap: 0; }
+            .one-person-layout { grid-template-columns: 1fr; }
+
+            .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.25rem; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+            .result-card { padding: 1.75rem 1rem; }
+            .result-number { font-size: 2.25rem; }
+            .comparison-row { grid-template-columns: 1fr; }
+            .comparison-cell:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+    <a href="#" class="nav-logo">Dawson Russell</a>
+    <div class="nav-links" id="navLinks">
+        <a href="#why">Why Me</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav-cta">Book a Call</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+    <div class="hero-badge">
+        AI Consultancy & Execution
+    </div>
+    <h1 class="reveal">Think fast,<br><em>build faster</em></h1>
+    <p class="hero-sub reveal reveal-delay-1">I help companies unlock the full power of AI — from Claude Code and Cowork to custom agent workflows. Done for you, or built with your team.</p>
+    <div class="hero-actions reveal reveal-delay-2">
+        <a href="#contact" class="btn-primary">
+            Start a conversation
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#services" class="btn-secondary">See how it works</a>
+    </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<div style="padding:3.5rem 2rem;text-align:center;border-top:1px solid rgba(26,26,26,0.08);">
+    <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#A09A93;margin-bottom:1.75rem;">Trusted by forward-thinking teams</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:3.5rem;flex-wrap:wrap;opacity:0.35;">
+        <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A1A;letter-spacing:-0.01em;">Apex Ventures</span>
+        <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A1A;letter-spacing:-0.01em;">Ironclad Capital</span>
+        <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A1A;letter-spacing:-0.01em;">Novalith</span>
+        <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A1A;letter-spacing:-0.01em;">Stratos Group</span>
+        <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;color:#1A1A1A;letter-spacing:-0.01em;">Meridian AI</span>
+    </div>
+</div>
+
+<!-- ─── WHY ONE PERSON ─── -->
+<section class="one-person" id="why">
+    <div class="container">
+        <div class="one-person-layout">
+            <div class="one-person-content">
+                <div class="section-label reveal">The Model</div>
+                <h2 class="section-heading reveal reveal-delay-1">One person.<br>Zero overhead.<br><em class="serif" style="font-style:italic;">All signal.</em></h2>
+                <p class="body-text reveal reveal-delay-2">Most AI agencies charge you $75k–$150k/month — and half of that covers their office, project managers, and account reps who never touch the actual work.</p>
+                <p class="body-text reveal reveal-delay-2">I'm a solo practitioner by design, not by limitation. AI is the great equalizer — it lets one expert with the right tools deliver what used to take an entire team. You get direct access to the person doing the work, every single day. No layers. No handoffs. No markup on someone else's overhead.</p>
+                <div class="advantage-pills reveal reveal-delay-3">
+                    <span class="advantage-pill"><span class="pill-icon">&#9670;</span> Direct expert access</span>
+                    <span class="advantage-pill"><span class="pill-icon">&#9670;</span> Zero agency markup</span>
+                    <span class="advantage-pill"><span class="pill-icon">&#9670;</span> AI-amplified output</span>
+                    <span class="advantage-pill"><span class="pill-icon">&#9670;</span> Same-day turnaround</span>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-2">
+                <div class="comparison-table">
+                    <div class="comparison-row header">
+                        <div class="comparison-cell">&nbsp;</div>
+                        <div class="comparison-cell">Typical Agency</div>
+                        <div class="comparison-cell">Dawson Russell</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell" style="font-weight:500;color:var(--text-primary);">Monthly cost</div>
+                        <div class="comparison-cell">$75k – $150k</div>
+                        <div class="comparison-cell highlight">$25k – $50k</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell" style="font-weight:500;color:var(--text-primary);">Who does the work</div>
+                        <div class="comparison-cell">Junior devs, rotating staff</div>
+                        <div class="comparison-cell highlight">Me. Directly.</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell" style="font-weight:500;color:var(--text-primary);">Communication</div>
+                        <div class="comparison-cell">Through account managers</div>
+                        <div class="comparison-cell highlight">Slack DM, same day</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell" style="font-weight:500;color:var(--text-primary);">Overhead you pay for</div>
+                        <div class="comparison-cell">Office, PMs, sales team</div>
+                        <div class="comparison-cell highlight">None</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div class="comparison-cell" style="font-weight:500;color:var(--text-primary);">Time to deploy</div>
+                        <div class="comparison-cell">6–12 weeks</div>
+                        <div class="comparison-cell highlight">1–2 weeks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="services-header">
+            <div>
+                <div class="section-label reveal">What I Do</div>
+                <h2 class="section-heading reveal reveal-delay-1">Enterprise AI,<br>without the enterprise bloat</h2>
+            </div>
+            <p class="section-subtext reveal reveal-delay-2">From initial audit to full deployment — I handle every layer of your AI transformation so your team ships faster, thinks bigger, and stays ahead.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3>Claude Code Setup</h3>
+                <p>Full environment configuration — CLI, desktop app, IDE extensions, MCP servers, and custom hooks. Your team productive on day one.</p>
+                <span class="service-tag">Implementation</span>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Cowork Deployment</h3>
+                <p>Configure collaborative AI workflows that let your entire team brainstorm and build together — with Claude as a tireless partner.</p>
+                <span class="service-tag">Collaboration</span>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3>Agent Architecture</h3>
+                <p>Design and build custom AI agent workflows using Claude Agent SDK, MCP connectors, and scheduled automation for your specific use cases.</p>
+                <span class="service-tag">Engineering</span>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h3>Team Training</h3>
+                <p>Hands-on workshops that teach your engineers, PMs, and leadership how to leverage AI tools effectively — not just use them.</p>
+                <span class="service-tag">Education</span>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>OpenClaw Configuration</h3>
+                <p>End-to-end OpenClaw setup — from initial configuration and security hardening to workflow automation and team onboarding.</p>
+                <span class="service-tag">Infrastructure</span>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Ongoing Advisory</h3>
+                <p>Monthly retainer for continuous AI strategy, new tool evaluation, prompt engineering optimization, and priority Slack support.</p>
+                <span class="service-tag">Retainer</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="process" id="process">
+    <div class="container">
+        <div class="section-label reveal">How It Works</div>
+        <h2 class="section-heading reveal reveal-delay-1">From zero to AI-native<br>in three steps</h2>
+        <div class="process-grid">
+            <div class="process-step reveal">
+                <div class="process-number">01</div>
+                <h3>Discovery & Audit</h3>
+                <p>I map your current workflows, identify high-impact automation opportunities, and build a prioritized roadmap tailored to your team's technical maturity.</p>
+            </div>
+            <div class="process-step reveal reveal-delay-1">
+                <div class="process-number">02</div>
+                <h3>Build & Deploy</h3>
+                <p>Hands-on implementation — setting up Claude Code environments, configuring MCP servers, building agent workflows, and integrating with your existing stack.</p>
+            </div>
+            <div class="process-step reveal reveal-delay-2">
+                <div class="process-number">03</div>
+                <h3>Train & Scale</h3>
+                <p>Your team gets trained to own the system. I provide documentation, workshops, and ongoing support to ensure adoption sticks and compounds over time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── RESULTS ─── -->
+<section class="results">
+    <div class="container">
+        <div style="text-align:center; margin-bottom: 1rem;">
+            <div class="section-label reveal">Results</div>
+            <h2 class="section-heading reveal reveal-delay-1">The numbers speak</h2>
+        </div>
+        <div class="results-grid">
+            <div class="result-card reveal">
+                <div class="result-number">10x</div>
+                <div class="result-label">Developer velocity<br>increase</div>
+            </div>
+            <div class="result-card reveal reveal-delay-1">
+                <div class="result-number">60%</div>
+                <div class="result-label">Reduction in<br>repetitive tasks</div>
+            </div>
+            <div class="result-card reveal reveal-delay-2">
+                <div class="result-number">2 wk</div>
+                <div class="result-label">Average time<br>to full deployment</div>
+            </div>
+            <div class="result-card reveal reveal-delay-3">
+                <div class="result-number">100%</div>
+                <div class="result-label">Client retention<br>rate</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="paths" id="pricing">
+    <div class="container">
+        <div style="text-align:center; margin-bottom:1rem;">
+            <div class="section-label reveal">Two Paths</div>
+            <h2 class="section-heading reveal reveal-delay-1">Choose your engagement</h2>
+            <p class="section-subtext reveal reveal-delay-2" style="margin: 0 auto;">Whether you need an expert to build it for you or want to empower your team — there's a path that fits.</p>
+        </div>
+        <div class="paths-grid">
+            <div class="path-card reveal">
+                <div class="path-label">Path A</div>
+                <h3>Teach Your Team</h3>
+                <p class="desc">Comprehensive training and enablement so your team becomes self-sufficient with AI tools and workflows.</p>
+                <ul class="path-features">
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Hands-on workshops for engineering & leadership
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Custom playbooks and prompt libraries
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Environment setup and configuration
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Ongoing Slack support channel access
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Monthly strategy check-ins
+                    </li>
+                </ul>
+                <div class="path-price">$25,000<span style="font-size:1rem;font-family:'Inter',sans-serif;font-weight:400;color:var(--text-light)">/mo</span></div>
+                <div class="path-price-note">Minimum 3-month engagement</div>
+                <a href="#contact" class="btn-outline">Get started</a>
+            </div>
+            <div class="path-card featured reveal reveal-delay-1">
+                <div class="path-label" style="color:var(--accent-warm);">Path B — Most Popular</div>
+                <h3>Done For You</h3>
+                <p class="desc">I embed with your team and handle everything — from architecture to deployment to optimization.</p>
+                <ul class="path-features">
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Full AI infrastructure buildout
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Custom agent and workflow development
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Claude Code, Cowork, & OpenClaw setup
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Team training included
+                    </li>
+                    <li>
+                        <span class="check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5.5l2 2 4-4.5"/></svg></span>
+                        Priority support & weekly syncs
+                    </li>
+                </ul>
+                <div class="path-price" style="color:var(--white);">$50,000<span style="font-size:1rem;font-family:'Inter',sans-serif;font-weight:400;color:rgba(255,255,255,0.35)">/mo</span></div>
+                <div class="path-price-note">Minimum 3-month engagement</div>
+                <a href="#contact" class="btn-light">Book a discovery call</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-label reveal">Frequently Asked</div>
+        <h2 class="section-heading reveal reveal-delay-1">Common questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item reveal">
+                <h4>What size companies do you work with?</h4>
+                <p>I work with teams of 5 to 500. The sweet spot is growth-stage startups and mid-market companies that want to move fast but need expert guidance on AI infrastructure.</p>
+            </div>
+            <div class="faq-item reveal reveal-delay-1">
+                <h4>What's the typical engagement timeline?</h4>
+                <p>Most deployments are fully operational within 2 weeks. Training engagements run 3+ months to ensure adoption sticks. I recommend a minimum 3-month commitment for lasting impact.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h4>Do I need technical knowledge to work with you?</h4>
+                <p>Not at all. I work with technical and non-technical leadership alike. If you're technical, we'll go deep. If not, I'll translate everything into clear business outcomes.</p>
+            </div>
+            <div class="faq-item reveal reveal-delay-1">
+                <h4>Can you work with our existing tools?</h4>
+                <p>Absolutely. I specialize in integrating AI workflows into your existing stack — whether that's GitHub, Linear, Slack, Notion, or custom internal tools via MCP connectors.</p>
+            </div>
+            <div class="faq-item reveal">
+                <h4>Why hire one person instead of an agency?</h4>
+                <p>Because you're paying for results, not overhead. AI lets me deliver at the output level of a full team. You get a senior expert who does the actual work — not a sales rep who delegates to juniors.</p>
+            </div>
+            <div class="faq-item reveal reveal-delay-1">
+                <h4>What if we're not sure which path is right?</h4>
+                <p>That's exactly what the discovery call is for. I'll assess your team's needs and recommend the engagement that delivers the highest ROI for your specific situation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta" id="contact">
+    <div class="container" style="position:relative;">
+        <div class="section-label reveal" style="color:var(--accent);">Let's Talk</div>
+        <h2 class="section-heading reveal reveal-delay-1">Ready to build<br><em class="serif" style="font-style:italic;">the future</em>?</h2>
+        <p class="section-subtext reveal reveal-delay-2" style="margin:0 auto 3rem;">Book a free 30-minute discovery call. I'll audit your current workflow and show you exactly where AI can 10x your team's output.</p>
+        <a href="mailto:dawson@example.com" class="btn-primary reveal reveal-delay-3">
+            Book your discovery call
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 Dawson Russell. All rights reserved.</span>
+        <div class="footer-links">
+            <a href="mailto:dawson@example.com">Email</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ─── Scroll reveal ───
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+    // Only observe non-hero reveals (hero uses CSS animation)
+    document.querySelectorAll('.reveal').forEach(el => {
+        if (!el.closest('.hero')) {
+            observer.observe(el);
+        }
+    });
+
+    // ─── Nav scroll effect ───
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ─── Mobile menu ───
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // ─── Smooth scroll for anchor links ───
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('navLinks').classList.remove('open');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
