@@ -825,7 +825,8 @@
 
         /* ─── CTA ─── */
         .cta {
-            background: var(--cream-dark);
+            background: var(--dark);
+            color: var(--white);
             text-align: center;
             padding: 8rem 2rem;
             position: relative;
@@ -840,8 +841,16 @@
             transform: translateX(-50%);
             width: 1000px;
             height: 1000px;
-            background: radial-gradient(circle, rgba(212, 113, 78, 0.05) 0%, transparent 60%);
+            background: radial-gradient(circle, rgba(212, 113, 78, 0.08) 0%, transparent 60%);
             pointer-events: none;
+        }
+
+        .cta .section-heading {
+            color: var(--white);
+        }
+
+        .cta .section-subtext {
+            color: rgba(255,255,255,0.45);
         }
 
         .cta .section-heading {
