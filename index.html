@@ -980,6 +980,184 @@
             min-height: 492px;
         }
 
+        /* ─── CUSTOM FORM FIELDS ─── */
+        .custom-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 0.8rem 1rem;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.2);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 0 3px rgba(212, 113, 78, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-group select option {
+            background: #2A2A2A;
+            color: var(--white);
+        }
+
+        .form-submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.9rem 2rem;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .form-submit-btn:hover {
+            background: var(--accent-warm);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(212, 113, 78, 0.3);
+        }
+
+        .form-submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-submit-btn svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .form-submit-btn:hover svg {
+            transform: translateX(3px);
+        }
+
+        .form-submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(212, 113, 78, 0.12);
+            border: 1px solid rgba(212, 113, 78, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .form-success-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+        }
+
+        .form-success h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.25);
+            margin-top: 0.75rem;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .cta-layout {
                 grid-template-columns: 1fr;
@@ -1487,29 +1665,86 @@
                     <h3>Start a project</h3>
                     <p>Fill out the form and we'll be in touch shortly.</p>
                 </div>
-                <div class="cta-form-iframe-container">
-                    <iframe
-                        src="https://api.leadconnectorhq.com/widget/form/Qv6dKqgnQYoDYsfOljbg"
-                        style="width:100%;height:100%;border:none;border-radius:3px"
-                        id="inline-Qv6dKqgnQYoDYsfOljbg"
-                        data-layout="{'id':'INLINE'}"
-                        data-trigger-type="alwaysShow"
-                        data-trigger-value=""
-                        data-activation-type="alwaysActivated"
-                        data-activation-value=""
-                        data-deactivation-type="neverDeactivate"
-                        data-deactivation-value=""
-                        data-form-name="Contact Us"
-                        data-height="492"
-                        data-layout-iframe-id="inline-Qv6dKqgnQYoDYsfOljbg"
-                        data-form-id="Qv6dKqgnQYoDYsfOljbg"
-                        title="Contact Us"
-                    ></iframe>
+                <form id="contactForm" class="custom-form" action="https://formsubmit.co/dawson@raiselaunch.com" method="POST">
+                    <!-- FormSubmit config -->
+                    <input type="hidden" name="_subject" value="New Project Inquiry — DawsonRussell.com">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_next" value="">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="project_type">What are you looking to build?</label>
+                        <select id="project_type" name="project_type">
+                            <option value="" disabled selected>Select a project type</option>
+                            <option value="Custom AI Agent">Custom AI Agent</option>
+                            <option value="Internal AI Application">Internal AI Application</option>
+                            <option value="Workflow Automation">Workflow Automation</option>
+                            <option value="AI Integration">AI-Powered Integration</option>
+                            <option value="Data & Knowledge System">Data & Knowledge System</option>
+                            <option value="Full AI Buildout">Full Multi-System Buildout</option>
+                            <option value="Not sure yet">Not sure yet — need guidance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us about the project</label>
+                        <textarea id="message" name="message" placeholder="What problem are you trying to solve? What does success look like?"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-btn" id="submitBtn">
+                        Send Message
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+                    </button>
+                    <p class="form-note">Your information is kept confidential and never shared.</p>
+                </form>
+                <div class="form-success" id="formSuccess">
+                    <div class="form-success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    </div>
+                    <h4>Message sent</h4>
+                    <p>We'll review your project details and get back to you within 48 hours with a scoping call invitation.</p>
+                </div>
+            </div>
+
+            <!-- Direct contact -->
+            <div style="margin-top:1.75rem; text-align:center;">
+                <p style="color:rgba(255,255,255,0.3); font-size:0.8rem; margin-bottom:1rem;">Or reach out directly</p>
+                <div style="display:flex; flex-direction:column; gap:0.75rem; align-items:center;">
+                    <a href="mailto:hello@dawsonrussell.com" style="display:inline-flex; align-items:center; gap:0.6rem; color:var(--white); text-decoration:none; font-size:1.05rem; font-weight:500; letter-spacing:-0.01em; transition:color 0.2s ease;">
+                        <span style="width:36px;height:36px;border-radius:10px;background:rgba(212,113,78,0.12);border:1px solid rgba(212,113,78,0.18);display:flex;align-items:center;justify-content:center;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4714E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </span>
+                        hello@dawsonrussell.com
+                    </a>
+                    <a href="sms:8179337408" style="display:inline-flex; align-items:center; gap:0.6rem; color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.95rem; font-weight:400; transition:color 0.2s ease;">
+                        <span style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </span>
+                        Text (817) 933-7408
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </section>
 
 <!-- ─── FOOTER ─── -->
@@ -1560,6 +1795,34 @@
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 document.getElementById('navLinks').classList.remove('open');
             }
+        });
+    });
+
+    // ─── Contact form (AJAX submit via FormSubmit.co) ───
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const form = this;
+        btn.disabled = true;
+        btn.innerHTML = 'Sending...';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(r => {
+            if (r.ok) {
+                form.style.display = 'none';
+                document.getElementById('formSuccess').classList.add('show');
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = 'Send Message <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+                alert('Something went wrong. Please email us directly at hello@dawsonrussell.com');
+            }
+        }).catch(() => {
+            btn.disabled = false;
+            btn.innerHTML = 'Send Message <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+            alert('Something went wrong. Please email us directly at hello@dawsonrussell.com');
         });
     });
 
