@@ -827,7 +827,6 @@
         .cta {
             background: var(--dark);
             color: var(--white);
-            text-align: center;
             padding: 8rem 2rem;
             position: relative;
             overflow: hidden;
@@ -836,30 +835,169 @@
         .cta::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1000px;
-            height: 1000px;
-            background: radial-gradient(circle, rgba(212, 113, 78, 0.08) 0%, transparent 60%);
+            top: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 113, 78, 0.07) 0%, transparent 65%);
             pointer-events: none;
         }
 
-        .cta .section-heading {
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 113, 78, 0.05) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .cta-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-copy {
+            padding-top: 1.5rem;
+        }
+
+        .cta-copy .section-label {
+            color: var(--accent);
+        }
+
+        .cta-copy .section-heading {
             color: var(--white);
+            text-align: left;
+            max-width: 420px;
+            margin-bottom: 1.25rem;
         }
 
-        .cta .section-subtext {
-            color: rgba(255,255,255,0.45);
+        .cta-copy .cta-description {
+            color: rgba(255,255,255,0.5);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 400px;
+            margin-bottom: 2.5rem;
         }
 
-        .cta .section-heading {
-            max-width: 600px;
-            margin: 0 auto 1.25rem;
+        .cta-promises {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .cta .section-subtext {
-            margin: 0 auto 3rem;
+        .cta-promise {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.88rem;
+            font-weight: 400;
+        }
+
+        .cta-promise-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(212, 113, 78, 0.1);
+            border: 1px solid rgba(212, 113, 78, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cta-promise-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--accent);
+        }
+
+        .cta-form-wrapper {
+            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow:
+                0 4px 24px rgba(0,0,0,0.2),
+                0 1px 0 rgba(255,255,255,0.05) inset;
+        }
+
+        .cta-form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 113, 78, 0.3), transparent);
+        }
+
+        .cta-form-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .cta-form-header h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.35rem;
+        }
+
+        .cta-form-header p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+            font-weight: 400;
+        }
+
+        .cta-form-iframe-container {
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 492px;
+        }
+
+        @media (max-width: 768px) {
+            .cta-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .cta-copy .section-heading {
+                text-align: center;
+                max-width: 100%;
+            }
+            .cta-copy .cta-description {
+                text-align: center;
+                max-width: 100%;
+            }
+            .cta-copy {
+                text-align: center;
+                padding-top: 0;
+            }
+            .cta-copy .section-label {
+                text-align: center;
+            }
+            .cta-promises {
+                align-items: center;
+            }
+            .cta-form-wrapper {
+                padding: 1.5rem;
+            }
         }
 
         /* ─── FOOTER ─── */
@@ -1309,32 +1447,61 @@
 
 <!-- ─── CTA / CONTACT FORM ─── -->
 <section class="cta" id="contact">
-    <div class="container" style="position:relative; max-width:600px;">
-        <div class="section-label" style="color:var(--accent);">Start Building</div>
-        <h2 class="section-heading">Tell us what<br><em class="serif" style="font-style:italic;">to build</em></h2>
-        <p class="section-subtext" style="margin:0 auto 3rem;">Describe the problem. Get a scoping call within 48 hours and a proposal with architecture, timeline, and fixed pricing — no obligations.</p>
-
-        <div style="background:rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;min-height:492px;">
-            <iframe
-                src="https://api.leadconnectorhq.com/widget/form/Qv6dKqgnQYoDYsfOljbg"
-                style="width:100%;height:100%;border:none;border-radius:3px"
-                id="inline-Qv6dKqgnQYoDYsfOljbg"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Contact Us"
-                data-height="492"
-                data-layout-iframe-id="inline-Qv6dKqgnQYoDYsfOljbg"
-                data-form-id="Qv6dKqgnQYoDYsfOljbg"
-                title="Contact Us"
-            ></iframe>
+    <div class="cta-layout">
+        <div class="cta-copy reveal">
+            <div class="section-label">Start Building</div>
+            <h2 class="section-heading">Tell us what<br><em class="serif" style="font-style:italic;">to build</em></h2>
+            <p class="cta-description">Describe the problem. Get a scoping call within 48 hours and a proposal with architecture, timeline, and fixed pricing.</p>
+            <div class="cta-promises">
+                <div class="cta-promise">
+                    <div class="cta-promise-icon">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.3 3L6 10.3 2.7 7"/></svg>
+                    </div>
+                    No commitment — just a conversation
+                </div>
+                <div class="cta-promise">
+                    <div class="cta-promise-icon">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+                    </div>
+                    Response within 48 hours
+                </div>
+                <div class="cta-promise">
+                    <div class="cta-promise-icon">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h12M2 8h12M2 12h8"/></svg>
+                    </div>
+                    Full proposal with scope, timeline & pricing
+                </div>
+            </div>
         </div>
-        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <div class="reveal reveal-delay-1">
+            <div class="cta-form-wrapper">
+                <div class="cta-form-header">
+                    <h3>Start a project</h3>
+                    <p>Fill out the form and we'll be in touch shortly.</p>
+                </div>
+                <div class="cta-form-iframe-container">
+                    <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/Qv6dKqgnQYoDYsfOljbg"
+                        style="width:100%;height:100%;border:none;border-radius:3px"
+                        id="inline-Qv6dKqgnQYoDYsfOljbg"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Contact Us"
+                        data-height="492"
+                        data-layout-iframe-id="inline-Qv6dKqgnQYoDYsfOljbg"
+                        data-form-id="Qv6dKqgnQYoDYsfOljbg"
+                        title="Contact Us"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </section>
 
 <!-- ─── FOOTER ─── -->
