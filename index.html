@@ -1314,36 +1314,26 @@
         <h2 class="section-heading">Tell us what<br><em class="serif" style="font-style:italic;">to build</em></h2>
         <p class="section-subtext" style="margin:0 auto 3rem;">Describe the problem. Get a scoping call within 48 hours and a proposal with architecture, timeline, and fixed pricing — no obligations.</p>
 
-        <form id="contactForm" style="text-align:left;">
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
-                <div>
-                    <label style="display:block;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Name</label>
-                    <input type="text" name="name" required placeholder="Your name" style="width:100%;padding:0.85rem 1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(255,255,255,0.25)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
-                </div>
-                <div>
-                    <label style="display:block;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Phone</label>
-                    <input type="tel" name="phone" required placeholder="(555) 000-0000" style="width:100%;padding:0.85rem 1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(255,255,255,0.25)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
-                </div>
-            </div>
-            <div style="margin-bottom:1rem;">
-                <label style="display:block;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Email</label>
-                <input type="email" name="email" required placeholder="you@company.com" style="width:100%;padding:0.85rem 1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(255,255,255,0.25)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
-            </div>
-            <div style="margin-bottom:2rem;">
-                <label style="display:block;font-size:0.75rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Company</label>
-                <input type="text" name="company" required placeholder="Company name" style="width:100%;padding:0.85rem 1rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;color:#fff;font-size:0.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(255,255,255,0.25)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
-            </div>
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;background:#fff;color:#1A1A1A;padding:1rem 2rem;font-size:0.95rem;">
-                Book your discovery call
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </button>
-        </form>
-
-        <div id="formSuccess" style="display:none;text-align:center;padding:3rem 1rem;">
-            <div style="font-size:2.5rem;margin-bottom:1rem;">&#10003;</div>
-            <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin-bottom:0.75rem;">You're on the list</h3>
-            <p style="color:rgba(255,255,255,0.5);font-size:0.95rem;">I'll be in touch within 24 hours to schedule your discovery call.</p>
+        <div style="background:rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;min-height:587px;">
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/Qv6dKqgnQYoDYsfOljbg"
+                style="width:100%;height:587px;border:none;border-radius:3px"
+                id="inline-Qv6dKqgnQYoDYsfOljbg"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Contact Us"
+                data-height="587"
+                data-layout-iframe-id="inline-Qv6dKqgnQYoDYsfOljbg"
+                data-form-id="Qv6dKqgnQYoDYsfOljbg"
+                title="Contact Us"
+            ></iframe>
         </div>
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
 </section>
 
@@ -1352,7 +1342,7 @@
     <div class="footer-inner">
         <span class="footer-copy">&copy; 2026 Dawson Russell. All rights reserved.</span>
         <div class="footer-links">
-            <a href="mailto:dawson@example.com">Email</a>
+            <a href="mailto:dawson@raiselaunch.com">Email</a>
             <a href="#">LinkedIn</a>
             <a href="#">Twitter</a>
         </div>
@@ -1398,28 +1388,6 @@
         });
     });
 
-    // ─── Contact form ───
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(this));
-        data.submitted = new Date().toISOString();
-
-        // Save to localStorage
-        const leads = JSON.parse(localStorage.getItem('leads') || '[]');
-        leads.push(data);
-        localStorage.setItem('leads', JSON.stringify(leads));
-
-        // Send to your email via Formspree (replace YOUR_FORM_ID)
-        // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // });
-
-        // Show success
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-    });
 </script>
 
 </body>
