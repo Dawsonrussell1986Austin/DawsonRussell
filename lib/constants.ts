@@ -39,6 +39,7 @@ export const COHORT = {
   sessionLabel: "May 11 – 15, 2026",
   sessionShortLabel: "May 11 – 15",
   startDateLabel: "Monday, May 11, 2026",
+  startDayShortLabel: "May 11th",
   startDateISO: "2026-05-11",
   price: 2499,
   priceLabel: "$2,499",
@@ -55,7 +56,7 @@ export const COHORT = {
     "To be eligible to walk away from the $1,999 balance, you must show up — attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day.",
   totalHoursLabel: "~20 hours across 5 days",
   workweekLine:
-    "5 days. 90 minutes a day. Monday to Friday. Clear your calendar — by Friday afternoon you'll have shipped a complete AI-powered raise marketing system.",
+    "5 days. 90 minutes a day — less than your happy hour, less than an extended lunch. Listen in the car. Hit it at the gym. Trade one Netflix night for the homework. By Friday afternoon, you've shipped a complete AI-powered raise marketing system.",
 
   // Optional hero video (same pattern as TRAINING). Leave empty to show
   // the curriculum preview card on the right.

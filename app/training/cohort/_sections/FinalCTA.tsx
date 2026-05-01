@@ -2,7 +2,7 @@ import { COHORT } from "@/lib/constants";
 import { CheckoutButton } from "@/components/CheckoutButton";
 
 export function FinalCTA() {
-  const ctaLabel = `Reserve my seat — ${COHORT.depositLabel} deposit`;
+  const ctaLabel = `Join the ${COHORT.startDayShortLabel} Session`;
   return (
     <section className="cta">
       <div className="cta-layout" style={{ gridTemplateColumns: "1fr", textAlign: "center" }}>

@@ -3,7 +3,7 @@ import { CheckoutButton } from "@/components/CheckoutButton";
 import { HeroVideo } from "@/components/HeroVideo";
 
 export function CohortHero() {
-  const ctaLabel = `Reserve my seat — ${COHORT.depositLabel} deposit`;
+  const ctaLabel = `Join the ${COHORT.startDayShortLabel} Session`;
   const hasVideo = Boolean(COHORT.videoUrl || COHORT.videoEmbed);
 
   return (
@@ -50,10 +50,13 @@ export function CohortHero() {
               fontWeight: 500,
             }}
           >
-            5 days. 90 minutes a day. Monday to Friday.{" "}
-            <span style={{ color: "#D4714E" }}>Clear your calendar</span> — by
-            Friday afternoon you&apos;ll have shipped a complete AI-powered
-            raise marketing system.
+            5 days. 90 minutes a day —{" "}
+            <span style={{ color: "#D4714E" }}>
+              less than your happy hour, less than an extended lunch.
+            </span>{" "}
+            Listen in the car. Hit it at the gym. Trade one Netflix night for
+            the homework. By Friday afternoon, you&apos;ve shipped a complete
+            AI-powered raise marketing system.
           </p>
 
           <div
