@@ -8,7 +8,7 @@ export function LegacyFooter() {
         <div className="footer-links">
           <a href="mailto:dawson@dawsonrussell.com">Email</a>
           <a href="/training">Training</a>
-          <a href="/training/cohort">Cohort</a>
+          <a href="/training/cohort">Sessions</a>
         </div>
       </div>
     </footer>

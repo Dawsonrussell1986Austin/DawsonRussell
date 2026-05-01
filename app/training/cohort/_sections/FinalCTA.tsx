@@ -2,13 +2,13 @@ import { COHORT } from "@/lib/constants";
 import { CheckoutButton } from "@/components/CheckoutButton";
 
 export function FinalCTA() {
-  const ctaLabel = `Join ${COHORT.number} — ${COHORT.priceLabel}`;
+  const ctaLabel = `Join the ${COHORT.sessionShortLabel} session — ${COHORT.priceLabel}`;
   return (
     <section className="cta">
       <div className="cta-layout" style={{ gridTemplateColumns: "1fr", textAlign: "center" }}>
         <div className="cta-copy">
           <div className="section-label" style={{ color: "rgba(255,255,255,0.5)" }}>
-            {COHORT.number} — Starts {COHORT.startDateLabel}
+            Starts {COHORT.startDateLabel}
           </div>
           <h2 className="section-heading">
             Five days from now,<br />

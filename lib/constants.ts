@@ -32,10 +32,12 @@ export const TRAINING = {
   videoPoster: "" as string, // optional poster image for <video>, e.g. "/dawson-poster.jpg"
 };
 
-// ---------- Paid cohort (page: /training/cohort) ----------
+// ---------- Paid 5-day session (page: /training/cohort) ----------
 export const COHORT = {
   name: "{{COHORT_NAME}}",
-  number: "Cohort 1",
+  // Session label (date range) — used in CTAs, badges, pricing.
+  sessionLabel: "May 11 – 15, 2026",
+  sessionShortLabel: "May 11 – 15",
   startDateLabel: "Monday, May 11, 2026",
   startDateISO: "2026-05-11",
   price: 2499,
@@ -118,7 +120,7 @@ export const MODULES: Module[] = [
     deliverable:
       "Rewritten deck + deployed investor landing page on a real URL",
     note:
-      "The 'holy shit, I just built that' day — landing page goes live for real.",
+      "The 'holy crap, I just built that' day — landing page goes live for real.",
   },
   {
     day: 3,
@@ -198,7 +200,7 @@ export const TRAINING_FAQ = [
   },
   {
     q: "Will there be a pitch?",
-    a: "At the end I'll mention the paid cohort for people who want to go deeper. The first 55 minutes are pure training — no pitch.",
+    a: "At the end I'll mention the paid 5-day session for people who want to go deeper. The first 55 minutes are pure training — no pitch.",
   },
   {
     q: "What software do I need?",
@@ -214,7 +216,7 @@ export const COHORT_FAQ = [
   },
   {
     q: "Is this self-paced?",
-    a: "No. Mon–Fri live workweek sprint. Block the calendar. The homework is yours to do at the pace you can sustain, but the classes are live and the energy of doing it together with a cohort is the whole point. If you can show up live (or hit the recording the same evening), you're fine.",
+    a: "No. Mon–Fri live workweek sprint. Block the calendar. The homework is yours to do at the pace you can sustain, but the classes are live and the energy of doing it together with a small group of issuers is the whole point. If you can show up live (or hit the recording the same evening), you're fine.",
   },
   {
     q: "What if I miss a session?",
@@ -226,7 +228,7 @@ export const COHORT_FAQ = [
   },
   {
     q: "Is there a payment plan?",
-    a: "Not for Cohort 1. Founding members pay in full. Future cohorts may offer split pay.",
+    a: "Not for the May 11 – 15 session. Founding members pay in full. Future sessions may offer split pay.",
   },
   {
     q: "What software do I need?",
@@ -295,7 +297,7 @@ export const WHO_NOT_FOR = [
 // ---------- What's included (cohort) ----------
 export const INCLUDED = [
   "Mon–Fri live workweek sprint, 90 min a day, taught by Dawson",
-  "Friday Demo Day — present, get feedback, launch live with the cohort",
+  "Friday Demo Day — present, get feedback, launch live with the group",
   "All session recordings + prompts (rewatch on your schedule)",
   "21 days of private Slack support + office hours with Dawson after",
   "All working prompts, n8n workflows, and Claude Projects",

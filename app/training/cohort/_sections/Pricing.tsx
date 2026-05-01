@@ -2,12 +2,12 @@ import { COHORT } from "@/lib/constants";
 import { CheckoutButton } from "@/components/CheckoutButton";
 
 export function Pricing() {
-  const ctaLabel = `Join ${COHORT.number} — ${COHORT.priceLabel}`;
+  const ctaLabel = `Join the ${COHORT.sessionShortLabel} session — ${COHORT.priceLabel}`;
   return (
     <section className="paths">
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-          <div className="section-label">{COHORT.number} pricing</div>
+          <div className="section-label">Founding session pricing</div>
           <h2 className="section-heading">Founding member rate</h2>
         </div>
         <div
@@ -15,7 +15,7 @@ export function Pricing() {
           style={{ maxWidth: 560, margin: "3rem auto 0", textAlign: "center" }}
         >
           <div className="path-label" style={{ color: "#D4714E" }}>
-            {COHORT.number} only
+            {COHORT.sessionLabel} session
           </div>
           <h3 style={{ marginBottom: "1.5rem" }}>The 5-Day Sprint</h3>
           <div
@@ -49,7 +49,7 @@ export function Pricing() {
             </span>
           </div>
           <div className="path-price-note" style={{ marginBottom: "2rem" }}>
-            Founding member rate. Cohort 2 will be priced higher.
+            Founding member rate. Future sessions will be priced higher.
           </div>
           <CheckoutButton label={ctaLabel} className="btn-light" />
           <p

@@ -3,7 +3,7 @@ import { CheckoutButton } from "@/components/CheckoutButton";
 import { HeroVideo } from "@/components/HeroVideo";
 
 export function CohortHero() {
-  const ctaLabel = `Join ${COHORT.number} — ${COHORT.priceLabel}`;
+  const ctaLabel = `Join the ${COHORT.sessionShortLabel} session — ${COHORT.priceLabel}`;
   const hasVideo = Boolean(COHORT.videoUrl || COHORT.videoEmbed);
 
   return (
@@ -21,7 +21,7 @@ export function CohortHero() {
                 marginRight: 8,
               }}
             />
-            {COHORT.number} — Starts {COHORT.startDateLabel}
+            Live Session · Starts {COHORT.startDateLabel}
           </div>
           <h1
             style={{
