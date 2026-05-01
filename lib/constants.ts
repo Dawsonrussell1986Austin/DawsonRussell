@@ -36,12 +36,15 @@ export const TRAINING = {
 export const COHORT = {
   name: "{{COHORT_NAME}}",
   number: "Cohort 1",
-  startDateLabel: "May 15, 2026",
-  startDateISO: "2026-05-15",
+  startDateLabel: "Monday, May 18, 2026",
+  startDateISO: "2026-05-18",
   price: 2499,
   priceLabel: "$2,499",
   anchorPriceLabel: "$3,997",
   seats: "{{SEATS}}", // e.g. "25"
+  totalHoursLabel: "~30 hours across 5 days",
+  workweekLine:
+    "5 days. Monday to Friday. Clear your calendar — by Friday afternoon you'll have shipped a complete AI-powered raise marketing system.",
 
   // Optional hero video (same pattern as TRAINING). Leave empty to show
   // the curriculum preview card on the right.
@@ -49,8 +52,10 @@ export const COHORT = {
   videoEmbed: "" as string,
   videoPoster: "" as string,
   format: {
-    sessions: "7 daily 1-hour live sessions (business days)",
-    trainingAccess: "All session recordings + prompts (rewatch any time)",
+    sessions:
+      "Mon–Fri live workweek sprint (~30 hours total, including Friday Demo Day)",
+    trainingAccess:
+      "All session recordings + prompts (rewatch on your schedule)",
     slackAccess:
       "21 days of private Slack support and office hours with Dawson after the sprint",
   },
@@ -60,63 +65,120 @@ export const COHORT = {
     "Limited to {{SEATS}} founders. Founding member pricing — Cohort 2 will be priced higher.",
 };
 
-// ---------- Curriculum (7 daily 1-hour sessions) ----------
+// ---------- Curriculum (5 days, Monday–Friday workweek sprint) ----------
 export type Module = {
   day: number;
+  dayLabel: string;
   name: string;
-  build: string;
+  liveTime: string;
+  agenda: string[];
+  async: string[];
   deliverable: string;
+  note?: string;
 };
 
 export const MODULES: Module[] = [
   {
     day: 1,
-    name: "Images",
-    build:
-      "AI-generated investor-grade images: hero shots, deck visuals, ad creative, and brand photography without a photo shoot.",
+    dayLabel: "Monday",
+    name: "Foundation, Visuals & Copy",
+    liveTime: "Live: 2 hours, 9–11am CT",
+    agenda: [
+      "Kickoff + intros",
+      "AI stack overview + Claude Project setup",
+      "Midjourney workflow for investor visuals",
+      "Copywriting framework + the 5-prompt investor email sequence",
+    ],
+    async: [
+      "Build a Claude Project loaded with your docs",
+      "Generate hero image + 6 deck visuals + 3 ad creatives",
+      "Draft 8-email investor sequence",
+    ],
     deliverable:
-      "A library of 50+ on-brand images you own outright, ready for the deck and the ad account.",
+      "Claude Project + visual asset pack + email sequence draft",
+    note:
+      "Heaviest day — Monday energy is highest, people are fresh.",
   },
   {
     day: 2,
-    name: "Copywriting",
-    build:
-      "The exact prompts I use for investor emails, LP one-pagers, and ad scripts that read like a human wrote them.",
+    dayLabel: "Tuesday",
+    name: "Pitch Deck & Web",
+    liveTime: "Live: 2 hours, 9–11am CT",
+    agenda: [
+      "Pitch deck narrative rebuild",
+      "Claude Code crash course",
+      "Investor landing page structure",
+      "Vercel deploy walkthrough",
+    ],
+    async: [
+      "Rebuild your pitch deck using the new narrative",
+      "Build and deploy a landing page to a live URL",
+      "Connect the form to GHL",
+    ],
     deliverable:
-      "A drafted investor email sequence and a one-pager you can send Monday.",
+      "Rewritten deck + deployed investor landing page on a real URL",
+    note:
+      "The 'holy shit, I just built that' day — landing page goes live for real.",
   },
   {
     day: 3,
-    name: "Web",
-    build:
-      "An investor-facing site built and deployed inside the session — copy, design, and code, top to bottom.",
-    deliverable: "A live URL for your raise, on your own domain.",
+    dayLabel: "Wednesday",
+    name: "Ads",
+    liveTime: "Live: 90 min, 9–10:30am CT",
+    agenda: [
+      "Reg D / Reg A / Reg CF compliance line for paid ads",
+      "Meta audience setup for accredited investors",
+      "AI-generated ad creative — 30-variation workflow",
+      "Hook library + scaling framework",
+    ],
+    async: [
+      "Build 10 ad variations + 3 audiences",
+      "Draft a 30-day media plan + budget allocation",
+    ],
+    deliverable:
+      "10 ads + 3 audiences ready to launch + a 30-day media plan",
+    note:
+      "Optional 60-min office hours at 4pm CT for stuck moments.",
   },
   {
     day: 4,
-    name: "Ads",
-    build:
-      "Meta and LinkedIn ad accounts wired up with AI-generated creative variants, audience targeting, and budget plans.",
+    dayLabel: "Thursday",
+    name: "Outreach Automation",
+    liveTime: "Live: 2 hours, 9–11am CT",
+    agenda: [
+      "Apollo + EDGAR investor sourcing",
+      "n8n basics — build one workflow live together",
+      "Personalized cold email at scale",
+      "AI-powered investor research briefings",
+    ],
+    async: [
+      "Build an n8n workflow for lead sourcing + outreach",
+      "Set up the CRM template",
+      "Generate 25 personalized investor research briefings",
+    ],
     deliverable:
-      "A running test campaign with 5+ creative variants and a tracking setup.",
+      "Working outreach automation + CRM + 25 briefings ready to send",
   },
   {
     day: 5,
-    name: "{{DAY_5_NAME}}",
-    build: "{{DAY_5_BUILD}}",
-    deliverable: "{{DAY_5_DELIVERABLE}}",
-  },
-  {
-    day: 6,
-    name: "{{DAY_6_NAME}}",
-    build: "{{DAY_6_BUILD}}",
-    deliverable: "{{DAY_6_DELIVERABLE}}",
-  },
-  {
-    day: 7,
-    name: "{{DAY_7_NAME}}",
-    build: "{{DAY_7_BUILD}}",
-    deliverable: "{{DAY_7_DELIVERABLE}}",
+    dayLabel: "Friday — Demo Day",
+    name: "Integration & Launch",
+    liveTime: "Live: 3 hours, 1–4pm CT",
+    agenda: [
+      "Each student presents (5 min): deck, landing page, system walkthrough",
+      "Live group + Dawson feedback",
+      "Final hour: everyone launches — campaigns go live, outreach starts sending",
+      "Send-off + 21-day Slack window kicks off",
+    ],
+    async: [
+      "Morning (9am–12pm): connect everything end-to-end",
+      "Test the full flow with a fake lead",
+      "Final polish on deck + landing page (Slack open for stuck moments)",
+    ],
+    deliverable:
+      "A complete, deployed, live AI-powered capital raise marketing system",
+    note:
+      "Friday afternoon by design — productive panic + you ride the high into the weekend.",
   },
 ];
 
@@ -144,15 +206,23 @@ export const TRAINING_FAQ = [
   },
 ];
 
-// ---------- Cohort FAQ (8 items) ----------
+// ---------- Cohort FAQ ----------
 export const COHORT_FAQ = [
   {
-    q: "What if I miss a session?",
-    a: "All 7 sessions are recorded and posted right after we wrap each day. You can rewatch on your own schedule. Live is where the questions get answered in real time, but the homework is yours to do at the pace you can sustain.",
+    q: "How much time will this actually take?",
+    a: "About 30 hours across 5 days. Live sessions: 2 hours each morning, Mon–Thu (9–11am CT). Friday is Demo Day, 1–4pm CT. Plus ~3 hours of build time each afternoon. Block the workweek like you'd block a conference.",
   },
   {
     q: "Is this self-paced?",
-    a: "The classes are not. Seven business days in a row, one hour each, live. The homework is yours — take it as fast or slow as you want. This isn't built for the procrastinator who'll start \"next month.\" If you can show up live (or hit play on the recording the same evening), you're fine.",
+    a: "No. Mon–Fri live workweek sprint. Block the calendar. The homework is yours to do at the pace you can sustain, but the classes are live and the energy of doing it together with a cohort is the whole point. If you can show up live (or hit the recording the same evening), you're fine.",
+  },
+  {
+    q: "What if I miss a session?",
+    a: "Every session is recorded and posted within an hour of wrapping. You can rewatch any time. Live is where the questions get answered in real time — that's where the value is — so do everything you can to be there.",
+  },
+  {
+    q: "What happens after the 5 days?",
+    a: "You get 21 more days of private Slack support and office hours with me. Bring your asset reviews, stuck points, campaign questions — I'll work through them with you while your raise goes into market.",
   },
   {
     q: "Is there a payment plan?",
@@ -160,19 +230,15 @@ export const COHORT_FAQ = [
   },
   {
     q: "What software do I need?",
-    a: "A browser, a Meta Ads account, and accounts at the AI tools we use (ChatGPT, Claude, a few others). I'll send the full list on signup.",
+    a: "A browser, a Meta Ads account, and accounts at the AI tools we use (Claude, ChatGPT, Midjourney, Vercel, n8n, Apollo). Full setup list goes out on signup so you can have everything wired before Monday morning.",
   },
   {
     q: "Who is this for?",
-    a: "Capital raise founders, GPs, and issuer marketing teams who are actively raising or about to. Not for agencies or service providers.",
-  },
-  {
-    q: "What happens after the 7 days?",
-    a: "You get 21 more days of private Slack support and office hours with me. Bring your homework, your stuck points, your asset reviews — I'll work through them with you.",
+    a: "Capital raise founders, GPs, and issuer marketing teams who are actively raising or about to. Not for agencies, service providers, or anyone trying to do this on the side of a full-time job — clear the workweek or skip this round.",
   },
   {
     q: "What's the refund policy?",
-    a: "Attend Day 1 live. If it's not for you, email me within 14 days of Day 1 for a full refund.",
+    a: "Attend Day 1 live. If it's not for you, email me within 14 days of Day 1 for a full refund — no questions asked.",
   },
   {
     q: "Is this tax-deductible?",
@@ -189,7 +255,7 @@ The thing nobody tells you about raising capital: the marketing is half the work
 
 In 2024 I started rebuilding everything around AI — image generation for hero shots, prompt libraries for investor copy, n8n workflows for ad iteration, custom GPTs for due diligence prep. The decks I used to spend 3 weeks on now take 3 days. The ad creative outperforms the agency work. The investor emails read like a person wrote them, because the prompts I built are good.
 
-This sprint is the system I use, in your hands, in 7 days. You'll walk out with the prompts, the workflows, the templates, and a working set of assets for your raise — plus 21 more days of Slack and office hours to grind through whatever's still in your way.`;
+This sprint is the system I use, in your hands, in one workweek. Mon–Fri, head down — you walk out Friday afternoon with prompts, workflows, templates, and a complete set of working assets for your raise. Plus 21 more days of Slack and office hours to grind through whatever's still in your way.`;
 
 // ---------- Trust strip ----------
 export const TRUST_STRIP =
@@ -213,14 +279,14 @@ export const VALUE_PROPS = [
 
 // ---------- Who it's for / not for (cohort) ----------
 export const WHO_FOR = [
-  "You can commit one hour a day for 7 business days (live or recording)",
+  "You can clear the workweek — Mon–Fri, head down, ~30 hours",
   "You're actively raising or planning a raise in the next 6 months",
   "You're the founder, GP, or marketing lead — you make the calls",
   "You'd rather build it yourself than hire an agency",
 ];
 
 export const WHO_NOT_FOR = [
-  "You're a procrastinator who'll bookmark the recordings and never open them",
+  "You can't clear a workweek — this isn't a side-of-desk course",
   "You want a self-paced course you'll get to \"eventually\"",
   "You want done-for-you — this is build-with-me",
   "You're a marketing agency looking to resell this",
@@ -228,9 +294,10 @@ export const WHO_NOT_FOR = [
 
 // ---------- What's included (cohort) ----------
 export const INCLUDED = [
-  "7 daily 1-hour live sessions, business days, taught by Dawson",
+  "Mon–Fri live workweek sprint, taught by Dawson (~30 hours total)",
+  "Friday Demo Day — present, get feedback, launch live with the cohort",
   "All session recordings + prompts (rewatch on your schedule)",
-  "21 days of private Slack support and office hours after the sprint",
-  "All working prompts and n8n workflows",
-  "Templates: deck, email sequence, ad scripts, landing page",
+  "21 days of private Slack support + office hours with Dawson after",
+  "All working prompts, n8n workflows, and Claude Projects",
+  "Templates: deck, landing page, email sequence, ad scripts, investor briefings",
 ];

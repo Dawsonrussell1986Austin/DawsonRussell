@@ -22,9 +22,10 @@ export function CohortProblem() {
           </p>
           <p className="body-text">
             AI changes all of it — but most founders don&apos;t know where to
-            start. Which tools? Which prompts? What workflow? Seven business
-            days from now, you&apos;ll have answers and working assets.
-            That&apos;s what this sprint is.
+            start. Which tools? Which prompts? What workflow? Five days from
+            now — Friday, 4pm CT — you&apos;ll have answers, a deployed
+            landing page, ads ready to launch, and outreach automation
+            sending. That&apos;s what this sprint is.
           </p>
         </div>
       </div>

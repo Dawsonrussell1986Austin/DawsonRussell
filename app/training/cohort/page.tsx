@@ -11,9 +11,9 @@ import { FinalCTA } from "./_sections/FinalCTA";
 import { COHORT } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `The 7-Day AI Sprint for Capital Raise Marketing — ${COHORT.number}`,
+  title: `The 5-Day AI Sprint for Capital Raise Marketing — ${COHORT.number}`,
   description:
-    "A 7-day live sprint (1 hour per business day) plus 21 days of Slack and office hours. Walk out with the AI system for decks, ads, investor copy, and landing pages.",
+    "Mon–Fri live workweek sprint (~30 hours) plus 21 days of Slack and office hours after. Walk out Friday afternoon with a deployed landing page, deck, ads ready to launch, and outreach automation sending.",
 };
 
 export default function CohortPage() {

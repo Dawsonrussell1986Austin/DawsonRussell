@@ -34,7 +34,7 @@ export function CohortHero() {
               marginBottom: "1.5rem",
             }}
           >
-            The 7-day AI sprint{" "}
+            The 5-day AI sprint{" "}
             <em style={{ fontStyle: "italic", color: "#D4714E" }}>
               for capital raise marketing.
             </em>
@@ -44,14 +44,30 @@ export function CohortHero() {
               fontFamily: "Inter, sans-serif",
               fontSize: "1.15rem",
               lineHeight: 1.55,
+              color: "#1A1A1A",
+              maxWidth: 560,
+              marginBottom: "1rem",
+              fontWeight: 500,
+            }}
+          >
+            5 days. Monday to Friday.{" "}
+            <span style={{ color: "#D4714E" }}>Clear your calendar</span> — by
+            Friday afternoon you&apos;ll have shipped a complete AI-powered
+            raise marketing system.
+          </p>
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "1rem",
+              lineHeight: 1.55,
               color: "#4A4A4A",
-              maxWidth: 540,
+              maxWidth: 560,
               marginBottom: "2rem",
             }}
           >
-            Seven business days. One hour each, live with me. Plus 21 days of
-            private Slack and office hours after — so the system actually
-            ships, not bookmarks.
+            ~30 hours of live build time across one workweek, plus 21 days of
+            private Slack and office hours with me after — so the system
+            actually ships, not bookmarks.
           </p>
 
           <div
@@ -200,7 +216,7 @@ function CurriculumPreview() {
           color: "#fff",
         }}
       >
-        Seven days. <em style={{ fontStyle: "italic", color: "#D4714E" }}>Seven builds.</em>
+        Mon–Fri. <em style={{ fontStyle: "italic", color: "#D4714E" }}>One workweek.</em>
       </h3>
       <ul
         style={{
@@ -209,7 +225,7 @@ function CurriculumPreview() {
           padding: 0,
           display: "flex",
           flexDirection: "column",
-          gap: "0.85rem",
+          gap: "0.95rem",
         }}
       >
         {MODULES.map((m) => (
@@ -217,7 +233,7 @@ function CurriculumPreview() {
             key={m.day}
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-start",
               gap: "1rem",
               fontSize: "0.95rem",
               color: "rgba(255,255,255,0.85)",
@@ -225,24 +241,21 @@ function CurriculumPreview() {
           >
             <span
               style={{
-                width: 32,
-                height: 32,
-                borderRadius: 8,
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "0.85rem",
-                fontWeight: 600,
+                minWidth: 86,
+                paddingTop: 2,
+                fontSize: "0.7rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
                 color: "#D4714E",
+                fontWeight: 600,
                 flexShrink: 0,
               }}
             >
-              {String(m.day).padStart(2, "0")}
+              {m.dayLabel.split(" — ")[0]}
             </span>
-            <span style={{ fontWeight: 500, color: "#fff" }}>{m.name}</span>
+            <span style={{ fontWeight: 500, color: "#fff", lineHeight: 1.35 }}>
+              {m.name}
+            </span>
           </li>
         ))}
       </ul>

@@ -11,7 +11,7 @@ export function FinalCTA() {
             {COHORT.number} — Starts {COHORT.startDateLabel}
           </div>
           <h2 className="section-heading">
-            Seven days from now,<br />
+            Five days from now,<br />
             <em className="serif" style={{ fontStyle: "italic" }}>
               your raise marketing looks different.
             </em>
