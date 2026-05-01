@@ -37,7 +37,6 @@ export function LegacyNav() {
       </Link>
       <div className={`nav-links${open ? " open" : ""}`} id="navLinks">
         <Link href="/training" onClick={() => setOpen(false)}>Free Training</Link>
-        <Link href="/training/work" onClick={() => setOpen(false)}>What&apos;s Been Built</Link>
         <Link href="/training/cohort" onClick={() => setOpen(false)} className="nav-cta">
           Join the May 11th Session
         </Link>

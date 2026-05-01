@@ -1351,13 +1351,3 @@
     color: #4A4A4A;
 }
 
-/* ─── Before/after mockups (cohort problem section) ─── */
-@media (max-width: 760px) {
-    .before-after-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-    }
-    .before-after-arrow {
-        transform: rotate(90deg);
-    }
-}
