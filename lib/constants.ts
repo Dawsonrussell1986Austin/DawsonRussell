@@ -36,15 +36,15 @@ export const TRAINING = {
 export const COHORT = {
   name: "{{COHORT_NAME}}",
   number: "Cohort 1",
-  startDateLabel: "Monday, May 18, 2026",
-  startDateISO: "2026-05-18",
+  startDateLabel: "Monday, May 11, 2026",
+  startDateISO: "2026-05-11",
   price: 2499,
   priceLabel: "$2,499",
   anchorPriceLabel: "$3,997",
-  seats: "{{SEATS}}", // e.g. "25"
-  totalHoursLabel: "~30 hours across 5 days",
+  seats: "10",
+  totalHoursLabel: "~20 hours across 5 days",
   workweekLine:
-    "5 days. Monday to Friday. Clear your calendar — by Friday afternoon you'll have shipped a complete AI-powered raise marketing system.",
+    "5 days. 90 minutes a day. Monday to Friday. Clear your calendar — by Friday afternoon you'll have shipped a complete AI-powered raise marketing system.",
 
   // Optional hero video (same pattern as TRAINING). Leave empty to show
   // the curriculum preview card on the right.
@@ -53,7 +53,7 @@ export const COHORT = {
   videoPoster: "" as string,
   format: {
     sessions:
-      "Mon–Fri live workweek sprint (~30 hours total, including Friday Demo Day)",
+      "Mon–Fri live workweek sprint, 90 minutes a day (~20 hours total, including Friday Demo Day)",
     trainingAccess:
       "All session recordings + prompts (rewatch on your schedule)",
     slackAccess:
@@ -62,7 +62,7 @@ export const COHORT = {
   refundLine:
     "Pay in full. 14-day refund if you attend Day 1 and it's not for you.",
   scarcityLine:
-    "Limited to {{SEATS}} founders. Founding member pricing — Cohort 2 will be priced higher.",
+    "Limited to 10 capital raise issuers per session. Founding member pricing — future sessions will be priced higher.",
 };
 
 // ---------- Curriculum (5 days, Monday–Friday workweek sprint) ----------
@@ -82,7 +82,7 @@ export const MODULES: Module[] = [
     day: 1,
     dayLabel: "Monday",
     name: "Foundation, Visuals & Copy",
-    liveTime: "Live: 2 hours, 9–11am CT",
+    liveTime: "Live: 90 min, 9–10:30am CT",
     agenda: [
       "Kickoff + intros",
       "AI stack overview + Claude Project setup",
@@ -103,7 +103,7 @@ export const MODULES: Module[] = [
     day: 2,
     dayLabel: "Tuesday",
     name: "Pitch Deck & Web",
-    liveTime: "Live: 2 hours, 9–11am CT",
+    liveTime: "Live: 90 min, 9–10:30am CT",
     agenda: [
       "Pitch deck narrative rebuild",
       "Claude Code crash course",
@@ -144,7 +144,7 @@ export const MODULES: Module[] = [
     day: 4,
     dayLabel: "Thursday",
     name: "Outreach Automation",
-    liveTime: "Live: 2 hours, 9–11am CT",
+    liveTime: "Live: 90 min, 9–10:30am CT",
     agenda: [
       "Apollo + EDGAR investor sourcing",
       "n8n basics — build one workflow live together",
@@ -163,7 +163,7 @@ export const MODULES: Module[] = [
     day: 5,
     dayLabel: "Friday — Demo Day",
     name: "Integration & Launch",
-    liveTime: "Live: 3 hours, 1–4pm CT",
+    liveTime: "Live: 90 min, 1–2:30pm CT",
     agenda: [
       "Each student presents (5 min): deck, landing page, system walkthrough",
       "Live group + Dawson feedback",
@@ -210,7 +210,7 @@ export const TRAINING_FAQ = [
 export const COHORT_FAQ = [
   {
     q: "How much time will this actually take?",
-    a: "About 30 hours across 5 days. Live sessions: 2 hours each morning, Mon–Thu (9–11am CT). Friday is Demo Day, 1–4pm CT. Plus ~3 hours of build time each afternoon. Block the workweek like you'd block a conference.",
+    a: "About 20 hours across 5 days. Live sessions: 90 minutes a day. Mon–Thu at 9–10:30am CT. Friday Demo Day at 1–2:30pm CT. Plus ~2 hours of build time each afternoon. Block the workweek like you'd block a conference.",
   },
   {
     q: "Is this self-paced?",
@@ -279,14 +279,14 @@ export const VALUE_PROPS = [
 
 // ---------- Who it's for / not for (cohort) ----------
 export const WHO_FOR = [
-  "You can clear the workweek — Mon–Fri, head down, ~30 hours",
+  "You can commit 90 min a day live Mon–Fri, plus ~2 hours of build time after",
   "You're actively raising or planning a raise in the next 6 months",
   "You're the founder, GP, or marketing lead — you make the calls",
   "You'd rather build it yourself than hire an agency",
 ];
 
 export const WHO_NOT_FOR = [
-  "You can't clear a workweek — this isn't a side-of-desk course",
+  "You can't clear the week — this isn't a side-of-desk course",
   "You want a self-paced course you'll get to \"eventually\"",
   "You want done-for-you — this is build-with-me",
   "You're a marketing agency looking to resell this",
@@ -294,7 +294,7 @@ export const WHO_NOT_FOR = [
 
 // ---------- What's included (cohort) ----------
 export const INCLUDED = [
-  "Mon–Fri live workweek sprint, taught by Dawson (~30 hours total)",
+  "Mon–Fri live workweek sprint, 90 min a day, taught by Dawson",
   "Friday Demo Day — present, get feedback, launch live with the cohort",
   "All session recordings + prompts (rewatch on your schedule)",
   "21 days of private Slack support + office hours with Dawson after",

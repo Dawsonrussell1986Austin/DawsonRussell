@@ -13,7 +13,7 @@ import { COHORT } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `The 5-Day AI Sprint for Capital Raise Marketing — ${COHORT.number}`,
   description:
-    "Mon–Fri live workweek sprint (~30 hours) plus 21 days of Slack and office hours after. Walk out Friday afternoon with a deployed landing page, deck, ads ready to launch, and outreach automation sending.",
+    "Mon–Fri live workweek sprint, 90 min a day (~20 hours total), plus 21 days of Slack and office hours after. Walk out Friday afternoon with a deployed landing page, deck, ads ready to launch, and outreach automation sending.",
 };
 
 export default function CohortPage() {

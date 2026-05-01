@@ -12,10 +12,10 @@ export function Curriculum() {
             </h2>
           </div>
           <p className="section-subtext">
-            Live mornings on Zoom (with one Friday afternoon Demo Day), build
-            time in the afternoons, recordings posted same day. By Friday at
-            4pm CT you&apos;ll have shipped a complete AI-powered raise
-            marketing system.
+            90 minutes a day, live on Zoom — mornings Mon–Thu, afternoon for
+            Friday Demo Day. ~2 hours of async build time after each session.
+            Recordings posted same day. By 2:30pm CT Friday you&apos;ll have
+            shipped a complete AI-powered raise marketing system.
           </p>
         </div>
         <div

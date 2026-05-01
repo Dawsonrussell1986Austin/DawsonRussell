@@ -50,7 +50,7 @@ export function CohortHero() {
               fontWeight: 500,
             }}
           >
-            5 days. Monday to Friday.{" "}
+            5 days. 90 minutes a day. Monday to Friday.{" "}
             <span style={{ color: "#D4714E" }}>Clear your calendar</span> — by
             Friday afternoon you&apos;ll have shipped a complete AI-powered
             raise marketing system.
@@ -65,9 +65,9 @@ export function CohortHero() {
               marginBottom: "2rem",
             }}
           >
-            ~30 hours of live build time across one workweek, plus 21 days of
-            private Slack and office hours with me after — so the system
-            actually ships, not bookmarks.
+            ~20 hours total: 90 min live each day plus ~2 hours of build time
+            after. Plus 21 days of private Slack and office hours with me
+            after the sprint — so the system actually ships, not bookmarks.
           </p>
 
           <div
@@ -147,7 +147,7 @@ export function CohortHero() {
               >
                 ✓
               </span>
-              Limited seats
+              10 issuers / session
             </span>
           </div>
         </div>
