@@ -210,11 +210,11 @@ export const TRAINING_FAQ = [
   },
   {
     q: "Will there be a pitch?",
-    a: "At the end I'll mention the paid 5-day session for people who want to go deeper. The first 55 minutes are pure training — no pitch.",
+    a: "At the end I'll mention the paid 5-day session that starts May 11 for people who want to go deeper. The first 55 minutes are pure training — no pitch.",
   },
   {
     q: "What software do I need?",
-    a: "A browser. The session runs on Zoom and the tools I demo are all web-based.",
+    a: "A browser. The training runs on Zoom and the tools I demo are all web-based.",
   },
 ];
 
