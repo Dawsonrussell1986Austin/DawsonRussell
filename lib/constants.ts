@@ -17,7 +17,7 @@ export const TRAINING = {
   durationLabel: "1 hour, live",
   eyebrow: "Capital Raises in 2026 · Live Training",
   headline:
-    "Watch me build a $25K capital raise marketing package in 20 minutes — live, on screen.",
+    "Watch me build a $25K capital raise marketing package — live, on screen, in 25 minutes.",
   subhead:
     "AI changed more in the last 90 days than in the previous two years. The issuers who adapt now will outraise the ones who don't — by a margin that won't be closeable later.",
   ctaLabel: "Reserve My Seat",
@@ -49,19 +49,20 @@ export const COHORT = {
   videoEmbed: "" as string,
   videoPoster: "" as string,
   format: {
-    sessions: "6 weekly 1-hour live sessions",
-    trainingAccess: "7 days of training recordings + prompts",
-    slackAccess: "21 days of private Slack community access after the cohort ends",
+    sessions: "7 daily 1-hour live sessions (business days)",
+    trainingAccess: "All session recordings + prompts (rewatch any time)",
+    slackAccess:
+      "21 days of private Slack support and office hours with Dawson after the sprint",
   },
   refundLine:
-    "Pay in full. 14-day refund if you attend Week 1 and it's not for you.",
+    "Pay in full. 14-day refund if you attend Day 1 and it's not for you.",
   scarcityLine:
     "Limited to {{SEATS}} founders. Founding member pricing — Cohort 2 will be priced higher.",
 };
 
-// ---------- Curriculum (6 weeks) ----------
+// ---------- Curriculum (7 daily 1-hour sessions) ----------
 export type Module = {
-  week: number;
+  day: number;
   name: string;
   build: string;
   deliverable: string;
@@ -69,7 +70,7 @@ export type Module = {
 
 export const MODULES: Module[] = [
   {
-    week: 1,
+    day: 1,
     name: "Images",
     build:
       "AI-generated investor-grade images: hero shots, deck visuals, ad creative, and brand photography without a photo shoot.",
@@ -77,7 +78,7 @@ export const MODULES: Module[] = [
       "A library of 50+ on-brand images you own outright, ready for the deck and the ad account.",
   },
   {
-    week: 2,
+    day: 2,
     name: "Copywriting",
     build:
       "The exact prompts I use for investor emails, LP one-pagers, and ad scripts that read like a human wrote them.",
@@ -85,14 +86,14 @@ export const MODULES: Module[] = [
       "A drafted investor email sequence and a one-pager you can send Monday.",
   },
   {
-    week: 3,
+    day: 3,
     name: "Web",
     build:
       "An investor-facing site built and deployed inside the session — copy, design, and code, top to bottom.",
     deliverable: "A live URL for your raise, on your own domain.",
   },
   {
-    week: 4,
+    day: 4,
     name: "Ads",
     build:
       "Meta and LinkedIn ad accounts wired up with AI-generated creative variants, audience targeting, and budget plans.",
@@ -100,16 +101,22 @@ export const MODULES: Module[] = [
       "A running test campaign with 5+ creative variants and a tracking setup.",
   },
   {
-    week: 5,
-    name: "{{MODULE_5_NAME}}",
-    build: "{{MODULE_5_BUILD}}",
-    deliverable: "{{MODULE_5_DELIVERABLE}}",
+    day: 5,
+    name: "{{DAY_5_NAME}}",
+    build: "{{DAY_5_BUILD}}",
+    deliverable: "{{DAY_5_DELIVERABLE}}",
   },
   {
-    week: 6,
-    name: "{{MODULE_6_NAME}}",
-    build: "{{MODULE_6_BUILD}}",
-    deliverable: "{{MODULE_6_DELIVERABLE}}",
+    day: 6,
+    name: "{{DAY_6_NAME}}",
+    build: "{{DAY_6_BUILD}}",
+    deliverable: "{{DAY_6_DELIVERABLE}}",
+  },
+  {
+    day: 7,
+    name: "{{DAY_7_NAME}}",
+    build: "{{DAY_7_BUILD}}",
+    deliverable: "{{DAY_7_DELIVERABLE}}",
   },
 ];
 
@@ -141,7 +148,11 @@ export const TRAINING_FAQ = [
 export const COHORT_FAQ = [
   {
     q: "What if I miss a session?",
-    a: "All 6 sessions are recorded and available for 7 days after the final week. Live attendance is recommended but not required.",
+    a: "All 7 sessions are recorded and posted right after we wrap each day. You can rewatch on your own schedule. Live is where the questions get answered in real time, but the homework is yours to do at the pace you can sustain.",
+  },
+  {
+    q: "Is this self-paced?",
+    a: "The classes are not. Seven business days in a row, one hour each, live. The homework is yours — take it as fast or slow as you want. This isn't built for the procrastinator who'll start \"next month.\" If you can show up live (or hit play on the recording the same evening), you're fine.",
   },
   {
     q: "Is there a payment plan?",
@@ -156,16 +167,12 @@ export const COHORT_FAQ = [
     a: "Capital raise founders, GPs, and issuer marketing teams who are actively raising or about to. Not for agencies or service providers.",
   },
   {
-    q: "What happens after the 21 days of Slack?",
-    a: "The Slack community closes. You keep all the prompts, templates, workflows, and recordings you downloaded during the cohort.",
-  },
-  {
-    q: "Are sessions recorded?",
-    a: "Yes. Recordings are available for 7 days after the cohort ends.",
+    q: "What happens after the 7 days?",
+    a: "You get 21 more days of private Slack support and office hours with me. Bring your homework, your stuck points, your asset reviews — I'll work through them with you.",
   },
   {
     q: "What's the refund policy?",
-    a: "Attend Week 1 live. If it's not for you, email me within 14 days of Week 1 for a full refund.",
+    a: "Attend Day 1 live. If it's not for you, email me within 14 days of Day 1 for a full refund.",
   },
   {
     q: "Is this tax-deductible?",
@@ -182,7 +189,7 @@ The thing nobody tells you about raising capital: the marketing is half the work
 
 In 2024 I started rebuilding everything around AI — image generation for hero shots, prompt libraries for investor copy, n8n workflows for ad iteration, custom GPTs for due diligence prep. The decks I used to spend 3 weeks on now take 3 days. The ad creative outperforms the agency work. The investor emails read like a person wrote them, because the prompts I built are good.
 
-This cohort is the system I use, in your hands, in 6 weeks. You'll walk out with the prompts, the workflows, the templates, and a working set of assets for your raise.`;
+This sprint is the system I use, in your hands, in 7 days. You'll walk out with the prompts, the workflows, the templates, and a working set of assets for your raise — plus 21 more days of Slack and office hours to grind through whatever's still in your way.`;
 
 // ---------- Trust strip ----------
 export const TRUST_STRIP =
@@ -206,24 +213,24 @@ export const VALUE_PROPS = [
 
 // ---------- Who it's for / not for (cohort) ----------
 export const WHO_FOR = [
+  "You can commit one hour a day for 7 business days (live or recording)",
   "You're actively raising or planning a raise in the next 6 months",
   "You're the founder, GP, or marketing lead — you make the calls",
   "You'd rather build it yourself than hire an agency",
-  "You're comfortable with new software and willing to do the work",
 ];
 
 export const WHO_NOT_FOR = [
+  "You're a procrastinator who'll bookmark the recordings and never open them",
+  "You want a self-paced course you'll get to \"eventually\"",
+  "You want done-for-you — this is build-with-me",
   "You're a marketing agency looking to resell this",
-  "You want a done-for-you service — this is a build cohort",
-  "You're not raising capital and have no plans to",
-  "You're looking for theory, not working assets",
 ];
 
 // ---------- What's included (cohort) ----------
 export const INCLUDED = [
-  "6 live cohort sessions, 1 hour each",
-  "7-day access to all recordings + prompts",
-  "21-day private Slack community after the cohort ends",
-  "All my working prompts and n8n workflows",
-  "Templates: deck, email sequence, ad scripts",
+  "7 daily 1-hour live sessions, business days, taught by Dawson",
+  "All session recordings + prompts (rewatch on your schedule)",
+  "21 days of private Slack support and office hours after the sprint",
+  "All working prompts and n8n workflows",
+  "Templates: deck, email sequence, ad scripts, landing page",
 ];

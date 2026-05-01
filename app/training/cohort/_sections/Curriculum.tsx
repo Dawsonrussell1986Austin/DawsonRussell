@@ -8,25 +8,26 @@ export function Curriculum() {
           <div>
             <div className="section-label">Curriculum</div>
             <h2 className="section-heading">
-              Six weeks.<br />Six modules.
+              Seven days.<br />Seven builds.
             </h2>
           </div>
           <p className="section-subtext">
-            Each week is a 1-hour live session. You build one asset live with
-            me, then take the prompts, workflows, and templates home.
+            One hour per day, business days only, live with me. You build one
+            asset on screen each session, then take the prompts, workflows, and
+            templates home as homework.
           </p>
         </div>
         <div className="services-grid">
           {MODULES.map((m) => (
-            <div key={m.week} className="service-card">
+            <div key={m.day} className="service-card">
               <div className="service-icon">
                 <span style={{ fontFamily: "Playfair Display, serif", fontSize: "1.4rem", fontWeight: 600 }}>
-                  {String(m.week).padStart(2, "0")}
+                  {String(m.day).padStart(2, "0")}
                 </span>
               </div>
               <h3>{m.name}</h3>
               <p>{m.build}</p>
-              <span className="service-tag">Week {m.week} deliverable</span>
+              <span className="service-tag">Day {m.day} deliverable</span>
               <p style={{ marginTop: "0.75rem", fontSize: "0.85rem", color: "#4A4A4A" }}>
                 {m.deliverable}
               </p>

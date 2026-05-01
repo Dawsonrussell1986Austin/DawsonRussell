@@ -31,9 +31,9 @@ export function TrainingHero() {
               marginBottom: "1.5rem",
             }}
           >
-            Watch me build a $25K capital raise marketing package in 20 minutes —{" "}
+            Watch me build a $25K capital raise marketing package —{" "}
             <em style={{ fontStyle: "italic", color: "#D4714E" }}>
-              live, on screen.
+              live, on screen, in 25 minutes.
             </em>
           </h1>
           <p

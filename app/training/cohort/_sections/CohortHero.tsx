@@ -34,7 +34,7 @@ export function CohortHero() {
               marginBottom: "1.5rem",
             }}
           >
-            The 6-week AI system{" "}
+            The 7-day AI sprint{" "}
             <em style={{ fontStyle: "italic", color: "#D4714E" }}>
               for capital raise marketing.
             </em>
@@ -49,8 +49,9 @@ export function CohortHero() {
               marginBottom: "2rem",
             }}
           >
-            Six weeks. The exact prompts, workflows, and templates I use to build
-            decks, ads, and investor copy for live raises — in your hands.
+            Seven business days. One hour each, live with me. Plus 21 days of
+            private Slack and office hours after — so the system actually
+            ships, not bookmarks.
           </p>
 
           <div
@@ -142,7 +143,7 @@ export function CohortHero() {
               videoEmbed={COHORT.videoEmbed}
               videoPoster={COHORT.videoPoster}
               aspectRatio="9 / 16"
-              placeholderLabel="Watch the cohort intro"
+              placeholderLabel="Watch the sprint intro"
             />
           ) : (
             <CurriculumPreview />
@@ -199,7 +200,7 @@ function CurriculumPreview() {
           color: "#fff",
         }}
       >
-        Six weeks. <em style={{ fontStyle: "italic", color: "#D4714E" }}>Six builds.</em>
+        Seven days. <em style={{ fontStyle: "italic", color: "#D4714E" }}>Seven builds.</em>
       </h3>
       <ul
         style={{
@@ -213,7 +214,7 @@ function CurriculumPreview() {
       >
         {MODULES.map((m) => (
           <li
-            key={m.week}
+            key={m.day}
             style={{
               display: "flex",
               alignItems: "center",
@@ -239,7 +240,7 @@ function CurriculumPreview() {
                 flexShrink: 0,
               }}
             >
-              {String(m.week).padStart(2, "0")}
+              {String(m.day).padStart(2, "0")}
             </span>
             <span style={{ fontWeight: 500, color: "#fff" }}>{m.name}</span>
           </li>

@@ -17,7 +17,7 @@ export function Pricing() {
           <div className="path-label" style={{ color: "#D4714E" }}>
             {COHORT.number} only
           </div>
-          <h3 style={{ marginBottom: "1.5rem" }}>The 6-Week Cohort</h3>
+          <h3 style={{ marginBottom: "1.5rem" }}>The 7-Day Sprint</h3>
           <div
             style={{
               display: "flex",
