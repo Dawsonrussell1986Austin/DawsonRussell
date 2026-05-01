@@ -49,11 +49,11 @@ export const COHORT = {
   remainderAmount: 1999,
   remainderLabel: "$1,999",
   paymentNote:
-    "Pay the $500 deposit to reserve your seat. The $1,999 balance is due only after the 5-day session — and only if you completed the work and found it worth $2,499.",
+    "Pay the $500 deposit to reserve your seat. The $1,999 balance is charged automatically Friday after Demo Day — refundable if you completed the work and it didn't deliver.",
   seats: "10",
   // Refund / completion policy — reused on pricing card and FAQ.
   completionRequirement:
-    "This is how much we believe the sessions can impact your capital raise: show up — attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day. Do that, and if it didn't deliver, walk away — the $500 was all you spent.",
+    "This is how much we believe the sessions can impact your capital raise: we charge the $1,999 balance Friday after Demo Day. If you completed the work — attended live or watched every recording within the session week, shipped the daily homework, and presented at Demo Day — and the system didn't deliver, email me and the $1,999 is refunded. The $500 deposit holds your seat either way.",
   totalHoursLabel: "~20 hours across 5 days",
   workweekLine:
     "5 days. 90 minutes a day — less than your happy hour, less than an extended lunch. Listen in the car. Hit it at the gym. Trade one Netflix night for the homework. By Friday afternoon, you've shipped a complete AI-powered raise marketing system.",
@@ -72,7 +72,7 @@ export const COHORT = {
       "21 days of private Slack support and office hours with Dawson after the sprint",
   },
   refundLine:
-    "$500 deposit reserves your seat (10 per session, non-refundable — the seat is real and limited). The $1,999 balance is due after the session, only if you completed the work.",
+    "$500 deposit reserves your seat (10 per session, non-refundable — the seat is real and limited). The $1,999 balance charges Friday after Demo Day, refundable if you completed the work and it didn't deliver.",
   scarcityLine:
     "Limited to 10 capital raise issuers per session. Founding member pricing — future sessions will be priced higher.",
 };
@@ -238,11 +238,11 @@ export const COHORT_FAQ = [
   },
   {
     q: "How does the $500 deposit work?",
-    a: "Your $500 reserves your seat. We only open 10 seats per session — once they're gone, they're gone. The deposit is non-refundable because the seat is real and someone else can't take it. The $1,999 balance is due after the 5-day session ends.",
+    a: "Your $500 reserves your seat. We only open 10 seats per session — once they're gone, they're gone. The deposit is non-refundable because the seat is real and someone else can't take it. The $1,999 balance is charged automatically after the session ends.",
   },
   {
-    q: "When and how is the $1,999 balance due?",
-    a: "Friday afternoon, after Demo Day. To be eligible to either pay it or walk away, you have to actually show up: attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day. If you completed the work and it delivered, the balance is due. If you completed it and it didn't deliver, walk away — the $500 deposit is the only money that ever changed hands.",
+    q: "When and how is the $1,999 balance charged?",
+    a: "Friday afternoon — we charge the card on file as soon as Demo Day wraps. If you completed the work (attended live or watched every recording within the session week, shipped the daily homework, and presented at Demo Day) and the system didn't deliver, email me and I'll refund the $1,999. If you ghosted or didn't do the work, you owe the balance — you took a real seat that someone else couldn't have.",
   },
   {
     q: "What software do I need?",
@@ -254,7 +254,7 @@ export const COHORT_FAQ = [
   },
   {
     q: "What's the refund policy?",
-    a: "There isn't one in the traditional sense — and that's the whole point. You only pay $500 up front. If you completed the work and the system delivered, you owe the $1,999 balance. If you completed it and it didn't deliver, you walk away owing nothing. The $500 deposit is non-refundable: you took a real, limited seat (10 per session) that another founder could've filled. If you ghost the session, skip the homework, or treat it like passive content, the $500 is gone and the eligibility to walk away from the balance is gone too — but you also won't be charged the $1,999. We don't refund people who don't show up.",
+    a: "Two parts. (1) The $500 deposit is non-refundable — you took 1 of 10 seats and another founder couldn't have it. (2) The $1,999 balance is charged after Demo Day; if you completed the work and the system didn't deliver, email me within 7 days and I'll refund it in full. \"Completed the work\" means attended live (or watched every recording within the session week), shipped the daily homework, and presented at Demo Day. If you ghosted or didn't do the work, no refund — you got the seat, you don't get the money back. We don't refund people who don't show up.",
   },
   {
     q: "Is this tax-deductible?",

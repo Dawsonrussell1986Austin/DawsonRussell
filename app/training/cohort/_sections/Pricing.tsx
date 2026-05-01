@@ -81,8 +81,8 @@ export function Pricing() {
             />
             <div style={{ height: 1, background: "rgba(255,255,255,0.08)" }} />
             <Row
-              label={`${COHORT.remainderLabel} due Friday`}
-              detail="Only if you completed the work and it delivered. If it didn't, you walk — and the $500 is all you ever paid."
+              label={`${COHORT.remainderLabel} charged Friday`}
+              detail="After Demo Day, the card on file gets charged. Refundable if you completed the work and it didn't deliver."
             />
           </div>
 
