@@ -19,7 +19,7 @@ export const TRAINING = {
   headline:
     "Watch me build a $25K capital raise marketing package in 20 minutes — live, on screen.",
   subhead:
-    "Decks, ads, landing pages, and investor copy. The exact AI workflow I use for Reg D, Reg A, and Reg CF raises.",
+    "AI changed more in the last 90 days than in the previous two years. The issuers who adapt now will outraise the ones who don't — by a margin that won't be closeable later.",
   ctaLabel: "Reserve My Seat",
   noReplayNote: "No replay. Live only.",
 
