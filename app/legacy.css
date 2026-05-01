@@ -1288,3 +1288,34 @@
             .comparison-row { grid-template-columns: 1fr; }
             .comparison-cell:not(:last-child) { border-right: none; border-bottom: 1px solid var(--border); }
         }
+
+/* ─── Training hero (2-column with video) ─── */
+.training-hero {
+    padding: clamp(3.5rem, 6vw, 6rem) 2rem clamp(2.5rem, 4vw, 4rem);
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.training-hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+}
+.training-hero-copy {
+    max-width: 600px;
+}
+.training-hero-video {
+    width: 100%;
+    max-width: 460px;
+    margin-left: auto;
+}
+@media (max-width: 900px) {
+    .training-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .training-hero-video {
+        margin: 0 auto;
+        max-width: 360px;
+    }
+}

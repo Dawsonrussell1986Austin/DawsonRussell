@@ -21,6 +21,14 @@ export const TRAINING = {
     "Faster decks, cheaper ads, sharper investor copy — built live on screen in one hour.",
   ctaLabel: "Reserve My Seat",
   noReplayNote: "No replay. Live only.",
+
+  // Hero video. Use ONE of these:
+  //   videoUrl    — direct .mp4/.webm file (drop in /public, e.g. "/dawson-intro.mp4")
+  //   videoEmbed  — YouTube/Vimeo embed URL (e.g. "https://www.youtube.com/embed/XXXX")
+  // Leave both empty to show a placeholder.
+  videoUrl: "" as string,
+  videoEmbed: "" as string,
+  videoPoster: "" as string, // optional poster image for <video>, e.g. "/dawson-poster.jpg"
 };
 
 // ---------- Paid cohort (page: /training/cohort) ----------
