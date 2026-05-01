@@ -53,7 +53,7 @@ export const COHORT = {
   seats: "10",
   // Refund / completion policy — reused on pricing card and FAQ.
   completionRequirement:
-    "To be eligible to walk away from the $1,999 balance, you must show up — attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day.",
+    "This is how much we believe the sessions can impact your capital raise: show up — attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day. Do that, and if it didn't deliver, walk away — the $500 was all you spent.",
   totalHoursLabel: "~20 hours across 5 days",
   workweekLine:
     "5 days. 90 minutes a day — less than your happy hour, less than an extended lunch. Listen in the car. Hit it at the gym. Trade one Netflix night for the homework. By Friday afternoon, you've shipped a complete AI-powered raise marketing system.",
@@ -308,7 +308,60 @@ export const WHO_NOT_FOR = [
   "You're a marketing agency looking to resell this",
 ];
 
-// ---------- What's included (cohort) ----------
+// ---------- "What's Been Built" gallery ----------
+export type WorkItem = {
+  id: string;
+  member: string; // First name + last initial, e.g. "Sarah K."
+  raise: string; // E.g. "Reg D — Real estate"
+  sessionLabel: string; // E.g. "May 11–15, 2026"
+  type: "Landing Page" | "Pitch Deck" | "Ad Campaign" | "Email Sequence" | "Outreach System" | "Visual Pack";
+  title: string;
+  blurb: string;
+  url?: string; // Optional outbound link to live work
+  imageUrl?: string; // Optional thumbnail (drop in /public)
+};
+
+// Real member work goes here after each session ships. Until then the page
+// shows category-preview cards (see WORK_CATEGORIES below).
+export const WORK_ITEMS: WorkItem[] = [];
+
+export const WORK_CATEGORIES: {
+  type: WorkItem["type"];
+  blurb: string;
+}[] = [
+  {
+    type: "Landing Page",
+    blurb:
+      "Investor-facing site, built and deployed inside the session — copy, design, and code top to bottom on a real URL.",
+  },
+  {
+    type: "Pitch Deck",
+    blurb:
+      "Rebuilt narrative, on-brand visuals, and an investor-ready deck — all generated and refined inside one 90-minute live block plus build time.",
+  },
+  {
+    type: "Ad Campaign",
+    blurb:
+      "10+ Meta ad variations, accredited-investor audiences, compliance-checked copy, and a 30-day media plan ready to launch Friday.",
+  },
+  {
+    type: "Email Sequence",
+    blurb:
+      "8-email investor sequence built from the 5-prompt copywriting framework — drafted, edited, and sent through GHL or your platform of choice.",
+  },
+  {
+    type: "Outreach System",
+    blurb:
+      "n8n workflow that pulls leads from Apollo + EDGAR, generates personalized briefings, and sends — all triggered the moment a new investor matches.",
+  },
+  {
+    type: "Visual Pack",
+    blurb:
+      "50+ on-brand investor-grade images: hero shots, deck visuals, ad creative, and brand photography — Midjourney workflow you can re-run any time.",
+  },
+];
+
+// ---------- What's included (session) ----------
 export const INCLUDED = [
   "Mon–Fri live workweek sprint, 90 min a day, taught by Dawson",
   "Friday Demo Day — present, get feedback, launch live with the group",
