@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CohortHero } from "./_sections/CohortHero";
 import { CohortProblem } from "./_sections/CohortProblem";
 import { Curriculum } from "./_sections/Curriculum";
+import { WhatMembersShip } from "./_sections/WhatMembersShip";
 import { Included } from "./_sections/Included";
 import { WhoFor } from "./_sections/WhoFor";
 import { Pricing } from "./_sections/Pricing";
@@ -22,6 +23,7 @@ export default function CohortPage() {
       <CohortHero />
       <CohortProblem />
       <Curriculum />
+      <WhatMembersShip />
       <Included />
       <WhoFor />
       <Pricing />

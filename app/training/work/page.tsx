@@ -7,6 +7,16 @@ import {
   COHORT,
   type WorkItem,
 } from "@/lib/constants";
+import { AssetMockup, type AssetType } from "@/components/AssetMockup";
+
+const TYPE_TO_MOCKUP: Record<WorkItem["type"], AssetType> = {
+  "Landing Page": "landing-page",
+  "Pitch Deck": "deck-slide",
+  "Ad Campaign": "ad-variations",
+  "Email Sequence": "email",
+  "Outreach System": "outreach-flow",
+  "Visual Pack": "visual-pack",
+};
 
 export const metadata: Metadata = {
   title: "What's Been Built — Recent Member Work",
@@ -58,7 +68,15 @@ export default function WorkPage() {
                   {WORK_ITEMS_DISCLAIMER}
                 </p>
               ) : null}
-              <div className="services-grid" style={{ marginTop: "2.5rem" }}>
+              <div
+                style={{
+                  marginTop: "2.5rem",
+                  display: "grid",
+                  gap: "1.75rem",
+                  gridTemplateColumns:
+                    "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
+                }}
+              >
                 {WORK_ITEMS.map((item) => (
                   <WorkCard key={item.id} item={item} />
                 ))}
@@ -134,7 +152,13 @@ function EmptyState() {
           the kind of work that gets built.
         </p>
       </div>
-      <div className="services-grid">
+      <div
+        style={{
+          display: "grid",
+          gap: "1.75rem",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
+        }}
+      >
         {WORK_CATEGORIES.map((cat) => (
           <CategoryCard key={cat.type} type={cat.type} blurb={cat.blurb} />
         ))}
@@ -151,14 +175,31 @@ function CategoryCard({
   blurb: string;
 }) {
   return (
-    <div className="service-card" style={{ position: "relative" }}>
-      <div className="service-icon">
-        <CategoryIcon type={type} />
+    <article
+      style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
+    >
+      <AssetMockup type={TYPE_TO_MOCKUP[type]} />
+      <div>
+        <span className="service-tag" style={{ marginBottom: "0.5rem", display: "inline-flex" }}>
+          {type}
+        </span>
+        <h3
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "1.35rem",
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
+            margin: "0.4rem 0 0.5rem",
+            color: "#1A1A1A",
+          }}
+        >
+          {type}
+        </h3>
+        <p style={{ fontSize: "0.92rem", lineHeight: 1.55, color: "#4A4A4A" }}>
+          {blurb}
+        </p>
       </div>
-      <h3>{type}</h3>
-      <p>{blurb}</p>
-      <span className="service-tag">Sample after May 15</span>
-    </div>
+    </article>
   );
 }
 
@@ -170,104 +211,52 @@ function WorkCard({ item }: { item: WorkItem }) {
   return (
     <Wrapper
       {...wrapperProps}
-      className="service-card"
-      style={{ textDecoration: "none", color: "inherit", cursor: item.url ? "pointer" : "default" }}
+      style={{
+        textDecoration: "none",
+        color: "inherit",
+        cursor: item.url ? "pointer" : "default",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1.25rem",
+      }}
     >
-      {item.imageUrl ? (
+      <AssetMockup type={TYPE_TO_MOCKUP[item.type]} />
+      <div>
+        <span className="service-tag" style={{ marginBottom: "0.5rem", display: "inline-flex" }}>
+          {item.type}
+        </span>
+        <h3
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "1.3rem",
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
+            margin: "0.4rem 0 0.5rem",
+            color: "#1A1A1A",
+          }}
+        >
+          {item.title}
+        </h3>
+        <p style={{ fontSize: "0.92rem", lineHeight: 1.55, color: "#4A4A4A" }}>
+          {item.blurb}
+        </p>
         <div
           style={{
-            width: "calc(100% + 3rem)",
-            margin: "-2rem -1.5rem 1.5rem",
-            aspectRatio: "16 / 9",
-            backgroundImage: `url(${item.imageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            borderTopLeftRadius: "1rem",
-            borderTopRightRadius: "1rem",
+            marginTop: "1.25rem",
+            paddingTop: "1rem",
+            borderTop: "1px solid rgba(26,26,26,0.08)",
+            fontSize: "0.85rem",
+            color: "#6B6B6B",
           }}
-        />
-      ) : (
-        <div className="service-icon">
-          <CategoryIcon type={item.type} />
+        >
+          <strong style={{ color: "#1A1A1A", fontWeight: 600 }}>{item.member}</strong>
+          {" · "}
+          {item.raise}
+          <br />
+          {item.sessionLabel}
         </div>
-      )}
-      <span className="service-tag">{item.type}</span>
-      <h3 style={{ marginTop: "0.5rem" }}>{item.title}</h3>
-      <p>{item.blurb}</p>
-      <div
-        style={{
-          marginTop: "1.25rem",
-          paddingTop: "1rem",
-          borderTop: "1px solid rgba(26,26,26,0.06)",
-          fontSize: "0.85rem",
-          color: "#6B6B6B",
-        }}
-      >
-        <strong style={{ color: "#1A1A1A", fontWeight: 600 }}>{item.member}</strong>
-        {" · "}
-        {item.raise}
-        <br />
-        {item.sessionLabel}
       </div>
     </Wrapper>
   );
 }
 
-function CategoryIcon({ type }: { type: WorkItem["type"] }) {
-  const common = {
-    width: 22,
-    height: 22,
-    fill: "none" as const,
-    stroke: "currentColor" as const,
-    strokeWidth: 1.5,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-  };
-  switch (type) {
-    case "Landing Page":
-      return (
-        <svg viewBox="0 0 24 24" {...common}>
-          <rect x="3" y="4" width="18" height="16" rx="2" />
-          <path d="M3 9h18M7 13h6M7 16h10" />
-        </svg>
-      );
-    case "Pitch Deck":
-      return (
-        <svg viewBox="0 0 24 24" {...common}>
-          <rect x="3" y="3" width="18" height="14" rx="2" />
-          <path d="M8 21h8M12 17v4" />
-        </svg>
-      );
-    case "Ad Campaign":
-      return (
-        <svg viewBox="0 0 24 24" {...common}>
-          <path d="M3 11l18-7v16l-18-7z" />
-          <path d="M11 11v8" />
-        </svg>
-      );
-    case "Email Sequence":
-      return (
-        <svg viewBox="0 0 24 24" {...common}>
-          <rect x="3" y="5" width="18" height="14" rx="2" />
-          <path d="M3 7l9 6 9-6" />
-        </svg>
-      );
-    case "Outreach System":
-      return (
-        <svg viewBox="0 0 24 24" {...common}>
-          <circle cx="6" cy="6" r="2.5" />
-          <circle cx="18" cy="6" r="2.5" />
-          <circle cx="12" cy="18" r="2.5" />
-          <path d="M6 8.5l5 7M18 8.5l-5 7M6 6h12" />
-        </svg>
-      );
-    case "Visual Pack":
-      return (
-        <svg viewBox="0 0 24 24" {...common}>
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <circle cx="9" cy="9" r="2" />
-          <path d="M21 17l-5-5-9 9" />
-        </svg>
-      );
-  }
-}

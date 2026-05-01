@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TrainingHero } from "./_sections/TrainingHero";
 import { ValueProps } from "./_sections/ValueProps";
+import { LiveBuildPreview } from "./_sections/LiveBuildPreview";
 import { AboutShort } from "./_sections/AboutShort";
 import { TrainingFAQ } from "./_sections/TrainingFAQ";
 import { TrainingCTA } from "./_sections/TrainingCTA";
@@ -18,6 +19,7 @@ export default function TrainingPage() {
       <TrainingHero />
       <TrustStrip />
       <ValueProps />
+      <LiveBuildPreview />
       <AboutShort />
       <TrainingFAQ />
       <TrainingCTA />
