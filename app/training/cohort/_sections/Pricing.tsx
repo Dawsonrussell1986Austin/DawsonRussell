@@ -2,67 +2,156 @@ import { COHORT } from "@/lib/constants";
 import { CheckoutButton } from "@/components/CheckoutButton";
 
 export function Pricing() {
-  const ctaLabel = `Join the ${COHORT.sessionShortLabel} session — ${COHORT.priceLabel}`;
+  const ctaLabel = `Reserve my seat — ${COHORT.depositLabel} deposit`;
   return (
     <section className="paths">
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-          <div className="section-label">Founding session pricing</div>
-          <h2 className="section-heading">Founding member rate</h2>
+          <div className="section-label">How payment works</div>
+          <h2 className="section-heading">Pay once it&apos;s delivered.</h2>
         </div>
         <div
           className="path-card featured"
-          style={{ maxWidth: 560, margin: "3rem auto 0", textAlign: "center" }}
+          style={{ maxWidth: 620, margin: "3rem auto 0", textAlign: "center" }}
         >
           <div className="path-label" style={{ color: "#D4714E" }}>
-            {COHORT.sessionLabel} session
+            {COHORT.sessionLabel} · 10 seats only
           </div>
-          <h3 style={{ marginBottom: "1.5rem" }}>The 5-Day Sprint</h3>
+          <h3 style={{ marginBottom: "1rem" }}>The 5-Day Sprint</h3>
+
+          {/* Deposit headline */}
           <div
             style={{
               display: "flex",
               alignItems: "baseline",
               justifyContent: "center",
-              gap: "1rem",
-              margin: "1rem 0 0.5rem",
+              gap: "0.75rem",
+              margin: "1.25rem 0 0.5rem",
             }}
           >
             <span
               style={{
                 fontFamily: "Playfair Display, serif",
-                fontSize: "1.5rem",
-                color: "rgba(255,255,255,0.4)",
-                textDecoration: "line-through",
-              }}
-            >
-              {COHORT.anchorPriceLabel}
-            </span>
-            <span
-              style={{
-                fontFamily: "Playfair Display, serif",
-                fontSize: "3.75rem",
+                fontSize: "4rem",
                 fontWeight: 600,
                 color: "#fff",
+                lineHeight: 1,
               }}
             >
-              {COHORT.priceLabel}
+              {COHORT.depositLabel}
+            </span>
+            <span
+              style={{
+                fontSize: "1rem",
+                color: "rgba(255,255,255,0.6)",
+                fontWeight: 500,
+              }}
+            >
+              deposit
             </span>
           </div>
-          <div className="path-price-note" style={{ marginBottom: "2rem" }}>
-            Founding member rate. Future sessions will be priced higher.
-          </div>
-          <CheckoutButton label={ctaLabel} className="btn-light" />
-          <p
+          <div
             style={{
-              marginTop: "1.25rem",
-              fontSize: "0.85rem",
-              color: "rgba(255,255,255,0.6)",
+              fontSize: "0.95rem",
+              color: "rgba(255,255,255,0.65)",
+              marginBottom: "1.5rem",
             }}
           >
-            {COHORT.refundLine}
+            Reserves your seat now.
+          </div>
+
+          {/* Two-row breakdown */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: "0.6rem",
+              padding: "1.25rem 1.5rem",
+              borderRadius: "0.85rem",
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              textAlign: "left",
+              marginBottom: "1.5rem",
+            }}
+          >
+            <Row
+              label={`${COHORT.depositLabel} due now`}
+              detail="Holds 1 of 10 seats. Non-refundable."
+              accent
+            />
+            <div style={{ height: 1, background: "rgba(255,255,255,0.08)" }} />
+            <Row
+              label={`${COHORT.remainderLabel} balance`}
+              detail="Due Friday afternoon — only if you completed the work and it delivered."
+            />
+            <div style={{ height: 1, background: "rgba(255,255,255,0.08)" }} />
+            <Row
+              label={`${COHORT.priceLabel} total`}
+              detail="If you walk away after completing the sprint, the $500 is all you ever paid."
+              muted
+            />
+          </div>
+
+          <CheckoutButton label={ctaLabel} className="btn-light" />
+
+          <p
+            style={{
+              marginTop: "1.5rem",
+              fontSize: "0.85rem",
+              color: "rgba(255,255,255,0.55)",
+              maxWidth: 460,
+              margin: "1.5rem auto 0",
+              lineHeight: 1.55,
+            }}
+          >
+            {COHORT.completionRequirement}
           </p>
         </div>
       </div>
     </section>
+  );
+}
+
+function Row({
+  label,
+  detail,
+  accent = false,
+  muted = false,
+}: {
+  label: string;
+  detail: string;
+  accent?: boolean;
+  muted?: boolean;
+}) {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "minmax(140px, max-content) 1fr",
+        gap: "1rem",
+        alignItems: "baseline",
+      }}
+    >
+      <span
+        style={{
+          fontFamily: "Playfair Display, serif",
+          fontSize: "1.1rem",
+          fontWeight: 600,
+          color: accent ? "#D4714E" : muted ? "rgba(255,255,255,0.55)" : "#fff",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {label}
+      </span>
+      <span
+        style={{
+          fontSize: "0.85rem",
+          color: muted ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.7)",
+          lineHeight: 1.45,
+        }}
+      >
+        {detail}
+      </span>
+    </div>
   );
 }

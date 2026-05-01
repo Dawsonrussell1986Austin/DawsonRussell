@@ -3,7 +3,7 @@ import { CheckoutButton } from "@/components/CheckoutButton";
 import { HeroVideo } from "@/components/HeroVideo";
 
 export function CohortHero() {
-  const ctaLabel = `Join the ${COHORT.sessionShortLabel} session — ${COHORT.priceLabel}`;
+  const ctaLabel = `Reserve my seat — ${COHORT.depositLabel} deposit`;
   const hasVideo = Boolean(COHORT.videoUrl || COHORT.videoEmbed);
 
   return (
@@ -97,7 +97,7 @@ export function CohortHero() {
               >
                 ✓
               </span>
-              14-day refund
+              $500 to reserve
             </span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
               <span
@@ -115,7 +115,7 @@ export function CohortHero() {
               >
                 ✓
               </span>
-              Founding rate
+              Pay rest only if it delivers
             </span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
               <span

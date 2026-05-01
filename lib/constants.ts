@@ -43,7 +43,16 @@ export const COHORT = {
   price: 2499,
   priceLabel: "$2,499",
   anchorPriceLabel: "$3,997",
+  depositAmount: 500,
+  depositLabel: "$500",
+  remainderAmount: 1999,
+  remainderLabel: "$1,999",
+  paymentNote:
+    "Pay the $500 deposit to reserve your seat. The $1,999 balance is due only after the 5-day session — and only if you completed the work and found it worth $2,499.",
   seats: "10",
+  // Refund / completion policy — reused on pricing card and FAQ.
+  completionRequirement:
+    "To be eligible to walk away from the $1,999 balance, you must show up — attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day.",
   totalHoursLabel: "~20 hours across 5 days",
   workweekLine:
     "5 days. 90 minutes a day. Monday to Friday. Clear your calendar — by Friday afternoon you'll have shipped a complete AI-powered raise marketing system.",
@@ -62,7 +71,7 @@ export const COHORT = {
       "21 days of private Slack support and office hours with Dawson after the sprint",
   },
   refundLine:
-    "Pay in full. 14-day refund if you attend Day 1 and it's not for you.",
+    "$500 deposit reserves your seat (10 per session, non-refundable — the seat is real and limited). The $1,999 balance is due after the session, only if you completed the work.",
   scarcityLine:
     "Limited to 10 capital raise issuers per session. Founding member pricing — future sessions will be priced higher.",
 };
@@ -167,7 +176,7 @@ export const MODULES: Module[] = [
     name: "Integration & Launch",
     liveTime: "Live: 90 min, 1–2:30pm CT",
     agenda: [
-      "Each student presents (5 min): deck, landing page, system walkthrough",
+      "Each member presents (5 min): deck, landing page, system walkthrough",
       "Live group + Dawson feedback",
       "Final hour: everyone launches — campaigns go live, outreach starts sending",
       "Send-off + 21-day Slack window kicks off",
@@ -227,8 +236,12 @@ export const COHORT_FAQ = [
     a: "You get 21 more days of private Slack support and office hours with me. Bring your asset reviews, stuck points, campaign questions — I'll work through them with you while your raise goes into market.",
   },
   {
-    q: "Is there a payment plan?",
-    a: "Not for the May 11 – 15 session. Founding members pay in full. Future sessions may offer split pay.",
+    q: "How does the $500 deposit work?",
+    a: "Your $500 reserves your seat. We only open 10 seats per session — once they're gone, they're gone. The deposit is non-refundable because the seat is real and someone else can't take it. The $1,999 balance is due after the 5-day session ends.",
+  },
+  {
+    q: "When and how is the $1,999 balance due?",
+    a: "Friday afternoon, after Demo Day. To be eligible to either pay it or walk away, you have to actually show up: attend live or watch every recording within the session week, ship the daily homework, and present at Friday Demo Day. If you completed the work and it delivered, the balance is due. If you completed it and it didn't deliver, walk away — the $500 deposit is the only money that ever changed hands.",
   },
   {
     q: "What software do I need?",
@@ -240,7 +253,7 @@ export const COHORT_FAQ = [
   },
   {
     q: "What's the refund policy?",
-    a: "Attend Day 1 live. If it's not for you, email me within 14 days of Day 1 for a full refund — no questions asked.",
+    a: "There isn't one in the traditional sense — and that's the whole point. You only pay $500 up front. If you completed the work and the system delivered, you owe the $1,999 balance. If you completed it and it didn't deliver, you walk away owing nothing. The $500 deposit is non-refundable: you took a real, limited seat (10 per session) that another founder could've filled. If you ghost the session, skip the homework, or treat it like passive content, the $500 is gone and the eligibility to walk away from the balance is gone too — but you also won't be charged the $1,999. We don't refund people who don't show up.",
   },
   {
     q: "Is this tax-deductible?",
