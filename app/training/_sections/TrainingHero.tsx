@@ -31,9 +31,11 @@ export function TrainingHero() {
               marginBottom: "1.5rem",
             }}
           >
-            How to run a capital raise{" "}
+            Watch me build a{" "}
+            <span style={{ color: "#D4714E" }}>$25K</span>{" "}
+            capital raise marketing package in 20 minutes —{" "}
             <em style={{ fontStyle: "italic", color: "#D4714E" }}>
-              with AI in 2026.
+              live, on screen.
             </em>
           </h1>
           <p

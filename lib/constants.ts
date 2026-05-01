@@ -15,10 +15,11 @@ export const TRAINING = {
   dateLabel: "May 8, 2026",
   timeLabel: "1:00 PM MT",
   durationLabel: "1 hour, live",
-  eyebrow: "Free 1-Hour Training",
-  headline: "How to Run a Capital Raise with AI in 2026",
+  eyebrow: "Capital Raises in 2026 · Live Training",
+  headline:
+    "Watch me build a $25K capital raise marketing package in 20 minutes — live, on screen.",
   subhead:
-    "Faster decks, cheaper ads, sharper investor copy — built live on screen in one hour.",
+    "Decks, ads, landing pages, and investor copy. The exact AI workflow I use for Reg D, Reg A, and Reg CF raises.",
   ctaLabel: "Reserve My Seat",
   noReplayNote: "No replay. Live only.",
 
