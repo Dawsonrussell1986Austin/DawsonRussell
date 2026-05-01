@@ -9,11 +9,11 @@ export const SITE = {
 
 // ---------- Free training (page: /training) ----------
 export const TRAINING = {
-  // ISO date in user's local zone — swap when finalized
-  dateISO: "2026-05-08T13:00:00-06:00",
+  // ISO date in Central Time — May 2026 is CDT (UTC-5)
+  dateISO: "2026-05-08T11:00:00-05:00",
   // Display strings
-  dateLabel: "May 8, 2026",
-  timeLabel: "1:00 PM MT",
+  dateLabel: "Friday, May 8, 2026",
+  timeLabel: "11:00 AM CST",
   durationLabel: "1 hour, live",
   eyebrow: "Capital Raises in 2026 · Live Training",
   headline:
