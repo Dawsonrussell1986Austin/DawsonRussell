@@ -1344,6 +1344,12 @@
 .form-light .form-note {
     color: #6B6B6B;
 }
+.form-light .form-success h4 {
+    color: #1A1A1A;
+}
+.form-light .form-success p {
+    color: #4A4A4A;
+}
 
 /* ─── Before/after mockups (cohort problem section) ─── */
 @media (max-width: 760px) {
