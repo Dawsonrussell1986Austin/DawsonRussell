@@ -23,15 +23,18 @@ export function TrainingHero() {
           <h1
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(2.6rem, 5vw, 4.25rem)",
+              fontSize: "clamp(1.85rem, 3.2vw, 2.85rem)",
               fontWeight: 500,
-              lineHeight: 1.05,
+              lineHeight: 1.15,
               letterSpacing: "-0.02em",
               color: "#1A1A1A",
               marginBottom: "1.5rem",
             }}
           >
-            Watch me build a $25K capital raise marketing package —{" "}
+            Watch me build a $25K
+            <br />
+            capital raise marketing package —
+            <br />
             <em style={{ fontStyle: "italic", color: "#D4714E" }}>
               live, on screen, in 25 minutes.
             </em>
