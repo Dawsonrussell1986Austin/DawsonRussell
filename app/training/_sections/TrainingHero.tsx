@@ -32,7 +32,7 @@ export function TrainingHero() {
             }}
           >
             How to run a capital raise{" "}
-            <em style={{ fontStyle: "italic", color: "#1A1A1A" }}>
+            <em style={{ fontStyle: "italic", color: "#D4714E" }}>
               with AI in 2026.
             </em>
           </h1>
@@ -78,7 +78,7 @@ export function TrainingHero() {
             <span style={{ color: "#4A4A4A" }}>{TRAINING.durationLabel}</span>
           </div>
 
-          <div style={{ maxWidth: 520 }}>
+          <div className="form-light" style={{ maxWidth: 520 }}>
             <LegacyRegistrationForm
               ctaLabel={TRAINING.ctaLabel}
               source="training-hero"
@@ -87,7 +87,7 @@ export function TrainingHero() {
               style={{
                 marginTop: "0.85rem",
                 fontSize: "0.78rem",
-                color: "#A09A93",
+                color: "#6B6B6B",
                 letterSpacing: "0.02em",
               }}
             >
@@ -97,7 +97,11 @@ export function TrainingHero() {
         </div>
 
         <div className="training-hero-video">
-          <HeroVideo />
+          <HeroVideo
+            videoUrl={TRAINING.videoUrl}
+            videoEmbed={TRAINING.videoEmbed}
+            videoPoster={TRAINING.videoPoster}
+          />
         </div>
       </div>
     </section>

@@ -1,11 +1,23 @@
-import { TRAINING } from "@/lib/constants";
+type Props = {
+  videoUrl?: string;
+  videoEmbed?: string;
+  videoPoster?: string;
+  aspectRatio?: string; // "9 / 16", "16 / 9", "1 / 1", etc.
+  placeholderLabel?: string;
+};
 
-export function HeroVideo() {
+export function HeroVideo({
+  videoUrl,
+  videoEmbed,
+  videoPoster,
+  aspectRatio = "9 / 16",
+  placeholderLabel = "Watch the 60-second intro",
+}: Props) {
   const wrapperStyle: React.CSSProperties = {
     position: "relative",
     width: "100%",
-    aspectRatio: "9 / 16",
-    maxHeight: "640px",
+    aspectRatio,
+    maxHeight: aspectRatio === "9 / 16" ? "640px" : undefined,
     borderRadius: "1.25rem",
     overflow: "hidden",
     background: "#1A1A1A",
@@ -13,11 +25,11 @@ export function HeroVideo() {
       "0 30px 60px -20px rgba(26,26,26,0.35), 0 0 0 1px rgba(26,26,26,0.06)",
   };
 
-  if (TRAINING.videoEmbed) {
+  if (videoEmbed) {
     return (
       <div style={wrapperStyle}>
         <iframe
-          src={TRAINING.videoEmbed}
+          src={videoEmbed}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           style={{
@@ -33,12 +45,12 @@ export function HeroVideo() {
     );
   }
 
-  if (TRAINING.videoUrl) {
+  if (videoUrl) {
     return (
       <div style={wrapperStyle}>
         <video
-          src={TRAINING.videoUrl}
-          poster={TRAINING.videoPoster || undefined}
+          src={videoUrl}
+          poster={videoPoster || undefined}
           controls
           playsInline
           preload="metadata"
@@ -54,7 +66,6 @@ export function HeroVideo() {
     );
   }
 
-  // Placeholder — visible until a video is set in lib/constants.ts
   return (
     <div
       style={{
@@ -66,8 +77,7 @@ export function HeroVideo() {
         gap: "1rem",
         color: "rgba(255,255,255,0.6)",
         fontFamily: "Inter, sans-serif",
-        background:
-          "linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%)",
+        background: "linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%)",
       }}
     >
       <div
@@ -87,7 +97,7 @@ export function HeroVideo() {
         </svg>
       </div>
       <div style={{ fontSize: "0.95rem", fontWeight: 500, color: "rgba(255,255,255,0.85)" }}>
-        Watch the 60-second intro
+        {placeholderLabel}
       </div>
       <div
         style={{

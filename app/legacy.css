@@ -1319,3 +1319,28 @@
         max-width: 360px;
     }
 }
+
+/* ─── Light form variant (for training hero on cream background) ─── */
+.form-light .form-group label {
+    color: #6B6B6B;
+}
+.form-light .form-group input,
+.form-light .form-group textarea,
+.form-light .form-group select {
+    background: #fff;
+    border: 1px solid rgba(26,26,26,0.12);
+    color: #1A1A1A;
+}
+.form-light .form-group input::placeholder,
+.form-light .form-group textarea::placeholder {
+    color: rgba(26,26,26,0.35);
+}
+.form-light .form-group input:focus,
+.form-light .form-group textarea:focus,
+.form-light .form-group select:focus {
+    border-color: rgba(26,26,26,0.4);
+    background: #fff;
+}
+.form-light .form-note {
+    color: #6B6B6B;
+}

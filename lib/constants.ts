@@ -41,6 +41,12 @@ export const COHORT = {
   priceLabel: "$2,499",
   anchorPriceLabel: "$3,997",
   seats: "{{SEATS}}", // e.g. "25"
+
+  // Optional hero video (same pattern as TRAINING). Leave empty to show
+  // the curriculum preview card on the right.
+  videoUrl: "" as string,
+  videoEmbed: "" as string,
+  videoPoster: "" as string,
   format: {
     sessions: "6 weekly 1-hour live sessions",
     trainingAccess: "7 days of training recordings + prompts",
