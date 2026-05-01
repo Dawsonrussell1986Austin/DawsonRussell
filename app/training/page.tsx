@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { TrainingHero } from "./_sections/TrainingHero";
 import { ValueProps } from "./_sections/ValueProps";
 import { AboutShort } from "./_sections/AboutShort";
+import { SprintCredential } from "./_sections/SprintCredential";
 import { TrainingFAQ } from "./_sections/TrainingFAQ";
 import { TrainingCTA } from "./_sections/TrainingCTA";
 import { TrustStrip } from "./_sections/TrustStrip";
@@ -19,6 +20,7 @@ export default function TrainingPage() {
       <TrustStrip />
       <ValueProps />
       <AboutShort />
+      <SprintCredential />
       <TrainingFAQ />
       <TrainingCTA />
     </>
