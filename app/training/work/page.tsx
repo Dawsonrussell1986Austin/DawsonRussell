@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   WORK_ITEMS,
+  WORK_ITEMS_DISCLAIMER,
   WORK_CATEGORIES,
   COHORT,
   type WorkItem,
@@ -40,11 +41,24 @@ export default function WorkPage() {
                   <h2 className="section-heading">Member-built, session-shipped.</h2>
                 </div>
                 <p className="section-subtext">
-                  Click any card to see what each member built during their
-                  session. Real founders, real raises, real assets in market.
+                  What members shipped during their 5-day sessions. Real
+                  founders, real raises, real assets in market.
                 </p>
               </div>
-              <div className="services-grid">
+              {WORK_ITEMS_DISCLAIMER ? (
+                <p
+                  style={{
+                    marginTop: "1.5rem",
+                    fontSize: "0.85rem",
+                    fontStyle: "italic",
+                    color: "#A09A93",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {WORK_ITEMS_DISCLAIMER}
+                </p>
+              ) : null}
+              <div className="services-grid" style={{ marginTop: "2.5rem" }}>
                 {WORK_ITEMS.map((item) => (
                   <WorkCard key={item.id} item={item} />
                 ))}

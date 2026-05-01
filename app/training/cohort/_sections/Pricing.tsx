@@ -75,14 +75,14 @@ export function Pricing() {
             }}
           >
             <Row
-              label={`${COHORT.depositLabel} due now`}
-              detail="Holds 1 of 10 seats. Non-refundable."
+              label={`${COHORT.depositLabel} due to reserve your seat`}
+              detail="Non-refundable. Holds 1 of 10 seats."
               accent
             />
             <div style={{ height: 1, background: "rgba(255,255,255,0.08)" }} />
             <Row
-              label={`${COHORT.remainderLabel} charged Friday`}
-              detail="After Demo Day, the card on file gets charged. Refundable if you completed the work and it didn't deliver."
+              label={`${COHORT.remainderLabel} due Day 5 (May 15)`}
+              detail="Charged after Demo Day. Refundable if you completed the work and it didn't deliver."
             />
           </div>
 
