@@ -32,11 +32,12 @@ export function TrainingHero() {
             }}
           >
             Watch me build a{" "}
-            <span style={{ color: "#D4714E" }}>$25K</span>{" "}
-            capital raise marketing package in 20 minutes —{" "}
-            <em style={{ fontStyle: "italic", color: "#D4714E" }}>
-              live, on screen.
-            </em>
+            <strong style={{ fontWeight: 700, color: "#1A1A1A" }}>
+              $25K capital raise marketing package
+            </strong>{" "}
+            <span style={{ color: "#D4714E" }}>
+              in 20 minutes — live, on screen.
+            </span>
           </h1>
           <p
             style={{
