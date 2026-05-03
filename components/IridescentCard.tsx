@@ -174,19 +174,20 @@ function Header() {
   return (
     <div className="iri-hdr">
       <div className="iri-mark">
-        <svg
-          viewBox="0 0 24 24"
-          width="22"
-          height="22"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.2"
+        <span
+          aria-hidden
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 700,
+            fontSize: "1rem",
+            letterSpacing: "-0.04em",
+            color: "var(--ink)",
+            lineHeight: 1,
+          }}
         >
-          <circle cx="12" cy="12" r="10.5" />
-          <circle cx="12" cy="12" r="6.5" />
-          <circle cx="12" cy="12" r="2.5" fill="currentColor" />
-        </svg>
-        <span>DAWSON · RUSSELL</span>
+          dr<span style={{ color: "#FF5C1F" }}>.</span>
+        </span>
+        <span>DAWSON RUSSELL</span>
       </div>
       <div className="iri-meta">
         <span>CREDENTIAL</span>

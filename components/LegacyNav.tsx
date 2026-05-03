@@ -15,25 +15,30 @@ export function LegacyNav() {
 
   return (
     <nav id="navbar" className={scrolled ? "scrolled" : ""}>
-      <Link href="/" className="nav-logo">
+      <Link href="/" className="nav-logo dr-wordmark">
         <span
+          aria-hidden
           style={{
             width: 34,
             height: 34,
-            borderRadius: "50%",
-            background: "#1A1A1A",
+            borderRadius: 8,
+            background: "#0A0A0A",
             color: "#fff",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "0.7rem",
-            fontWeight: 600,
+            fontFamily: "Inter, sans-serif",
+            fontSize: "0.85rem",
+            fontWeight: 700,
+            letterSpacing: "-0.04em",
             flexShrink: 0,
           }}
         >
-          DR
+          dr<span style={{ color: "#FF5C1F" }}>.</span>
         </span>
-        Dawson Russell
+        <span style={{ display: "inline-flex", alignItems: "baseline" }}>
+          Dawson Russell<span style={{ color: "#FF5C1F" }}>.</span>
+        </span>
       </Link>
       <div className={`nav-links${open ? " open" : ""}`} id="navLinks">
         <Link href="/training" onClick={() => setOpen(false)}>Free Training</Link>

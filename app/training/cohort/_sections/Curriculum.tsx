@@ -65,7 +65,7 @@ function DayCard({ module: m }: { module: Module }) {
               fontSize: "0.7rem",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
-              color: "#D4714E",
+              color: "#FF5C1F",
               fontWeight: 600,
               marginBottom: "0.4rem",
             }}
@@ -78,7 +78,7 @@ function DayCard({ module: m }: { module: Module }) {
               fontSize: "1.5rem",
               fontWeight: 500,
               letterSpacing: "-0.01em",
-              color: "#1A1A1A",
+              color: "#0A0A0A",
               lineHeight: 1.15,
             }}
           >
@@ -132,7 +132,7 @@ function DayCard({ module: m }: { module: Module }) {
         <p
           style={{
             fontSize: "0.95rem",
-            color: "#1A1A1A",
+            color: "#0A0A0A",
             fontWeight: 500,
             lineHeight: 1.45,
           }}
@@ -170,7 +170,7 @@ function SubLabel({
         fontSize: "0.7rem",
         letterSpacing: "0.14em",
         textTransform: "uppercase",
-        color: accent ? "#D4714E" : "#6B6B6B",
+        color: accent ? "#FF5C1F" : "#6B6B6B",
         fontWeight: 600,
         marginBottom: "0.6rem",
       }}
@@ -189,7 +189,7 @@ function Bullet({ muted = false }: { muted?: boolean }) {
         width: 5,
         height: 5,
         borderRadius: 999,
-        background: muted ? "rgba(26,26,26,0.25)" : "#D4714E",
+        background: muted ? "rgba(26,26,26,0.25)" : "#FF5C1F",
         flexShrink: 0,
       }}
     />

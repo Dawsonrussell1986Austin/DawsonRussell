@@ -37,28 +37,33 @@ export default function PrivacyPolicyPage() {
               alignItems: "center",
               gap: "0.6rem",
               textDecoration: "none",
-              color: "#1A1A1A",
+              color: "#0A0A0A",
               fontWeight: 600,
               letterSpacing: "-0.01em",
             }}
           >
             <span
+              aria-hidden
               style={{
                 width: 30,
                 height: 30,
-                borderRadius: "50%",
-                background: "#1A1A1A",
+                borderRadius: 7,
+                background: "#0A0A0A",
                 color: "#fff",
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "0.65rem",
-                fontWeight: 600,
+                fontFamily: "Inter, sans-serif",
+                fontSize: "0.78rem",
+                fontWeight: 700,
+                letterSpacing: "-0.04em",
               }}
             >
-              DR
+              dr<span style={{ color: "#FF5C1F" }}>.</span>
             </span>
-            Dawson Russell
+            <span>
+              Dawson Russell<span style={{ color: "#FF5C1F" }}>.</span>
+            </span>
           </Link>
           <Link
             href="/"
@@ -79,7 +84,7 @@ export default function PrivacyPolicyPage() {
           margin: "0 auto",
           padding: "4rem 2rem 5rem",
           fontFamily: "Inter, sans-serif",
-          color: "#1A1A1A",
+          color: "#0A0A0A",
         }}
       >
         <div
@@ -244,7 +249,7 @@ export default function PrivacyPolicyPage() {
             certain processing. To exercise any of these rights, email{" "}
             <a
               href={`mailto:${SITE.contactEmail}`}
-              style={{ color: "#D4714E" }}
+              style={{ color: "#FF5C1F" }}
             >
               {SITE.contactEmail}
             </a>
@@ -288,7 +293,7 @@ export default function PrivacyPolicyPage() {
             Questions about this Privacy Policy? Email{" "}
             <a
               href={`mailto:${SITE.contactEmail}`}
-              style={{ color: "#D4714E" }}
+              style={{ color: "#FF5C1F" }}
             >
               {SITE.contactEmail}
             </a>
@@ -318,7 +323,7 @@ function Section({
           fontWeight: 500,
           letterSpacing: "-0.01em",
           marginBottom: "1rem",
-          color: "#1A1A1A",
+          color: "#0A0A0A",
         }}
       >
         {heading}

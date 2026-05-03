@@ -38,7 +38,7 @@ export function TrustStrip() {
                 fontFamily: "Inter, sans-serif",
                 fontSize: "1.1rem",
                 fontWeight: 600,
-                color: "#1A1A1A",
+                color: "#0A0A0A",
                 letterSpacing: "-0.01em",
               }}
             >

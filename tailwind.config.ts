@@ -6,16 +6,16 @@ const config: Config = {
     extend: {
       colors: {
         cream: {
-          DEFAULT: "#F5F0E8",
-          dark: "#EBE5D9",
+          DEFAULT: "#F0EEE9",
+          dark: "#E5DFD3",
         },
         ink: {
-          DEFAULT: "#1A1A1A",
+          DEFAULT: "#0A0A0A",
           soft: "#2A2A2A",
           card: "#222222",
         },
         text: {
-          primary: "#1A1A1A",
+          primary: "#0A0A0A",
           secondary: "#4A4A4A",
           muted: "#6B6B6B",
         },

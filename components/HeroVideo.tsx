@@ -20,7 +20,7 @@ export function HeroVideo({
     maxHeight: aspectRatio === "9 / 16" ? "640px" : undefined,
     borderRadius: "1.25rem",
     overflow: "hidden",
-    background: "#1A1A1A",
+    background: "#0A0A0A",
     boxShadow:
       "0 30px 60px -20px rgba(26,26,26,0.35), 0 0 0 1px rgba(26,26,26,0.06)",
   };
@@ -77,7 +77,7 @@ export function HeroVideo({
         gap: "1rem",
         color: "rgba(255,255,255,0.6)",
         fontFamily: "Inter, sans-serif",
-        background: "linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%)",
+        background: "linear-gradient(135deg, #0A0A0A 0%, #2A2A2A 100%)",
       }}
     >
       <div

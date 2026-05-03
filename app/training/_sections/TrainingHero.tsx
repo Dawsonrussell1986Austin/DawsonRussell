@@ -13,7 +13,7 @@ export function TrainingHero() {
                 width: 6,
                 height: 6,
                 borderRadius: 999,
-                background: "#D4714E",
+                background: "#FF5C1F",
                 display: "inline-block",
                 marginRight: 8,
               }}
@@ -27,7 +27,7 @@ export function TrainingHero() {
               fontWeight: 500,
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
-              color: "#1A1A1A",
+              color: "#0A0A0A",
               marginBottom: "1.5rem",
             }}
           >
@@ -35,7 +35,7 @@ export function TrainingHero() {
             <br />
             capital raise marketing package —
             <br />
-            <em style={{ fontStyle: "italic", color: "#D4714E" }}>
+            <em style={{ fontStyle: "italic", color: "#FF5C1F" }}>
               live, on screen, in 25 minutes.
             </em>
           </h1>
@@ -71,7 +71,7 @@ export function TrainingHero() {
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <path d="M16 2v4M8 2v4M3 10h18" />
               </svg>
-              <span style={{ fontWeight: 600, color: "#1A1A1A" }}>
+              <span style={{ fontWeight: 600, color: "#0A0A0A" }}>
                 {TRAINING.dateLabel}
               </span>
             </span>

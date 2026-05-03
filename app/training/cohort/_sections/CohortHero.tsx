@@ -16,7 +16,7 @@ export function CohortHero() {
                 width: 6,
                 height: 6,
                 borderRadius: 999,
-                background: "#D4714E",
+                background: "#FF5C1F",
                 display: "inline-block",
                 marginRight: 8,
               }}
@@ -30,12 +30,12 @@ export function CohortHero() {
               fontWeight: 500,
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
-              color: "#1A1A1A",
+              color: "#0A0A0A",
               marginBottom: "1.5rem",
             }}
           >
             The 5-day AI sprint{" "}
-            <em style={{ fontStyle: "italic", color: "#D4714E" }}>
+            <em style={{ fontStyle: "italic", color: "#FF5C1F" }}>
               for capital raise marketing.
             </em>
           </h1>
@@ -44,14 +44,14 @@ export function CohortHero() {
               fontFamily: "Inter, sans-serif",
               fontSize: "1.15rem",
               lineHeight: 1.55,
-              color: "#1A1A1A",
+              color: "#0A0A0A",
               maxWidth: 560,
               marginBottom: "2rem",
               fontWeight: 500,
             }}
           >
             5 days. 90 minutes a day —{" "}
-            <span style={{ color: "#D4714E" }}>
+            <span style={{ color: "#FF5C1F" }}>
               less than your happy hour, less than an extended lunch.
             </span>{" "}
             Listen in the car. Hit it at the gym. Trade one Netflix night for
@@ -92,7 +92,7 @@ export function CohortHero() {
                   height: 18,
                   borderRadius: 999,
                   background: "rgba(212,113,78,0.12)",
-                  color: "#D4714E",
+                  color: "#FF5C1F",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.7rem",
@@ -110,7 +110,7 @@ export function CohortHero() {
                   height: 18,
                   borderRadius: 999,
                   background: "rgba(212,113,78,0.12)",
-                  color: "#D4714E",
+                  color: "#FF5C1F",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.7rem",
@@ -128,7 +128,7 @@ export function CohortHero() {
                   height: 18,
                   borderRadius: 999,
                   background: "rgba(212,113,78,0.12)",
-                  color: "#D4714E",
+                  color: "#FF5C1F",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.7rem",
@@ -163,7 +163,7 @@ function CurriculumPreview() {
   return (
     <div
       style={{
-        background: "linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%)",
+        background: "linear-gradient(135deg, #0A0A0A 0%, #2A2A2A 100%)",
         borderRadius: "1.25rem",
         padding: "2rem",
         color: "#fff",
@@ -205,7 +205,7 @@ function CurriculumPreview() {
           color: "#fff",
         }}
       >
-        Mon–Fri. <em style={{ fontStyle: "italic", color: "#D4714E" }}>One workweek.</em>
+        Mon–Fri. <em style={{ fontStyle: "italic", color: "#FF5C1F" }}>One workweek.</em>
       </h3>
       <ul
         style={{
@@ -235,7 +235,7 @@ function CurriculumPreview() {
                 fontSize: "0.7rem",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#D4714E",
+                color: "#FF5C1F",
                 fontWeight: 600,
                 flexShrink: 0,
               }}

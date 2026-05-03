@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Dawson Russell — Custom AI Solutions",
   description:
     "Custom agents, applications, and automations purpose-built for your business.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

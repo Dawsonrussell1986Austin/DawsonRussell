@@ -5,16 +5,16 @@
         }
 
         :root {
-            --cream: #F5F0E8;
-            --cream-dark: #EBE5D9;
-            --dark: #1A1A1A;
+            --cream: #F0EEE9;
+            --cream-dark: #E5DFD3;
+            --dark: #0A0A0A;
             --dark-soft: #2A2A2A;
             --dark-card: #222222;
-            --text-primary: #1A1A1A;
+            --text-primary: #0A0A0A;
             --text-secondary: #6B6560;
             --text-light: #A09A93;
-            --accent: #D4714E;
-            --accent-warm: #E8845A;
+            --accent: #FF5C1F;
+            --accent-warm: #FF7547;
             --white: #FFFFFF;
             --border: rgba(26, 26, 26, 0.08);
             --border-light: rgba(255, 255, 255, 0.08);
@@ -1329,7 +1329,7 @@
 .form-light .form-group select {
     background: #fff;
     border: 1px solid rgba(26,26,26,0.12);
-    color: #1A1A1A;
+    color: #0A0A0A;
 }
 .form-light .form-group input::placeholder,
 .form-light .form-group textarea::placeholder {
@@ -1345,7 +1345,7 @@
     color: #6B6B6B;
 }
 .form-light .form-success h4 {
-    color: #1A1A1A;
+    color: #0A0A0A;
 }
 .form-light .form-success p {
     color: #4A4A4A;
