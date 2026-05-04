@@ -17,9 +17,9 @@ export const TRAINING = {
   durationLabel: "1 hour, live",
   eyebrow: "Capital Raises in 2026 · Live Training",
   headline:
-    "Watch me build a $30,000+ capital raise marketing package — live, on screen, in 60 minutes.",
+    "Watch me build a $30,000+ capital raise marketing package — live, on screen, in less than 60 minutes.",
   subhead:
-    "AI changed more in the last 90 days than in the previous two years. The issuers who adapt now will outraise the ones who don't — by a margin that won't be closeable later.",
+    "AI changed more in the last 90 days than in the previous two years. The issuers who adapt now will outraise the ones who don't — by a margin that won't be closeable later. Watch it firsthand — reserve your seat below.",
   ctaLabel: "Reserve My Seat",
   noReplayNote: "No replay. Live only.",
 
