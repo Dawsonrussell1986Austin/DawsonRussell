@@ -34,10 +34,10 @@ export function LegacyNav() {
             flexShrink: 0,
           }}
         >
-          dr<span style={{ color: "#FF5C1F" }}>.</span>
+          dr<span style={{ color: "#00D26A" }}>.</span>
         </span>
         <span style={{ display: "inline-flex", alignItems: "baseline" }}>
-          Dawson Russell<span style={{ color: "#FF5C1F" }}>.</span>
+          Dawson Russell<span style={{ color: "#00D26A" }}>.</span>
         </span>
       </Link>
       <div className={`nav-links${open ? " open" : ""}`} id="navLinks">

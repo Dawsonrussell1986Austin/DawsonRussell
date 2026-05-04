@@ -185,7 +185,7 @@ function Header() {
             lineHeight: 1,
           }}
         >
-          dr<span style={{ color: "#FF5C1F" }}>.</span>
+          dr<span style={{ color: "#00D26A" }}>.</span>
         </span>
         <span>DAWSON RUSSELL</span>
       </div>

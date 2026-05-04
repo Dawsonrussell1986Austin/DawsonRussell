@@ -65,7 +65,7 @@ function DayCard({ module: m }: { module: Module }) {
               fontSize: "0.7rem",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
-              color: "#FF5C1F",
+              color: "#00D26A",
               fontWeight: 600,
               marginBottom: "0.4rem",
             }}
@@ -170,7 +170,7 @@ function SubLabel({
         fontSize: "0.7rem",
         letterSpacing: "0.14em",
         textTransform: "uppercase",
-        color: accent ? "#FF5C1F" : "#6B6B6B",
+        color: accent ? "#00D26A" : "#6B6B6B",
         fontWeight: 600,
         marginBottom: "0.6rem",
       }}
@@ -189,7 +189,7 @@ function Bullet({ muted = false }: { muted?: boolean }) {
         width: 5,
         height: 5,
         borderRadius: 999,
-        background: muted ? "rgba(26,26,26,0.25)" : "#FF5C1F",
+        background: muted ? "rgba(26,26,26,0.25)" : "#00D26A",
         flexShrink: 0,
       }}
     />

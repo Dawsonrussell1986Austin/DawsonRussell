@@ -14,7 +14,7 @@ export function Pricing() {
           className="path-card featured"
           style={{ maxWidth: 620, margin: "3rem auto 0", textAlign: "center" }}
         >
-          <div className="path-label" style={{ color: "#FF5C1F" }}>
+          <div className="path-label" style={{ color: "#00D26A" }}>
             {COHORT.sessionLabel} · 10 seats only
           </div>
           <h3 style={{ marginBottom: "1rem" }}>The 5-Day Sprint</h3>
@@ -131,7 +131,7 @@ function Row({
           fontFamily: "Playfair Display, serif",
           fontSize: "1.1rem",
           fontWeight: 600,
-          color: accent ? "#FF5C1F" : muted ? "rgba(255,255,255,0.55)" : "#fff",
+          color: accent ? "#00D26A" : muted ? "rgba(255,255,255,0.55)" : "#fff",
           whiteSpace: "nowrap",
         }}
       >

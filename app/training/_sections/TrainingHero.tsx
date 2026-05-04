@@ -13,7 +13,7 @@ export function TrainingHero() {
                 width: 6,
                 height: 6,
                 borderRadius: 999,
-                background: "#FF5C1F",
+                background: "#00D26A",
                 display: "inline-block",
                 marginRight: 8,
               }}
@@ -35,7 +35,7 @@ export function TrainingHero() {
             <br />
             capital raise marketing package —
             <br />
-            <em style={{ fontStyle: "italic", color: "#FF5C1F" }}>
+            <em style={{ fontStyle: "italic", color: "#00D26A" }}>
               live, on screen, in 25 minutes.
             </em>
           </h1>

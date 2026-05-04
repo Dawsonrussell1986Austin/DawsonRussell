@@ -59,10 +59,10 @@ export default function PrivacyPolicyPage() {
                 letterSpacing: "-0.04em",
               }}
             >
-              dr<span style={{ color: "#FF5C1F" }}>.</span>
+              dr<span style={{ color: "#00D26A" }}>.</span>
             </span>
             <span>
-              Dawson Russell<span style={{ color: "#FF5C1F" }}>.</span>
+              Dawson Russell<span style={{ color: "#00D26A" }}>.</span>
             </span>
           </Link>
           <Link
@@ -249,7 +249,7 @@ export default function PrivacyPolicyPage() {
             certain processing. To exercise any of these rights, email{" "}
             <a
               href={`mailto:${SITE.contactEmail}`}
-              style={{ color: "#FF5C1F" }}
+              style={{ color: "#00D26A" }}
             >
               {SITE.contactEmail}
             </a>
@@ -293,7 +293,7 @@ export default function PrivacyPolicyPage() {
             Questions about this Privacy Policy? Email{" "}
             <a
               href={`mailto:${SITE.contactEmail}`}
-              style={{ color: "#FF5C1F" }}
+              style={{ color: "#00D26A" }}
             >
               {SITE.contactEmail}
             </a>

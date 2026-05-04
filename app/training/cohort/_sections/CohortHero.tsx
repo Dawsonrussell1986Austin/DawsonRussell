@@ -16,7 +16,7 @@ export function CohortHero() {
                 width: 6,
                 height: 6,
                 borderRadius: 999,
-                background: "#FF5C1F",
+                background: "#00D26A",
                 display: "inline-block",
                 marginRight: 8,
               }}
@@ -35,7 +35,7 @@ export function CohortHero() {
             }}
           >
             The 5-day AI sprint{" "}
-            <em style={{ fontStyle: "italic", color: "#FF5C1F" }}>
+            <em style={{ fontStyle: "italic", color: "#00D26A" }}>
               for capital raise marketing.
             </em>
           </h1>
@@ -51,7 +51,7 @@ export function CohortHero() {
             }}
           >
             5 days. 90 minutes a day —{" "}
-            <span style={{ color: "#FF5C1F" }}>
+            <span style={{ color: "#00D26A" }}>
               less than your happy hour, less than an extended lunch.
             </span>{" "}
             Listen in the car. Hit it at the gym. Trade one Netflix night for
@@ -92,7 +92,7 @@ export function CohortHero() {
                   height: 18,
                   borderRadius: 999,
                   background: "rgba(212,113,78,0.12)",
-                  color: "#FF5C1F",
+                  color: "#00D26A",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.7rem",
@@ -110,7 +110,7 @@ export function CohortHero() {
                   height: 18,
                   borderRadius: 999,
                   background: "rgba(212,113,78,0.12)",
-                  color: "#FF5C1F",
+                  color: "#00D26A",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.7rem",
@@ -128,7 +128,7 @@ export function CohortHero() {
                   height: 18,
                   borderRadius: 999,
                   background: "rgba(212,113,78,0.12)",
-                  color: "#FF5C1F",
+                  color: "#00D26A",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "0.7rem",
@@ -205,7 +205,7 @@ function CurriculumPreview() {
           color: "#fff",
         }}
       >
-        Mon–Fri. <em style={{ fontStyle: "italic", color: "#FF5C1F" }}>One workweek.</em>
+        Mon–Fri. <em style={{ fontStyle: "italic", color: "#00D26A" }}>One workweek.</em>
       </h3>
       <ul
         style={{
@@ -235,7 +235,7 @@ function CurriculumPreview() {
                 fontSize: "0.7rem",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#FF5C1F",
+                color: "#00D26A",
                 fontWeight: 600,
                 flexShrink: 0,
               }}
