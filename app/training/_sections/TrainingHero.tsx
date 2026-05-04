@@ -31,7 +31,7 @@ export function TrainingHero() {
               marginBottom: "1.5rem",
             }}
           >
-            Watch me build a $25K
+            Watch me build a $30,000+
             <br />
             capital raise marketing package —
             <br />
