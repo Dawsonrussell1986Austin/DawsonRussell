@@ -23,18 +23,17 @@ export function TrainingHero() {
           <h1
             style={{
               fontFamily: "'Playfair Display', serif",
-              fontSize: "clamp(1.85rem, 3.2vw, 2.85rem)",
+              fontSize: "clamp(1.85rem, 3.2vw, 2.75rem)",
               fontWeight: 500,
-              lineHeight: 1.15,
+              lineHeight: 1.18,
               letterSpacing: "-0.02em",
               color: "#0A0A0A",
               marginBottom: "1.5rem",
+              textWrap: "balance" as React.CSSProperties["textWrap"],
             }}
           >
-            I&apos;ll build the same $30K+ capital raise package
-            <br />
-            my agency normally delivers in 6 weeks —
-            <br />
+            I&apos;ll build the same $30K+ capital raise package my agency
+            normally delivers in 6 weeks —{" "}
             <em
               style={{
                 fontStyle: "italic",
@@ -44,6 +43,7 @@ export function TrainingHero() {
                 textDecorationColor: "#00D26A",
                 textDecorationThickness: "3px",
                 textUnderlineOffset: "0.18em",
+                textDecorationSkipInk: "none",
               }}
             >
               live, on screen in less than 60 minutes.
