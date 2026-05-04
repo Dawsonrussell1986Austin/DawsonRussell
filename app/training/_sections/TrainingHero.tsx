@@ -35,7 +35,17 @@ export function TrainingHero() {
             <br />
             capital raise marketing package —
             <br />
-            <em style={{ fontStyle: "italic", color: "#00D26A" }}>
+            <em
+              style={{
+                fontStyle: "italic",
+                fontWeight: 700,
+                color: "inherit",
+                textDecoration: "underline",
+                textDecorationColor: "#00D26A",
+                textDecorationThickness: "3px",
+                textUnderlineOffset: "0.18em",
+              }}
+            >
               live, on screen, in 25 minutes.
             </em>
           </h1>
