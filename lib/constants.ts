@@ -288,8 +288,8 @@ export const VALUE_PROPS = [
     body: "Decks, investor emails, ad creative — copy-paste ready, tuned on real raises.",
   },
   {
-    title: "A live build on screen",
-    body: "I'll build one full investor asset start to finish during the hour. You watch the work.",
+    title: "The full package, built live",
+    body: "Landing page, deck, investor email, ad creative — the whole $30K+ marketing package built start to finish on screen in under an hour. You watch every keystroke.",
   },
 ];
 
