@@ -46,7 +46,7 @@ export function TrainingHero() {
                 textUnderlineOffset: "0.18em",
               }}
             >
-              live, on screen, in 25 minutes.
+              live, on screen, in 60 minutes.
             </em>
           </h1>
           <p
