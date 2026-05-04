@@ -31,9 +31,9 @@ export function TrainingHero() {
               marginBottom: "1.5rem",
             }}
           >
-            Watch me build a $30,000+
+            I&apos;ll build the same $30K+ capital raise package
             <br />
-            capital raise marketing package —
+            my agency normally delivers in 6 weeks —
             <br />
             <em
               style={{
@@ -46,7 +46,7 @@ export function TrainingHero() {
                 textUnderlineOffset: "0.18em",
               }}
             >
-              live, on screen, in less than 60 minutes.
+              live, on screen in less than 60 minutes.
             </em>
           </h1>
           <p
