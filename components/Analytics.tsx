@@ -1,26 +1,26 @@
 import Script from "next/script";
 
+// GA4 ID is public anyway (visible in any page source) — hardcode the
+// fallback so analytics always fires even without env config.
+const DEFAULT_GA_ID = "G-V2FH4YZNRJ";
+
 export function Analytics() {
-  const ga = process.env.NEXT_PUBLIC_GA_ID;
+  const ga = process.env.NEXT_PUBLIC_GA_ID || DEFAULT_GA_ID;
   const pixel = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   return (
     <>
-      {ga ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${ga}');
-            `}
-          </Script>
-        </>
-      ) : null}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${ga}');
+        `}
+      </Script>
       {pixel ? (
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
