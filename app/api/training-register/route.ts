@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 
-// Server-side route — keeps GHL_API_KEY and friends out of the browser bundle.
-// Posts the lead to GHL (if configured) AND to FormSubmit (always, as backup).
+// Server-side route — keeps GHL_API_KEY out of the browser bundle.
+// The browser already handles FormSubmit (Vercel data-center IPs are
+// blocked by FormSubmit, so it has to run client-side). This route is
+// dedicated to GHL.
 
-const FORMSUBMIT_URL =
-  "https://formsubmit.co/ajax/dawson@dawsonrussell.com";
 const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/";
 const GHL_API_VERSION = "2021-07-28";
 
@@ -24,7 +24,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { firstName = "", email = "", phone = "", smsOptIn = "yes", source = "training" } = body;
+  const {
+    firstName = "",
+    email = "",
+    phone = "",
+    smsOptIn = "yes",
+    source = "training",
+  } = body;
 
   if (!email || !firstName) {
     return NextResponse.json(
@@ -35,51 +41,31 @@ export async function POST(req: Request) {
 
   const ghlKey = process.env.GHL_API_KEY;
   const ghlLocation = process.env.GHL_LOCATION_ID;
-  const ghlWebhook = process.env.GHL_WEBHOOK_URL || process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL;
+  const ghlWebhook =
+    process.env.GHL_WEBHOOK_URL || process.env.NEXT_PUBLIC_GHL_WEBHOOK_URL;
 
-  const requests: Promise<Response>[] = [];
-
-  // 1) GHL — choose the path that's actually configured.
+  // Path A — Inbound Webhook (preferred when configured; no auth needed).
   if (ghlWebhook) {
-    // Inbound Webhook trigger — no auth, no locationId required.
-    requests.push(
-      fetch(ghlWebhook, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ firstName, email, phone, smsOptIn, source }),
-      }),
-    );
-  } else if (ghlKey && ghlLocation) {
-    // GHL v2 Contacts API — requires both API key and location ID.
-    const tags = [`source:${source}`];
-    if (smsOptIn === "yes") tags.push("sms-opt-in");
-    requests.push(
-      fetch(GHL_CONTACTS_URL, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${ghlKey}`,
-          Version: GHL_API_VERSION,
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          firstName,
-          email,
-          phone,
-          locationId: ghlLocation,
-          source: "Training Registration",
-          tags,
-        }),
-      }),
+    const r = await fetch(ghlWebhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ firstName, email, phone, smsOptIn, source }),
+    });
+    return NextResponse.json(
+      { ok: r.ok, via: "webhook", status: r.status },
+      { status: r.ok ? 200 : 502 },
     );
   }
-  // (If neither is configured, GHL silently no-ops; FormSubmit still runs.)
 
-  // 2) FormSubmit — always-on safety net into Dawson's inbox.
-  requests.push(
-    fetch(FORMSUBMIT_URL, {
+  // Path B — GHL v2 Contacts API. Needs API key + location ID.
+  if (ghlKey && ghlLocation) {
+    const tags = [`source:${source}`];
+    if (smsOptIn === "yes") tags.push("sms-opt-in");
+    const r = await fetch(GHL_CONTACTS_URL, {
       method: "POST",
       headers: {
+        Authorization: `Bearer ${ghlKey}`,
+        Version: GHL_API_VERSION,
         "Content-Type": "application/json",
         Accept: "application/json",
       },
@@ -87,35 +73,23 @@ export async function POST(req: Request) {
         firstName,
         email,
         phone,
-        smsOptIn,
-        source,
-        _subject: `Training Reg — ${firstName || "(no name)"} <${email}>`,
-        _template: "table",
+        locationId: ghlLocation,
+        source: "Training Registration",
+        tags,
       }),
-    }),
-  );
-
-  const results = await Promise.allSettled(requests);
-  const okCount = results.filter(
-    (r) => r.status === "fulfilled" && r.value.ok,
-  ).length;
-
-  if (okCount === 0) {
-    // Surface the first error so we can debug from network logs.
-    const firstFail = results.find(
-      (r) => r.status === "rejected" || (r.status === "fulfilled" && !r.value.ok),
-    );
-    let detail = "All endpoints failed";
-    if (firstFail?.status === "fulfilled") {
-      detail = `Endpoint responded ${firstFail.value.status}`;
-    } else if (firstFail?.status === "rejected") {
-      detail =
-        firstFail.reason instanceof Error
-          ? firstFail.reason.message
-          : String(firstFail.reason);
+    });
+    let detail: unknown = null;
+    try {
+      detail = await r.json();
+    } catch {
+      // ignore
     }
-    return NextResponse.json({ ok: false, error: detail }, { status: 502 });
+    return NextResponse.json(
+      { ok: r.ok, via: "api", status: r.status, detail },
+      { status: r.ok ? 200 : 502 },
+    );
   }
 
-  return NextResponse.json({ ok: true });
+  // Nothing configured — return 200 (FormSubmit handles the capture).
+  return NextResponse.json({ ok: true, via: "noop", note: "GHL not configured" });
 }
