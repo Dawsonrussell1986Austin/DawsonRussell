@@ -74,7 +74,7 @@ export const COHORT = {
   refundLine:
     "$500 deposit reserves your seat (10 per session, non-refundable — the seat is real and limited). The $1,999 balance charges Friday after Demo Day, refundable if you completed the work and it didn't deliver.",
   scarcityLine:
-    "Limited to 10 capital raise issuers per session. Founding member pricing — future sessions will be priced higher.",
+    "Only 10 founders per month. Once the seats are gone, the next session is a month away. Founding member pricing — future sessions will be priced higher.",
 };
 
 // ---------- Curriculum (5 days, Monday–Friday workweek sprint) ----------

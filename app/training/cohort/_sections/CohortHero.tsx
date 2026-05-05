@@ -81,6 +81,55 @@ export function CohortHero() {
             AI-powered raise marketing system.
           </p>
 
+          {/* Scarcity line */}
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "0.95rem",
+              lineHeight: 1.5,
+              color: "#1A1A1A",
+              maxWidth: 560,
+              marginBottom: "2rem",
+              padding: "0.85rem 1.1rem",
+              background: "rgba(0,210,106,0.08)",
+              border: "1px solid rgba(0,210,106,0.25)",
+              borderRadius: "0.65rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.6rem",
+            }}
+          >
+            <span
+              aria-hidden
+              style={{
+                width: 7,
+                height: 7,
+                borderRadius: 999,
+                background: "#00D26A",
+                flexShrink: 0,
+                boxShadow: "0 0 0 0 rgba(0,210,106,0.6)",
+                animation: "pulse 1.8s ease-in-out infinite",
+              }}
+            />
+            <span>
+              <em
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 700,
+                  color: "inherit",
+                  textDecoration: "underline",
+                  textDecorationColor: "#00D26A",
+                  textDecorationThickness: "2px",
+                  textUnderlineOffset: "0.18em",
+                  textDecorationSkipInk: "none",
+                }}
+              >
+                Only 10 founders per month.
+              </em>{" "}
+              Once the seats are gone, the next session is a month away.
+            </span>
+          </p>
+
           <div
             style={{
               display: "flex",
@@ -158,7 +207,7 @@ export function CohortHero() {
               >
                 ✓
               </span>
-              10 issuers / session
+              10 founders / month
             </span>
           </div>
         </div>
