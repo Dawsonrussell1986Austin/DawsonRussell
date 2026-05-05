@@ -1,6 +1,7 @@
 import { TRAINING } from "@/lib/constants";
 import { LegacyRegistrationForm } from "@/components/LegacyRegistrationForm";
 import { HeroVideo } from "@/components/HeroVideo";
+import { HeroCountdown } from "@/components/HeroCountdown";
 
 export function TrainingHero() {
   return (
@@ -90,6 +91,8 @@ export function TrainingHero() {
             <span style={{ color: "rgba(26,26,26,0.2)" }}>·</span>
             <span style={{ color: "#4A4A4A" }}>{TRAINING.durationLabel}</span>
           </div>
+
+          <HeroCountdown />
 
           <div className="form-light" style={{ maxWidth: 520 }}>
             <LegacyRegistrationForm

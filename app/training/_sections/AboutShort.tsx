@@ -26,21 +26,30 @@ export function AboutShort() {
           <div>
             <div
               style={{
-                aspectRatio: "1 / 1",
+                aspectRatio: "3 / 4",
                 width: "100%",
                 maxWidth: 380,
                 marginLeft: "auto",
                 borderRadius: "1rem",
-                background: "rgba(26,26,26,0.05)",
-                border: "1px solid rgba(26,26,26,0.08)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#A09A93",
-                fontSize: "0.9rem",
+                overflow: "hidden",
+                border: "1px solid rgba(10,10,10,0.08)",
+                boxShadow:
+                  "0 30px 60px -25px rgba(10,10,10,0.25), 0 0 0 1px rgba(10,10,10,0.04)",
+                background: "#0A0A0A",
               }}
             >
-              Headshot
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/dawson.png"
+                alt="Dawson Russell"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center 30%",
+                  display: "block",
+                }}
+              />
             </div>
           </div>
         </div>
