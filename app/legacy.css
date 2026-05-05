@@ -1657,3 +1657,8 @@
         order: -1;
     }
 }
+
+/* Anchor scroll: leave room for the fixed nav (72px) so #curriculum etc. don't land under it. */
+[id] {
+    scroll-margin-top: 96px;
+}

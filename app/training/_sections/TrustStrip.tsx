@@ -121,17 +121,35 @@ function StatCell({
           color: "#0A0A0A",
           lineHeight: 1,
           fontVariantNumeric: "tabular-nums",
-          display: "inline-flex",
-          alignItems: "baseline",
+          position: "relative",
+          display: "inline-block",
         }}
       >
-        {stat.prefix ? (
-          <span style={{ color: "#0A0A0A" }}>{stat.prefix}</span>
-        ) : null}
-        <span>{display}</span>
-        {stat.suffix ? (
-          <span style={{ color: ACCENT }}>{stat.suffix}</span>
-        ) : null}
+        {/* Width reservation — invisible "final" string sets the box size */}
+        <span aria-hidden style={{ visibility: "hidden", whiteSpace: "nowrap" }}>
+          {stat.prefix ?? ""}
+          {stat.to}
+          {stat.suffix ?? ""}
+        </span>
+        {/* Live, rendered value sits absolutely on top */}
+        <span
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "inline-flex",
+            alignItems: "baseline",
+            justifyContent: "center",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {stat.prefix ? (
+            <span style={{ color: "#0A0A0A" }}>{stat.prefix}</span>
+          ) : null}
+          <span>{display}</span>
+          {stat.suffix ? (
+            <span style={{ color: ACCENT }}>{stat.suffix}</span>
+          ) : null}
+        </span>
       </span>
       <span
         style={{

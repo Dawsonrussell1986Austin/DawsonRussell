@@ -35,7 +35,18 @@ export function CohortHero() {
             }}
           >
             The 5-day AI sprint{" "}
-            <em style={{ fontStyle: "italic", color: "#00D26A" }}>
+            <em
+              style={{
+                fontStyle: "italic",
+                fontWeight: 700,
+                color: "inherit",
+                textDecoration: "underline",
+                textDecorationColor: "#00D26A",
+                textDecorationThickness: "3px",
+                textUnderlineOffset: "0.18em",
+                textDecorationSkipInk: "none",
+              }}
+            >
               for capital raise marketing.
             </em>
           </h1>
@@ -51,9 +62,20 @@ export function CohortHero() {
             }}
           >
             5 days. 90 minutes a day —{" "}
-            <span style={{ color: "#00D26A" }}>
+            <em
+              style={{
+                fontStyle: "italic",
+                fontWeight: 700,
+                color: "inherit",
+                textDecoration: "underline",
+                textDecorationColor: "#00D26A",
+                textDecorationThickness: "2px",
+                textUnderlineOffset: "0.18em",
+                textDecorationSkipInk: "none",
+              }}
+            >
               less than your happy hour, less than an extended lunch.
-            </span>{" "}
+            </em>{" "}
             Listen in the car. Hit it at the gym. Trade one Netflix night for
             the homework. By Friday afternoon, you&apos;ve shipped a complete
             AI-powered raise marketing system.
