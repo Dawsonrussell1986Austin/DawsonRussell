@@ -1306,7 +1306,7 @@
 }
 .training-hero-video {
     width: 100%;
-    max-width: 460px;
+    max-width: 380px;
     margin-left: auto;
 }
 @media (max-width: 900px) {
@@ -1316,7 +1316,7 @@
     }
     .training-hero-video {
         margin: 0 auto;
-        max-width: 360px;
+        max-width: 320px;
     }
 }
 
