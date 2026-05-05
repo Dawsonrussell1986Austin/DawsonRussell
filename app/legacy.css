@@ -1291,7 +1291,8 @@
 
 /* ─── Training hero (2-column with video) ─── */
 .training-hero {
-    padding: clamp(3.5rem, 6vw, 6rem) 2rem clamp(2.5rem, 4vw, 4rem);
+    /* min top-padding clears the 72px fixed nav with breathing room. */
+    padding: clamp(6rem, 8vw, 7rem) 2rem clamp(2.5rem, 4vw, 4rem);
     max-width: 1280px;
     margin: 0 auto;
 }
