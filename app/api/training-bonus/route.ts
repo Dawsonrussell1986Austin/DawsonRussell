@@ -8,6 +8,8 @@ import { NextResponse } from "next/server";
 const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/upsert";
 const GHL_NOTES_URL = (id: string) =>
   `https://services.leadconnectorhq.com/contacts/${id}/notes`;
+const GHL_TASKS_URL = (id: string) =>
+  `https://services.leadconnectorhq.com/contacts/${id}/tasks`;
 const GHL_API_VERSION = "2021-07-28";
 
 type Payload = {
@@ -97,6 +99,8 @@ export async function POST(req: Request) {
     ]
       .filter(Boolean)
       .join("\n\n");
+
+    // Pinned note so it sticks to the top of the Notes tab.
     try {
       await fetch(GHL_NOTES_URL(contactId), {
         method: "POST",
@@ -106,10 +110,39 @@ export async function POST(req: Request) {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({ body: noteBody }),
+        body: JSON.stringify({ body: noteBody, pinned: true }),
       });
     } catch (err) {
       console.error("[training-bonus] note attach failed", err);
+    }
+
+    // Task so it shows up in Dawson's dashboard feed and on the contact card.
+    // Due tomorrow at 9am — well before the training, so it's actionable.
+    try {
+      const due = new Date();
+      due.setDate(due.getDate() + 1);
+      due.setHours(9, 0, 0, 0);
+      const taskTitle = link
+        ? `Review live-example candidate: ${firstName || email}`
+        : `Topic request from ${firstName || email}`;
+      await fetch(GHL_TASKS_URL(contactId), {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${ghlKey}`,
+          Version: GHL_API_VERSION,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          title: taskTitle,
+          body: noteBody,
+          dueDate: due.toISOString(),
+          completed: false,
+          ...(assignedTo ? { assignedTo } : {}),
+        }),
+      });
+    } catch (err) {
+      console.error("[training-bonus] task create failed", err);
     }
   }
 
