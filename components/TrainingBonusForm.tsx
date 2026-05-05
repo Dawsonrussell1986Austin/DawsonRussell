@@ -75,11 +75,11 @@ export function TrainingBonusForm({ email, firstName }: Props) {
       </div>
       <div className="form-row">
         <div className="form-group" style={{ flex: 1 }}>
-          <label htmlFor="bonusLink">Or — your raise URL or pitch deck link</label>
+          <label htmlFor="bonusLink">Or — your raise URL, deck link, or anything you want me to see</label>
           <input
             id="bonusLink"
-            type="url"
-            placeholder="https://..."
+            type="text"
+            placeholder="dawsonrussell.com / drive link / Loom / anything"
             value={link}
             onChange={(e) => setLink(e.target.value)}
           />
