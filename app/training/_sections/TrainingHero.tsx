@@ -64,6 +64,7 @@ export function TrainingHero() {
           </p>
 
           <div
+            className="hero-pill"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -92,9 +93,11 @@ export function TrainingHero() {
             <span style={{ color: "#4A4A4A" }}>{TRAINING.durationLabel}</span>
           </div>
 
-          <HeroCountdown />
+          <div className="hero-countdown-wrap">
+            <HeroCountdown />
+          </div>
 
-          <div className="form-light" style={{ maxWidth: 520 }}>
+          <div className="form-light hero-form-wrap" style={{ maxWidth: 520 }}>
             <LegacyRegistrationForm
               ctaLabel={TRAINING.ctaLabel}
               source="training-hero"

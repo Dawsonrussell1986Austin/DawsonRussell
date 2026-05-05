@@ -76,7 +76,7 @@ export function Pricing() {
           >
             <Row
               label={`${COHORT.depositLabel} due to reserve your seat`}
-              detail="Non-refundable. Holds 1 of 10 seats."
+              detail="Holds 1 of 10 seats. We don't refund no-shows."
               accent
             />
             <div style={{ height: 1, background: "rgba(255,255,255,0.08)" }} />

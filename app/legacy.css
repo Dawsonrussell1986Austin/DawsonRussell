@@ -1677,3 +1677,15 @@
         gap: 0.35rem;
     }
 }
+
+/* Mobile: form jumps above the date pill + countdown so opt-in is the
+   first interactive element below the headline. */
+@media (max-width: 900px) {
+    .training-hero-copy {
+        display: flex;
+        flex-direction: column;
+    }
+    .training-hero-copy .hero-form-wrap { order: 3; margin-bottom: 1.75rem; }
+    .training-hero-copy .hero-pill { order: 4; margin-bottom: 1.5rem; }
+    .training-hero-copy .hero-countdown-wrap { order: 5; }
+}

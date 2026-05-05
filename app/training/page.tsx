@@ -6,6 +6,7 @@ import { SprintCredential } from "./_sections/SprintCredential";
 import { TrainingFAQ } from "./_sections/TrainingFAQ";
 import { TrainingCTA } from "./_sections/TrainingCTA";
 import { TrustStrip } from "./_sections/TrustStrip";
+import { MetaDemo } from "./_sections/MetaDemo";
 import { TRAINING } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default function TrainingPage() {
       <AboutShort />
       <SprintCredential />
       <TrainingFAQ />
+      <MetaDemo />
       <TrainingCTA />
     </>
   );
