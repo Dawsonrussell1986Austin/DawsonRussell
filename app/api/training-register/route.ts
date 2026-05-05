@@ -5,7 +5,9 @@ import { NextResponse } from "next/server";
 // blocked by FormSubmit, so it has to run client-side). This route is
 // dedicated to GHL.
 
-const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/";
+// Use upsert so a duplicate email updates the existing contact
+// instead of throwing a 400.
+const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/upsert";
 const GHL_API_VERSION = "2021-07-28";
 
 type Payload = {
@@ -85,6 +87,13 @@ export async function POST(req: Request) {
       detail = await r.json();
     } catch {
       // ignore
+    }
+    if (!r.ok) {
+      console.error(
+        "[training-register] GHL upsert failed",
+        r.status,
+        JSON.stringify(detail),
+      );
     }
     return NextResponse.json(
       { ok: r.ok, via: "api", status: r.status, detail },

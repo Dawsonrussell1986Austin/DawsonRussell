@@ -4,7 +4,9 @@ import { NextResponse } from "next/server";
 // FormSubmit (Vercel data-center IPs are blocked by FormSubmit, so we
 // have to keep that client-side). This route writes the lead into GHL.
 
-const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/";
+// Use upsert so a duplicate email updates the existing contact
+// instead of throwing a 400.
+const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/upsert";
 const GHL_NOTES_URL = (contactId: string) =>
   `https://services.leadconnectorhq.com/contacts/${contactId}/notes`;
 const GHL_API_VERSION = "2021-07-28";
@@ -116,6 +118,11 @@ export async function POST(req: Request) {
     }
 
     if (!contactRes.ok) {
+      console.error(
+        "[contact] GHL upsert failed",
+        contactRes.status,
+        JSON.stringify(contactJson),
+      );
       return NextResponse.json(
         { ok: false, via: "api", status: contactRes.status, detail: contactJson },
         { status: 502 },
