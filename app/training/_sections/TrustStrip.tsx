@@ -1,80 +1,155 @@
-import { TRUST_STRIP } from "@/lib/constants";
+"use client";
 
-const STATS: { value: string; label: string }[] = [
-  { value: "20+ years", label: "Experience" },
-  { value: "200+", label: "Issuers" },
-  { value: "$2B+", label: "AUM Impacted" },
+import { useEffect, useRef, useState } from "react";
+
+type Stat = {
+  to: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+};
+
+const STATS: Stat[] = [
+  { to: 20, suffix: "+", label: "Years experience" },
+  { to: 200, suffix: "+", label: "Capital raise issuers" },
+  { to: 2, prefix: "$", suffix: "B+", label: "AUM impacted" },
 ];
+
+const ACCENT = "#00D26A";
 
 export function TrustStrip() {
   return (
     <div
       style={{
-        padding: "3.5rem 2rem",
+        padding: "4rem 2rem",
         textAlign: "center",
         borderTop: "1px solid rgba(10,10,10,0.08)",
+        borderBottom: "1px solid rgba(10,10,10,0.08)",
       }}
     >
-      <p
-        style={{
-          fontSize: "0.85rem",
-          color: "#4A4A4A",
-          maxWidth: 640,
-          margin: "0 auto 2.25rem",
-        }}
-      >
-        {TRUST_STRIP}
-      </p>
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          maxWidth: 880,
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          maxWidth: 960,
           margin: "0 auto",
-          gap: "0",
+          gap: 0,
           alignItems: "stretch",
         }}
       >
         {STATS.map((s, i) => (
-          <div
-            key={s.value}
-            style={{
-              padding: "1.25rem 1rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.4rem",
-              alignItems: "center",
-              borderLeft:
-                i > 0 ? "1px solid rgba(10,10,10,0.08)" : "none",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                fontWeight: 500,
-                letterSpacing: "-0.02em",
-                color: "#0A0A0A",
-                lineHeight: 1,
-              }}
-            >
-              {s.value}
-            </span>
-            <span
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "0.7rem",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#6B6B6B",
-                fontWeight: 600,
-              }}
-            >
-              {s.label}
-            </span>
-          </div>
+          <StatCell key={s.label} stat={s} index={i} hasDivider={i > 0} />
         ))}
       </div>
     </div>
   );
+}
+
+function StatCell({
+  stat,
+  index,
+  hasDivider,
+}: {
+  stat: Stat;
+  index: number;
+  hasDivider: boolean;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [value, setValue] = useState(0);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting && !started) {
+            setStarted(true);
+            obs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+    obs.observe(node);
+    return () => obs.disconnect();
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
+    const duration = 1400;
+    const delay = index * 120;
+    const startTime = performance.now() + delay;
+    let raf = 0;
+    const tick = (now: number) => {
+      const t = Math.max(0, now - startTime) / duration;
+      if (t <= 0) {
+        raf = requestAnimationFrame(tick);
+        return;
+      }
+      // easeOutCubic
+      const eased = t >= 1 ? 1 : 1 - Math.pow(1 - t, 3);
+      setValue(stat.to * eased);
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [started, stat.to, index]);
+
+  const display = formatValue(value, stat);
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        padding: "1.5rem 1.25rem",
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.6rem",
+        alignItems: "center",
+        position: "relative",
+        borderLeft: hasDivider ? "1px solid rgba(10,10,10,0.08)" : "none",
+      }}
+    >
+      <span
+        style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "clamp(2.4rem, 5vw, 3.5rem)",
+          fontWeight: 500,
+          letterSpacing: "-0.02em",
+          color: "#0A0A0A",
+          lineHeight: 1,
+          fontVariantNumeric: "tabular-nums",
+          display: "inline-flex",
+          alignItems: "baseline",
+        }}
+      >
+        {stat.prefix ? (
+          <span style={{ color: "#0A0A0A" }}>{stat.prefix}</span>
+        ) : null}
+        <span>{display}</span>
+        {stat.suffix ? (
+          <span style={{ color: ACCENT }}>{stat.suffix}</span>
+        ) : null}
+      </span>
+      <span
+        style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "0.72rem",
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "#6B6B6B",
+          fontWeight: 600,
+        }}
+      >
+        {stat.label}
+      </span>
+    </div>
+  );
+}
+
+function formatValue(v: number, stat: Stat): string {
+  // Round during animation. Integer-only — works for 20, 200, and 2.
+  return Math.round(v).toString();
 }
