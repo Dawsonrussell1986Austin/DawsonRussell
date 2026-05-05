@@ -118,21 +118,13 @@ function Row({
   muted?: boolean;
 }) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "minmax(140px, max-content) 1fr",
-        gap: "1rem",
-        alignItems: "baseline",
-      }}
-    >
+    <div className="pricing-row">
       <span
         style={{
           fontFamily: "Playfair Display, serif",
           fontSize: "1.1rem",
           fontWeight: 600,
           color: accent ? "#00D26A" : muted ? "rgba(255,255,255,0.55)" : "#fff",
-          whiteSpace: "nowrap",
         }}
       >
         {label}

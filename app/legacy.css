@@ -1134,7 +1134,7 @@
             margin-top: 0.75rem;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 640px) {
             .form-row {
                 grid-template-columns: 1fr;
             }
@@ -1661,4 +1661,18 @@
 /* Anchor scroll: leave room for the fixed nav (72px) so #curriculum etc. don't land under it. */
 [id] {
     scroll-margin-top: 96px;
+}
+
+/* Pricing card rows: side-by-side on desktop, stacked on small phones. */
+.pricing-row {
+    display: grid;
+    grid-template-columns: minmax(140px, max-content) 1fr;
+    gap: 1rem;
+    align-items: baseline;
+}
+@media (max-width: 540px) {
+    .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
 }
