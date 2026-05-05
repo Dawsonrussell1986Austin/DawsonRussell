@@ -34,25 +34,21 @@ export function LegacyRegistrationForm({
       if (typeof window !== "undefined" && (window as any).fbq) {
         (window as any).fbq("track", "Lead", { source });
       }
+      // Hand off to the dedicated thanks page (bigger moment, plus the
+      // bonus offer asking for a live-example link).
+      if (typeof window !== "undefined") {
+        const params = new URLSearchParams({
+          n: firstName,
+          e: email,
+        });
+        window.location.href = `/training/confirmed?${params.toString()}`;
+        return;
+      }
       setStatus("success");
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Something went wrong.");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="form-success show" style={{ display: "block" }}>
-        <div className="form-success-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M20 6L9 17l-5-5" />
-          </svg>
-        </div>
-        <h4>You&apos;re in</h4>
-        <p>Check your inbox for the calendar invite and Zoom link.</p>
-      </div>
-    );
   }
 
   return (
