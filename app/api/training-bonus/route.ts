@@ -6,6 +6,8 @@ import { NextResponse } from "next/server";
 // answer to the existing GHL contact (upsert by email) as a tag + Note.
 
 const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/upsert";
+const GHL_TAGS_URL = (id: string) =>
+  `https://services.leadconnectorhq.com/contacts/${id}/tags`;
 const GHL_NOTES_URL = (id: string) =>
   `https://services.leadconnectorhq.com/contacts/${id}/notes`;
 const GHL_TASKS_URL = (id: string) =>
@@ -55,6 +57,9 @@ export async function POST(req: Request) {
   if (link) tags.push("wants-real-example");
   if (topic) tags.push("wants-topic");
 
+  // Upsert WITHOUT tags — passing tags here would overwrite the
+  // contact's existing tags (registration source, sms-opt-in, etc.).
+  // Tags get added via the additive /tags endpoint below.
   const upsertRes = await fetch(GHL_CONTACTS_URL, {
     method: "POST",
     headers: {
@@ -67,7 +72,6 @@ export async function POST(req: Request) {
       ...(firstName ? { firstName } : {}),
       email,
       locationId: ghlLocation,
-      tags,
       ...(assignedTo ? { assignedTo } : {}),
     }),
   });
@@ -92,6 +96,22 @@ export async function POST(req: Request) {
 
   const contactId: string | undefined = upsertJson?.contact?.id;
   if (contactId) {
+    // Add tags additively (preserves source:training-hero, sms-opt-in, etc.)
+    try {
+      await fetch(GHL_TAGS_URL(contactId), {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${ghlKey}`,
+          Version: GHL_API_VERSION,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ tags }),
+      });
+    } catch (err) {
+      console.error("[training-bonus] tag attach failed", err);
+    }
+
     const noteBody = [
       "TRAINING REGISTRATION BONUS",
       topic ? `Wants to learn: ${topic}` : null,

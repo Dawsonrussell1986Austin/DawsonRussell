@@ -7,6 +7,8 @@ import { NextResponse } from "next/server";
 // Use upsert so a duplicate email updates the existing contact
 // instead of throwing a 400.
 const GHL_CONTACTS_URL = "https://services.leadconnectorhq.com/contacts/upsert";
+const GHL_TAGS_URL = (id: string) =>
+  `https://services.leadconnectorhq.com/contacts/${id}/tags`;
 const GHL_NOTES_URL = (contactId: string) =>
   `https://services.leadconnectorhq.com/contacts/${contactId}/notes`;
 const GHL_API_VERSION = "2021-07-28";
@@ -89,6 +91,7 @@ export async function POST(req: Request) {
     if (project_type) tags.push(`project-type:${project_type}`);
     const assignedTo = process.env.GHL_ASSIGNED_USER_ID;
 
+    // Upsert WITHOUT tags — additive tag write happens after.
     const contactRes = await fetch(GHL_CONTACTS_URL, {
       method: "POST",
       headers: {
@@ -105,7 +108,6 @@ export async function POST(req: Request) {
         companyName: company,
         locationId: ghlLocation,
         source: "Homepage Contact",
-        tags,
         ...(assignedTo ? { assignedTo } : {}),
       }),
     });
@@ -129,8 +131,27 @@ export async function POST(req: Request) {
       );
     }
 
-    // Best-effort: attach the project description as a note on the contact.
     const contactId: string | undefined = contactJson?.contact?.id;
+
+    // Add tags additively (preserves any tags from prior touchpoints).
+    if (contactId && tags.length) {
+      try {
+        await fetch(GHL_TAGS_URL(contactId), {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${ghlKey}`,
+            Version: GHL_API_VERSION,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({ tags }),
+        });
+      } catch (err) {
+        console.error("[contact] tag attach failed", err);
+      }
+    }
+
+    // Best-effort: attach the project description as a note on the contact.
     if (contactId && (message || project_type)) {
       const noteBody = [
         project_type ? `Project type: ${project_type}` : null,
