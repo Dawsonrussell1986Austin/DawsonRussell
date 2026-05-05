@@ -107,6 +107,27 @@ export async function POST(req: Request) {
 
     const contactId: string | undefined = detail?.contact?.id;
     if (contactId && tags.length) {
+      // Force a fresh "Tag Added" event for the source tag on EVERY opt-in
+      // (new contact OR existing). This guarantees any GHL workflow whose
+      // trigger is "Contact Tag Added: source:training-hero" fires every
+      // time someone re-opts-in — not just the first time.
+      const triggerTag = `source:${source}`;
+      try {
+        await fetch(GHL_TAGS_URL(contactId), {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${ghlKey}`,
+            Version: GHL_API_VERSION,
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({ tags: [triggerTag] }),
+        });
+      } catch (err) {
+        console.error("[training-register] tag pre-remove failed", err);
+        // Non-fatal — the add below will still attempt.
+      }
+
       try {
         const tagRes = await fetch(GHL_TAGS_URL(contactId), {
           method: "POST",
