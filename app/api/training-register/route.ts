@@ -61,6 +61,7 @@ export async function POST(req: Request) {
   if (ghlKey && ghlLocation) {
     const tags = [`source:${source}`];
     if (smsOptIn === "yes") tags.push("sms-opt-in");
+    const assignedTo = process.env.GHL_ASSIGNED_USER_ID;
     const r = await fetch(GHL_CONTACTS_URL, {
       method: "POST",
       headers: {
@@ -76,6 +77,7 @@ export async function POST(req: Request) {
         locationId: ghlLocation,
         source: "Training Registration",
         tags,
+        ...(assignedTo ? { assignedTo } : {}),
       }),
     });
     let detail: unknown = null;
