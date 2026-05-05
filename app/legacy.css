@@ -1297,12 +1297,12 @@
 }
 .training-hero-grid {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
 }
 .training-hero-copy {
-    max-width: 600px;
+    max-width: 720px;
 }
 .training-hero-video {
     width: 100%;
