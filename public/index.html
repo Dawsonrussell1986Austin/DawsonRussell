@@ -1897,7 +1897,11 @@
         });
     });
 
-    // ─── Contact form: dual-fire FormSubmit (inbox) + /api/contact (GHL) ───
+    // ─── Contact form: same-origin POST to /api/contact only ───
+    // (We used to also POST to formsubmit.co directly from the browser as a
+    // safety net, but Malwarebytes / corp firewalls have FormSubmit on
+    // reputation blocklists from phishing abuse — that XHR was getting
+    // aborted in some users' browsers, killing legit leads.)
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
@@ -1905,12 +1909,8 @@
         btn.disabled = true;
         btn.innerHTML = 'Sending...';
 
-        // Pull values into a JSON payload for the GHL route.
         const data = Object.fromEntries(new FormData(form).entries());
 
-        // Best-effort: write the lead into GHL. Fire-and-forget — failures
-        // here don't block the success state since FormSubmit is the
-        // source of truth for "did the lead land?"
         fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1921,18 +1921,9 @@
                 company: data.company || '',
                 project_type: data.project_type || '',
                 message: data.message || ''
-            }),
-            keepalive: true
-        }).catch(() => {});
-
-        // FormSubmit (browser) — captures every lead into Dawson's inbox.
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
+            })
         }).then(r => {
             if (r.ok) {
-                // Meta Pixel Lead event
                 if (typeof window.fbq === 'function') {
                     window.fbq('track', 'Lead', { source: 'homepage-contact' });
                 }
