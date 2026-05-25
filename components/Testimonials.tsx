@@ -1,7 +1,7 @@
 const testimonials = [
   {
     quote:
-      'We had a finished ad in our inbox five days after the kickoff call. The thing actually performed.',
+      'We had a finished ad in our inbox two weeks after the kickoff call. The thing actually performed.',
     name: 'Jane Doe',
     role: 'Head of Growth',
     company: 'Stealth DTC',
@@ -24,23 +24,19 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border-strong)] border border-[var(--border-strong)]">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       {testimonials.map((t, i) => (
         <figure
           key={t.name}
-          className="bg-black p-8 md:p-10 flex flex-col"
+          className="surface p-8 md:p-10 flex flex-col"
         >
-          <div className="spec-label mb-8">
-            — {String(i + 1).padStart(2, '0')}
-          </div>
+          <div className="spec-label mb-8">— {String(i + 1).padStart(2, '0')}</div>
           <blockquote className="display-thin text-xl md:text-2xl leading-snug text-white flex-1">
             "{t.quote}"
           </blockquote>
           <figcaption className="mt-10 pt-6 border-t border-[var(--border-strong)]">
-            <div className="font-semibold uppercase tracking-wider text-sm">
-              {t.name}
-            </div>
-            <div className="text-xs text-[var(--muted-2)] mt-1 uppercase tracking-wider">
+            <div className="font-medium text-sm text-white">{t.name}</div>
+            <div className="text-xs text-[var(--muted-2)] mt-1">
               {t.role} · {t.company}
             </div>
           </figcaption>

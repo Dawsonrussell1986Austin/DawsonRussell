@@ -6,9 +6,9 @@ import { caseStudies } from '@/lib/work';
 
 export function WorkGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border-strong)] border border-[var(--border-strong)]">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {caseStudies.map((c, i) => (
-        <WorkCard key={c.slug} c={c} index={i} />
+        <WorkCard key={c.slug} c={c} index={i} featured={i === 0} />
       ))}
     </div>
   );
@@ -17,16 +17,19 @@ export function WorkGrid() {
 function WorkCard({
   c,
   index,
+  featured,
 }: {
   c: (typeof caseStudies)[number];
   index: number;
+  featured?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const n = String(index + 1).padStart(2, '0');
   return (
     <Link
       href={`/work/${c.slug}`}
-      className="card-work group block bg-black"
+      className={`card-work group block surface overflow-hidden ${
+        featured ? 'md:col-span-2 lg:col-span-2' : ''
+      }`}
       onMouseEnter={() => videoRef.current?.play().catch(() => {})}
       onMouseLeave={() => {
         const v = videoRef.current;
@@ -36,7 +39,7 @@ function WorkCard({
         }
       }}
     >
-      <div className="relative aspect-video w-full overflow-hidden bg-[#0A0A0A]">
+      <div className="relative aspect-video w-full overflow-hidden">
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
@@ -48,20 +51,14 @@ function WorkCard({
         >
           <source src={c.heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase">
-          — {n}
-        </div>
-        <div className="absolute bottom-5 right-5 font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase opacity-0 group-hover:opacity-100 transition">
-          View →
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
       </div>
-      <div className="p-6 md:p-8 flex items-baseline justify-between border-t border-[var(--border-strong)]">
+      <div className="p-6 md:p-7 flex items-baseline justify-between">
         <div>
           <div className="spec-label mb-2">{c.client}</div>
-          <h3 className="display text-3xl md:text-4xl text-white">{c.title}</h3>
+          <h3 className="display text-2xl md:text-3xl text-white">{c.title}</h3>
         </div>
-        <div className="font-mono text-[11px] tracking-[0.25em] text-white/50 uppercase">
+        <div className="font-mono text-[11px] tracking-[0.2em] text-white/50">
           {c.year}
         </div>
       </div>

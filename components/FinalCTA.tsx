@@ -1,39 +1,35 @@
 import { Container } from './Container';
+import { ApplicationForm } from './ApplicationForm';
 
 export function FinalCTA() {
   return (
-    <section className="relative border-t border-[var(--border-strong)] bg-black overflow-hidden">
-      <div className="absolute inset-0 tech-grid opacity-[0.06]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
-      <Container className="relative py-32 md:py-48">
-        <div className="max-w-5xl">
-          <div className="eyebrow mb-8 flex items-center gap-3">
-            <span className="inline-block w-10 h-px bg-white" />
-            Let's work
-          </div>
-          <h2 className="display text-[clamp(3rem,10vw,10rem)] text-white">
-            Got an ad
-            <br />
-            to make?
-          </h2>
-          <p className="mt-10 text-lg md:text-xl max-w-xl leading-relaxed text-white/70">
-            Tell me about it. I'll get back to you within 48 hours.
-          </p>
-          <div className="mt-12 flex flex-wrap gap-4 items-center">
-            <a
-              href="https://cal.com/dawsonrussell"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2 px-10 py-5 text-[13px]"
-            >
-              Book a call →
-            </a>
-            <a
-              href="mailto:dawson@dawsonrussell.com"
-              className="btn-ghost inline-flex items-center gap-2 px-10 py-5 text-[13px]"
-            >
-              Or email direct
-            </a>
+    <section id="apply" className="py-16 md:py-24">
+      <Container>
+        <div className="surface-lg p-8 md:p-14 lg:p-20 relative overflow-hidden">
+          <div className="absolute inset-0 tech-grid opacity-[0.05] pointer-events-none" />
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            <div className="lg:col-span-5">
+              <div className="eyebrow mb-6">Apply to work together</div>
+              <h2 className="display text-[clamp(2.5rem,6vw,5.5rem)] text-white">
+                Got an ad to make?
+              </h2>
+              <p className="mt-8 text-base md:text-lg max-w-md leading-relaxed text-white/70">
+                Send me a quick brief. If it's a fit, I'll reply within 48
+                hours with next steps.
+              </p>
+              <div className="mt-8 spec-label">
+                Or email{' '}
+                <a
+                  href="mailto:dawson@dawsonrussell.com"
+                  className="text-white hover:underline underline-offset-4"
+                >
+                  dawson@dawsonrussell.com
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <ApplicationForm />
+            </div>
           </div>
         </div>
       </Container>

@@ -1,31 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #000000;
-  --color-fg: #FFFFFF;
+  --color-bg: #0B0B0E;
+  --color-fg: #F7F7F5;
   --color-primary: #FFFFFF;
   --color-primary-hover: #E5E5E5;
-  --color-muted: #6E6E6E;
-  --color-muted-2: #A0A0A0;
-  --color-border: #1A1A1A;
-  --color-border-strong: #2A2A2A;
-  --color-surface: #0A0A0A;
+  --color-muted: #6B6B72;
+  --color-muted-2: #9A9AA1;
+  --color-border: rgba(255,255,255,0.06);
+  --color-border-strong: rgba(255,255,255,0.10);
+  --color-surface: #131318;
+  --color-surface-2: #18181F;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius-pill: 9999px;
+  --radius-card: 28px;
+  --radius-card-lg: 36px;
 }
 
 :root {
-  --bg: #000000;
-  --fg: #FFFFFF;
+  --bg: #0B0B0E;
+  --fg: #F7F7F5;
   --primary: #FFFFFF;
   --primary-hover: #E5E5E5;
-  --muted: #6E6E6E;
-  --muted-2: #A0A0A0;
-  --border: #1A1A1A;
-  --border-strong: #2A2A2A;
-  --surface: #0A0A0A;
+  --muted: #6B6B72;
+  --muted-2: #9A9AA1;
+  --border: rgba(255,255,255,0.06);
+  --border-strong: rgba(255,255,255,0.10);
+  --surface: #131318;
+  --surface-2: #18181F;
 }
 
 html {
@@ -49,21 +55,18 @@ body {
 
 ::selection { background: var(--fg); color: var(--bg); }
 
-/* SpaceX/Tesla typography — ultra-tight, all-caps, heavy weight display */
 .display {
   font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.92;
-  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
 }
 
 .display-thin {
   font-family: var(--font-display);
-  font-weight: 300;
-  letter-spacing: -0.03em;
-  line-height: 1.0;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .eyebrow {
@@ -82,51 +85,48 @@ body {
   color: var(--muted);
 }
 
-/* Sharp-cornered buttons */
 .btn-primary {
   background: var(--fg);
   color: var(--bg);
-  transition: background 300ms ease-out, color 300ms ease-out;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  font-size: 12px;
+  border-radius: var(--radius-pill);
+  transition: background 300ms ease-out, transform 300ms ease-out;
+  font-weight: 500;
+  font-size: 14px;
 }
-.btn-primary:hover { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); }
 
 .btn-ghost {
-  border: 1px solid var(--fg);
+  border: 1px solid var(--border-strong);
   color: var(--fg);
   background: transparent;
-  transition: background 300ms ease-out, color 300ms ease-out;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  font-size: 12px;
+  border-radius: var(--radius-pill);
+  transition: border-color 300ms ease-out, background 300ms ease-out;
+  font-weight: 500;
+  font-size: 14px;
 }
-.btn-ghost:hover { background: var(--fg); color: var(--bg); }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.03); }
 
-.btn-danger {
-  background: var(--fg);
-  color: var(--bg);
-  transition: background 300ms ease-out;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  font-size: 12px;
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
 }
-.btn-danger:hover { background: var(--primary-hover); }
+
+.surface-lg {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card-lg);
+}
 
 .card-work video, .card-work img {
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms;
 }
 .card-work:hover video, .card-work:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .hairline { height: 1px; background: var(--border-strong); }
 
-/* Scanline / tech grid background */
 .tech-grid {
   background-image:
     linear-gradient(to right, var(--border) 1px, transparent 1px),
@@ -135,5 +135,5 @@ body {
 }
 
 .vignette {
-  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.55) 75%, #000 100%);
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(11,11,14,0.6) 80%, var(--bg) 100%);
 }
