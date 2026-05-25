@@ -9,6 +9,7 @@ import { NavBar } from '@/components/NavBar';
 import { Footer } from '@/components/Footer';
 import { Container } from '@/components/Container';
 import { caseStudies, getCaseStudy, getNextCaseStudy } from '@/lib/work';
+import { Media, MediaRow, Tile, Reel, Caption, PullQuote } from '@/components/mdx/Media';
 
 export async function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -47,30 +48,35 @@ const mdxComponents = {
   h2: (p: any) => (
     <h2
       {...p}
-      className="display text-3xl md:text-5xl mt-20 mb-6 text-white"
+      className="display text-3xl md:text-5xl mt-24 mb-6 text-white max-w-3xl mx-auto"
     />
   ),
   h3: (p: any) => (
-    <h3 {...p} className="display text-2xl mt-12 mb-4 text-white" />
+    <h3 {...p} className="display text-2xl mt-14 mb-4 text-white max-w-3xl mx-auto" />
   ),
   p: (p: any) => (
     <p
       {...p}
-      className="text-base md:text-lg leading-relaxed text-white/80 mt-5"
+      className="text-base md:text-lg leading-relaxed text-white/85 mt-5 max-w-3xl mx-auto"
     />
   ),
   blockquote: (p: any) => (
     <blockquote
       {...p}
-      className="my-10 border-l-2 border-[var(--primary)] pl-6 font-mono text-sm text-[var(--muted-2)] leading-relaxed uppercase tracking-wider"
+      className="my-12 max-w-3xl mx-auto border-l-2 border-white/40 pl-6 font-mono text-sm text-[var(--muted-2)] leading-relaxed uppercase tracking-wider"
     />
   ),
-  a: (p: any) => (
-    <a {...p} className="text-[var(--primary)] underline underline-offset-4" />
-  ),
+  a: (p: any) => <a {...p} className="text-white underline underline-offset-4" />,
   strong: (p: any) => <strong {...p} className="text-white font-semibold" />,
-  ul: (p: any) => <ul {...p} className="mt-6 space-y-2 list-disc pl-6" />,
+  ul: (p: any) => <ul {...p} className="mt-6 space-y-2 list-disc pl-6 max-w-3xl mx-auto" />,
   li: (p: any) => <li {...p} className="text-white/85" />,
+  hr: () => <hr className="my-20 border-0 h-px bg-[var(--border-strong)] max-w-3xl mx-auto" />,
+  Media,
+  MediaRow,
+  Tile,
+  Reel,
+  Caption,
+  PullQuote,
 };
 
 export default async function WorkPage({
@@ -89,54 +95,58 @@ export default async function WorkPage({
     <>
       <NavBar />
       <main>
-        <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={meta.poster}
-          >
-            <source src={meta.heroVideo} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg)]" />
+        {/* Hero video, rounded card like the homepage */}
+        <section className="pt-28 md:pt-32 pb-4">
+          <Container>
+            <div className="relative w-full overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9] max-h-[88vh]">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={meta.poster}
+              >
+                <source src={meta.heroVideo} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(11,11,14,0.55)]" />
+              <div className="absolute bottom-6 left-6 md:bottom-8 md:left-10 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                  <div className="eyebrow mb-3">Case study · {meta.year}</div>
+                  <h1 className="display text-4xl md:text-6xl lg:text-7xl text-white">
+                    {meta.title}
+                  </h1>
+                </div>
+                <div className="font-mono text-[11px] tracking-[0.2em] text-white/70 uppercase">
+                  {meta.client}
+                </div>
+              </div>
+            </div>
+          </Container>
         </section>
 
-        <Container className="py-16 md:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
-            <div className="md:col-span-8">
-              <div className="eyebrow mb-6 flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-white" />
-                Case study · {meta.year}
-              </div>
-              <h1 className="display text-5xl md:text-7xl lg:text-9xl text-white">
-                {meta.title}
-              </h1>
-            </div>
-            <aside className="md:col-span-4 md:pt-6 grid grid-cols-2 md:grid-cols-1 gap-6 text-sm">
-              <Meta label="Client" value={meta.client} />
-              <Meta label="Year" value={String(meta.year)} />
-              <Meta label="Role" value={meta.role} />
-            </aside>
+        {/* Meta strip */}
+        <Container className="mt-10 md:mt-14">
+          <div className="surface p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+            <Meta label="Client" value={meta.client} />
+            <Meta label="Year" value={String(meta.year)} />
+            <Meta label="Role" value={meta.role} />
+            <Meta label="Status" value="Released" />
           </div>
+        </Container>
 
-          <div className="mt-16 md:mt-24 max-w-3xl">
+        {/* Body */}
+        <Container className="mt-16 md:mt-24 pb-32">
+          <article>
             <MDXRemote source={mdx.content} components={mdxComponents} />
-          </div>
+          </article>
 
           {next && (
-            <div className="mt-32 pt-16 border-t border-[var(--border-strong)]">
-              <Link
-                href={`/work/${next.slug}`}
-                className="group inline-flex flex-col gap-3"
-              >
-                <div className="eyebrow flex items-center gap-3">
-                  <span className="inline-block w-8 h-px bg-white" />
-                  Next project
-                </div>
-                <div className="display text-4xl md:text-7xl text-white group-hover:text-[var(--primary)] transition-colors">
+            <div className="mt-32 pt-14 border-t border-[var(--border-strong)]">
+              <Link href={`/work/${next.slug}`} className="group inline-flex flex-col gap-3">
+                <div className="eyebrow">Next project</div>
+                <div className="display text-4xl md:text-7xl text-white group-hover:text-white/80 transition-colors">
                   {next.title} →
                 </div>
               </Link>
@@ -151,9 +161,9 @@ export default async function WorkPage({
 
 function Meta({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border-t border-[var(--border-strong)] pt-4">
+    <div>
       <div className="spec-label mb-2">{label}</div>
-      <div className="text-white text-sm uppercase tracking-wider">{value}</div>
+      <div className="text-white text-sm">{value}</div>
     </div>
   );
 }
