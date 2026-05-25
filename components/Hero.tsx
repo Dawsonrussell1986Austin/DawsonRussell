@@ -31,10 +31,8 @@ export function Hero() {
             <span className="inline-block w-10 h-px bg-white" />
             AI Video Ad Agency — Austin, TX
           </div>
-          <h1 className="display text-[clamp(3.5rem,11vw,11rem)] text-white">
-            AI-powered ads.
-            <br />
-            Shipped in days.
+          <h1 className="display text-[clamp(2.5rem,8vw,8rem)] text-white whitespace-nowrap">
+            AI-powered ads. Shipped in days.
           </h1>
           <p className="mt-10 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
             What used to take agencies eight weeks and two hundred grand —
@@ -62,7 +60,7 @@ export function Hero() {
 
       <div className="absolute bottom-6 left-6 md:left-10 right-6 md:right-10 z-10 flex justify-between items-end font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
         <div>↓ Scroll</div>
-        <div className="hidden md:block">Studio currently accepting projects</div>
+        <div className="hidden md:block">Currently accepting waitlist applications</div>
       </div>
     </section>
   );

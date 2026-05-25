@@ -22,7 +22,6 @@ export function Footer() {
             <div className="spec-label mb-2">Site</div>
             <Link href="/#work" className="hover:text-[var(--primary)] transition uppercase tracking-wider text-xs">Work</Link>
             <Link href="/#process" className="hover:text-[var(--primary)] transition uppercase tracking-wider text-xs">Process</Link>
-            <Link href="/#services" className="hover:text-[var(--primary)] transition uppercase tracking-wider text-xs">Services</Link>
             <Link href="/#about" className="hover:text-[var(--primary)] transition uppercase tracking-wider text-xs">About</Link>
           </div>
           <div className="flex flex-col gap-3 text-sm">

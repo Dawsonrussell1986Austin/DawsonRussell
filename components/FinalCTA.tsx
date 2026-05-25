@@ -17,7 +17,7 @@ export function FinalCTA() {
             to make?
           </h2>
           <p className="mt-10 text-lg md:text-xl max-w-xl leading-relaxed text-white/70">
-            Tell me about it. Plan and quote in your inbox within 48 hours.
+            Tell me about it. I'll get back to you within 48 hours.
           </p>
           <div className="mt-12 flex flex-wrap gap-4 items-center">
             <a

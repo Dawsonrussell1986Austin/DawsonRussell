@@ -30,7 +30,6 @@ export function NavBar() {
         <div className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-white/70">
           <Link href="/#work" className="hover:text-white transition">Work</Link>
           <Link href="/#process" className="hover:text-white transition">Process</Link>
-          <Link href="/#services" className="hover:text-white transition">Services</Link>
           <Link href="/#about" className="hover:text-white transition">About</Link>
         </div>
         <a

@@ -3,7 +3,6 @@ import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { WorkGrid } from '@/components/WorkGrid';
 import { Process } from '@/components/Process';
-import { Services } from '@/components/Services';
 import { About } from '@/components/About';
 import { Testimonials } from '@/components/Testimonials';
 import { FinalCTA } from '@/components/FinalCTA';
@@ -31,15 +30,6 @@ export default function HomePage() {
           subheading="Three steps from brief to finished cut. No retainer required to start."
         >
           <Process />
-        </Section>
-
-        <Section
-          id="services"
-          eyebrow="Engagements"
-          heading="Work with me."
-          subheading="Three ways to start. All include strategy, generation, edit, and delivery."
-        >
-          <Services />
         </Section>
 
         <Section id="about" eyebrow="About" heading="Who's behind this.">
