@@ -2,11 +2,10 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from './Button';
 
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[680px] w-full overflow-hidden">
+    <section className="relative h-screen min-h-[720px] w-full overflow-hidden bg-black">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
@@ -18,40 +17,73 @@ export function Hero() {
       >
         <source src="/hero-reel.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.55)] via-[rgba(10,10,10,0.35)] to-[rgba(10,10,10,0.9)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,10,10,0.6)_100%)]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10 h-full flex flex-col justify-end pb-24 md:pb-32">
+      {/* Layered gradients for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
+      <div className="absolute inset-0 vignette pointer-events-none" />
+
+      {/* HUD top-left telemetry */}
+      <div className="absolute top-24 left-6 md:left-10 z-10 hidden md:block">
+        <div className="font-mono text-[10px] tracking-[0.25em] text-white/50 uppercase space-y-1.5">
+          <div className="flex items-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse" />
+            LIVE · AUSTIN, TX · 30.27°N 97.74°W
+          </div>
+          <div>STUDIO STATUS — ACCEPTING PROJECTS</div>
+        </div>
+      </div>
+
+      {/* HUD top-right */}
+      <div className="absolute top-24 right-6 md:right-10 z-10 hidden md:block text-right">
+        <div className="font-mono text-[10px] tracking-[0.25em] text-white/50 uppercase space-y-1.5">
+          <div>UNIT 001 / DAWSON RUSSELL</div>
+          <div>AI-NATIVE VIDEO PRODUCTION</div>
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10 h-full flex flex-col justify-end pb-20 md:pb-28">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-5xl"
         >
-          <div className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--accent)]/80 mb-8">
-            AI Video Ad Agency · Austin, TX
+          <div className="eyebrow mb-8 flex items-center gap-3">
+            <span className="inline-block w-10 h-px bg-[var(--primary)]" />
+            AI VIDEO AD AGENCY
           </div>
-          <h1 className="hero-headline text-[clamp(3rem,9vw,9.5rem)] text-[var(--fg)]">
-            AI-powered ads.
+          <h1 className="display text-[clamp(3.5rem,11vw,11rem)] text-white">
+            Ads at the
             <br />
-            <span className="italic text-[var(--accent)]">Shipped in days.</span>
+            speed of <span className="text-[var(--primary)]">thought.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-[var(--fg)]/80 leading-relaxed">
-            I make the kind of ads that used to take agencies eight weeks and two
-            hundred grand. In a week. For a tenth of the price.
+          <p className="mt-10 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
+            What used to take agencies eight weeks and two hundred grand —
+            scripted, generated, edited, and delivered in days. For a tenth of
+            the price.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-5">
-            <Button href="https://cal.com/dawsonrussell" external withArrow>
-              Book a call
-            </Button>
+          <div className="mt-12 flex flex-wrap items-center gap-5">
+            <a
+              href="https://cal.com/dawsonrussell"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-2 px-8 py-4"
+            >
+              Book a call →
+            </a>
             <Link
               href="#work"
-              className="text-sm text-[var(--fg)]/80 hover:text-[var(--fg)] transition border-b border-[var(--fg)]/30 pb-1"
+              className="btn-ghost inline-flex items-center gap-2 px-8 py-4"
             >
-              See the work ↓
+              View the work
             </Link>
           </div>
         </motion.div>
+      </div>
+
+      {/* Bottom corner spec ticks */}
+      <div className="absolute bottom-6 left-6 md:left-10 right-6 md:right-10 z-10 flex justify-between items-end font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
+        <div>↓ SCROLL TO ENGAGE</div>
+        <div className="hidden md:block">v2026.05 · ALL SYSTEMS NOMINAL</div>
       </div>
     </section>
   );

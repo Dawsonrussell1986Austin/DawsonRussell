@@ -1,27 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0A0A0A;
-  --color-fg: #F5F5F0;
-  --color-primary: #D4714E;
-  --color-primary-hover: #E08862;
-  --color-muted: #888888;
-  --color-border: #1F1F1F;
-  --color-accent: #F5E6D3;
+  --color-bg: #000000;
+  --color-fg: #FFFFFF;
+  --color-primary: #E82127;
+  --color-primary-hover: #FF3B41;
+  --color-muted: #6E6E6E;
+  --color-muted-2: #A0A0A0;
+  --color-border: #1A1A1A;
+  --color-border-strong: #2A2A2A;
+  --color-surface: #0A0A0A;
 
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Newsreader', Georgia, serif;
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 :root {
-  --bg: #0A0A0A;
-  --fg: #F5F5F0;
-  --primary: #D4714E;
-  --primary-hover: #E08862;
-  --muted: #888888;
-  --border: #1F1F1F;
-  --accent: #F5E6D3;
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --primary: #E82127;
+  --primary-hover: #FF3B41;
+  --muted: #6E6E6E;
+  --muted-2: #A0A0A0;
+  --border: #1A1A1A;
+  --border-strong: #2A2A2A;
+  --surface: #0A0A0A;
 }
 
 html {
@@ -37,50 +41,99 @@ body {
   background: var(--bg);
   color: var(--fg);
   overflow-x: hidden;
+  font-weight: 400;
 }
 
-.font-serif { font-family: var(--font-serif); font-feature-settings: "ss01", "ss02"; }
 .font-mono { font-family: var(--font-mono); }
+.font-display { font-family: var(--font-display); font-weight: 800; }
 
-::selection { background: var(--primary); color: var(--bg); }
+::selection { background: var(--primary); color: #fff; }
 
-.hero-headline {
-  font-family: var(--font-serif);
-  letter-spacing: -0.035em;
-  line-height: 0.95;
-  font-weight: 600;
+/* SpaceX/Tesla typography — ultra-tight, all-caps, heavy weight display */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+  text-transform: uppercase;
 }
 
-.section-heading {
-  font-family: var(--font-serif);
-  letter-spacing: -0.025em;
+.display-thin {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.03em;
   line-height: 1.0;
-  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.btn-primary {
-  background: var(--primary);
-  color: #0A0A0A;
-  transition: background 400ms ease-out, transform 400ms ease-out;
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted-2);
 }
-.btn-primary:hover { background: var(--primary-hover); }
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+}
+
+/* Sharp-cornered buttons */
+.btn-primary {
+  background: var(--fg);
+  color: var(--bg);
+  transition: background 300ms ease-out, color 300ms ease-out;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-size: 12px;
+}
+.btn-primary:hover { background: var(--primary); color: #fff; }
 
 .btn-ghost {
-  border: 1px solid rgba(245,245,240,0.18);
+  border: 1px solid var(--fg);
   color: var(--fg);
-  transition: border-color 400ms ease-out, background 400ms ease-out;
+  background: transparent;
+  transition: background 300ms ease-out, color 300ms ease-out;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-size: 12px;
 }
-.btn-ghost:hover { border-color: var(--fg); background: rgba(245,245,240,0.04); }
+.btn-ghost:hover { background: var(--fg); color: var(--bg); }
+
+.btn-danger {
+  background: var(--primary);
+  color: #fff;
+  transition: background 300ms ease-out;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  font-size: 12px;
+}
+.btn-danger:hover { background: var(--primary-hover); }
 
 .card-work video, .card-work img {
-  transition: transform 600ms ease-out, filter 600ms ease-out;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms;
 }
 .card-work:hover video, .card-work:hover img {
-  transform: scale(1.03);
-  filter: brightness(1.05);
+  transform: scale(1.04);
 }
 
-.divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border), transparent);
+.hairline { height: 1px; background: var(--border-strong); }
+
+/* Scanline / tech grid background */
+.tech-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.vignette {
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.55) 75%, #000 100%);
 }

@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 type Props = {
   href: string;
   children: React.ReactNode;
-  variant?: 'primary' | 'ghost';
+  variant?: 'primary' | 'ghost' | 'danger';
   className?: string;
   withArrow?: boolean;
   external?: boolean;
@@ -18,11 +18,11 @@ export function Button({
   withArrow = false,
   external = false,
 }: Props) {
-  const base =
-    'inline-flex items-center gap-2 px-7 py-4 text-sm font-medium tracking-tight rounded-full';
+  const base = 'inline-flex items-center justify-center gap-2 px-7 py-3.5';
   const variants = {
     primary: 'btn-primary',
     ghost: 'btn-ghost',
+    danger: 'btn-danger',
   };
   const Cmp: any = external ? 'a' : Link;
   const props: any = external
@@ -30,8 +30,8 @@ export function Button({
     : { href };
   return (
     <Cmp {...props} className={`${base} ${variants[variant]} ${className}`}>
-      {children}
-      {withArrow && <ArrowUpRight size={16} strokeWidth={1.75} />}
+      <span>{children}</span>
+      {withArrow && <ArrowRight size={14} strokeWidth={2.5} />}
     </Cmp>
   );
 }

@@ -6,9 +6,9 @@ import { caseStudies } from '@/lib/work';
 
 export function WorkGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--border-strong)] border border-[var(--border-strong)]">
       {caseStudies.map((c, i) => (
-        <WorkCard key={c.slug} c={c} featured={i === 0} />
+        <WorkCard key={c.slug} c={c} index={i} />
       ))}
     </div>
   );
@@ -16,16 +16,17 @@ export function WorkGrid() {
 
 function WorkCard({
   c,
-  featured,
+  index,
 }: {
   c: (typeof caseStudies)[number];
-  featured?: boolean;
+  index: number;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const n = String(index + 1).padStart(2, '0');
   return (
     <Link
       href={`/work/${c.slug}`}
-      className={`card-work group block ${featured ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''}`}
+      className="card-work group block bg-black"
       onMouseEnter={() => videoRef.current?.play().catch(() => {})}
       onMouseLeave={() => {
         const v = videoRef.current;
@@ -35,7 +36,7 @@ function WorkCard({
         }
       }}
     >
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-[#111] border border-[var(--border)]">
+      <div className="relative aspect-video w-full overflow-hidden bg-[#0A0A0A]">
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
@@ -47,19 +48,21 @@ function WorkCard({
         >
           <source src={c.heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.6)] via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
-      </div>
-      <div className="mt-5 flex items-baseline justify-between">
-        <div>
-          <h3 className="font-serif text-2xl md:text-3xl tracking-tight text-[var(--fg)]">
-            {c.title}
-          </h3>
-          <div className="mt-1 text-sm text-[var(--muted)]">
-            {c.client} · {c.year}
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+        <div className="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase">
+          PROJECT — {n}
         </div>
-        <div className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--muted)] group-hover:text-[var(--primary)] transition">
+        <div className="absolute bottom-5 right-5 font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase opacity-0 group-hover:opacity-100 transition">
           View →
+        </div>
+      </div>
+      <div className="p-6 md:p-8 flex items-baseline justify-between border-t border-[var(--border-strong)]">
+        <div>
+          <div className="spec-label mb-2">{c.client}</div>
+          <h3 className="display text-3xl md:text-4xl text-white">{c.title}</h3>
+        </div>
+        <div className="font-mono text-[11px] tracking-[0.25em] text-white/50 uppercase">
+          {c.year}
         </div>
       </div>
     </Link>

@@ -2,24 +2,37 @@ import { Container } from './Container';
 
 export function FinalCTA() {
   return (
-    <section className="my-12 md:my-24">
-      <Container>
-        <div className="rounded-3xl bg-[var(--primary)] text-[var(--bg)] px-8 md:px-16 py-20 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(245,230,211,0.25),_transparent_60%)]" />
-          <div className="relative max-w-3xl">
-            <h2 className="hero-headline text-[clamp(2.5rem,7vw,6rem)]">
-              Got an ad to make?
-            </h2>
-            <p className="mt-6 text-lg md:text-xl max-w-xl leading-relaxed text-[var(--bg)]/80">
-              Tell me about it. I'll send you a plan and a quote in 48 hours.
-            </p>
+    <section className="relative border-t border-[var(--border-strong)] bg-black overflow-hidden">
+      <div className="absolute inset-0 tech-grid opacity-[0.07]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
+      <Container className="relative py-32 md:py-48">
+        <div className="max-w-5xl">
+          <div className="eyebrow mb-8 flex items-center gap-3">
+            <span className="inline-block w-10 h-px bg-[var(--primary)]" />
+            INITIATE
+          </div>
+          <h2 className="display text-[clamp(3rem,10vw,10rem)] text-white">
+            Got an ad
+            <br />
+            to <span className="text-[var(--primary)]">make?</span>
+          </h2>
+          <p className="mt-10 text-lg md:text-xl max-w-xl leading-relaxed text-white/70">
+            Tell me about it. Plan and quote in your inbox within 48 hours.
+          </p>
+          <div className="mt-12 flex flex-wrap gap-4 items-center">
             <a
               href="https://cal.com/dawsonrussell"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-2 px-8 py-5 rounded-full bg-[var(--bg)] text-[var(--fg)] text-base font-medium hover:bg-[#1a1a1a] transition-colors"
+              className="btn-danger inline-flex items-center gap-2 px-10 py-5 text-[13px]"
             >
               Book a call →
+            </a>
+            <a
+              href="mailto:dawson@dawsonrussell.com"
+              className="btn-ghost inline-flex items-center gap-2 px-10 py-5 text-[13px]"
+            >
+              Or email direct
             </a>
           </div>
         </div>

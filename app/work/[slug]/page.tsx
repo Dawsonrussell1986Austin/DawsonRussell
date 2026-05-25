@@ -47,30 +47,30 @@ const mdxComponents = {
   h2: (p: any) => (
     <h2
       {...p}
-      className="font-serif text-3xl md:text-5xl tracking-tight mt-20 mb-6 text-[var(--fg)]"
+      className="display text-3xl md:text-5xl mt-20 mb-6 text-white"
     />
   ),
   h3: (p: any) => (
-    <h3 {...p} className="font-serif text-2xl tracking-tight mt-12 mb-4" />
+    <h3 {...p} className="display text-2xl mt-12 mb-4 text-white" />
   ),
   p: (p: any) => (
     <p
       {...p}
-      className="text-lg md:text-xl leading-relaxed text-[var(--fg)]/85 mt-5"
+      className="text-base md:text-lg leading-relaxed text-white/80 mt-5"
     />
   ),
   blockquote: (p: any) => (
     <blockquote
       {...p}
-      className="my-10 border-l-2 border-[var(--primary)] pl-6 italic text-[var(--muted)] text-lg leading-relaxed"
+      className="my-10 border-l-2 border-[var(--primary)] pl-6 font-mono text-sm text-[var(--muted-2)] leading-relaxed uppercase tracking-wider"
     />
   ),
   a: (p: any) => (
     <a {...p} className="text-[var(--primary)] underline underline-offset-4" />
   ),
-  strong: (p: any) => <strong {...p} className="text-[var(--fg)] font-semibold" />,
+  strong: (p: any) => <strong {...p} className="text-white font-semibold" />,
   ul: (p: any) => <ul {...p} className="mt-6 space-y-2 list-disc pl-6" />,
-  li: (p: any) => <li {...p} className="text-[var(--fg)]/85" />,
+  li: (p: any) => <li {...p} className="text-white/85" />,
 };
 
 export default async function WorkPage({
@@ -107,10 +107,11 @@ export default async function WorkPage({
         <Container className="py-16 md:py-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-8">
-              <div className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--muted)] mb-6">
-                Case study · {meta.year}
+              <div className="eyebrow mb-6 flex items-center gap-3">
+                <span className="inline-block w-8 h-px bg-[var(--primary)]" />
+                CASE STUDY · {meta.year}
               </div>
-              <h1 className="hero-headline text-5xl md:text-7xl lg:text-8xl">
+              <h1 className="display text-5xl md:text-7xl lg:text-9xl text-white">
                 {meta.title}
               </h1>
             </div>
@@ -126,15 +127,16 @@ export default async function WorkPage({
           </div>
 
           {next && (
-            <div className="mt-32 pt-16 border-t border-[var(--border)]">
+            <div className="mt-32 pt-16 border-t border-[var(--border-strong)]">
               <Link
                 href={`/work/${next.slug}`}
-                className="group inline-flex flex-col gap-2"
+                className="group inline-flex flex-col gap-3"
               >
-                <div className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--muted)]">
-                  Next project
+                <div className="eyebrow flex items-center gap-3">
+                  <span className="inline-block w-8 h-px bg-[var(--primary)]" />
+                  NEXT PROJECT
                 </div>
-                <div className="font-serif text-4xl md:text-6xl tracking-tight group-hover:text-[var(--primary)] transition-colors">
+                <div className="display text-4xl md:text-7xl text-white group-hover:text-[var(--primary)] transition-colors">
                   {next.title} →
                 </div>
               </Link>
@@ -149,11 +151,9 @@ export default async function WorkPage({
 
 function Meta({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--muted)] mb-2">
-        {label}
-      </div>
-      <div className="text-[var(--fg)]">{value}</div>
+    <div className="border-t border-[var(--border-strong)] pt-4">
+      <div className="spec-label mb-2">// {label}</div>
+      <div className="text-white text-sm uppercase tracking-wider">{value}</div>
     </div>
   );
 }

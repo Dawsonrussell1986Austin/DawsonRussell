@@ -1,32 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { PenTool, Film, Send } from 'lucide-react';
 
 const steps = [
   {
     n: '01',
-    icon: PenTool,
     title: 'Strategy',
     body: 'Script, storyboard, and shot list. Locked in days, not weeks.',
+    spec: 'DAY 1–2',
   },
   {
     n: '02',
-    icon: Film,
     title: 'Production',
     body: 'Cinematic AI-generated footage, scored, edited, and color-graded.',
+    spec: 'DAY 3–6',
   },
   {
     n: '03',
-    icon: Send,
     title: 'Delivery',
     body: 'Final cuts for every platform. Stills. Captions. Done.',
+    spec: 'DAY 7',
   },
 ];
 
 export function Process() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[var(--border-strong)]">
       {steps.map((s, i) => (
         <motion.div
           key={s.n}
@@ -34,19 +33,22 @@ export function Process() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
+          className={`py-12 md:py-16 px-2 md:px-10 ${
+            i > 0 ? 'md:border-l border-[var(--border-strong)] border-t md:border-t-0' : ''
+          }`}
         >
-          <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-xs tracking-[0.2em] text-[var(--primary)]">
-              {s.n}
+          <div className="flex items-center justify-between mb-10">
+            <span className="font-mono text-xs tracking-[0.25em] text-[var(--primary)]">
+              / {s.n}
             </span>
-            <div className="h-px flex-1 bg-[var(--border)]" />
-            <s.icon size={20} strokeWidth={1.25} className="text-[var(--muted)]" />
+            <span className="spec-label">{s.spec}</span>
           </div>
-          <h3 className="font-serif text-3xl md:text-4xl tracking-tight mb-4">
+          <h3 className="display text-4xl md:text-5xl text-white mb-6">
             {s.title}
           </h3>
-          <p className="text-[var(--muted)] leading-relaxed max-w-sm">{s.body}</p>
+          <p className="text-[var(--muted-2)] leading-relaxed max-w-sm text-[15px]">
+            {s.body}
+          </p>
         </motion.div>
       ))}
     </div>

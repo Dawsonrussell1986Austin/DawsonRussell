@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Button } from './Button';
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,23 +16,31 @@ export function NavBar() {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[rgba(10,10,10,0.78)] backdrop-blur-xl border-b border-[var(--border)]'
+          ? 'bg-black/85 backdrop-blur-xl border-b border-[var(--border)]'
           : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 md:px-10 h-[72px] flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl tracking-tight text-[var(--fg)]">
+      <div className="mx-auto w-full max-w-[1600px] px-6 md:px-10 h-[64px] flex items-center justify-between">
+        <Link
+          href="/"
+          className="text-[13px] font-bold tracking-[0.3em] uppercase text-white"
+        >
           Dawson Russell
         </Link>
-        <div className="hidden md:flex items-center gap-10 text-sm text-[var(--fg)]/80">
-          <Link href="/#work" className="hover:text-[var(--fg)] transition">Work</Link>
-          <Link href="/#process" className="hover:text-[var(--fg)] transition">Process</Link>
-          <Link href="/#services" className="hover:text-[var(--fg)] transition">Services</Link>
-          <Link href="/#about" className="hover:text-[var(--fg)] transition">About</Link>
+        <div className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-white/70">
+          <Link href="/#work" className="hover:text-white transition">Work</Link>
+          <Link href="/#process" className="hover:text-white transition">Process</Link>
+          <Link href="/#services" className="hover:text-white transition">Services</Link>
+          <Link href="/#about" className="hover:text-white transition">About</Link>
         </div>
-        <Button href="https://cal.com/dawsonrussell" external variant="primary">
+        <a
+          href="https://cal.com/dawsonrussell"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary inline-flex items-center px-5 py-2.5"
+        >
           Book a call
-        </Button>
+        </a>
       </div>
     </nav>
   );
