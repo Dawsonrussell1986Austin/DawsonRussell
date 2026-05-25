@@ -21,9 +21,9 @@ export function Toolkit() {
             }`}
           >
             <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)]">
-              / {String(i + 1).padStart(2, '0')}
+              — {String(i + 1).padStart(2, '0')}
             </span>
-            <span className="display text-xl md:text-2xl text-white/80 group-hover:text-[var(--primary)] transition-colors duration-500">
+            <span className="display text-xl md:text-2xl text-white/80 group-hover:text-white transition-colors duration-500">
               {t}
             </span>
           </div>

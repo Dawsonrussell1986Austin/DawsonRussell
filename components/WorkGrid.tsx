@@ -50,7 +50,7 @@ function WorkCard({
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
         <div className="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase">
-          PROJECT — {n}
+          — {n}
         </div>
         <div className="absolute bottom-5 right-5 font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase opacity-0 group-hover:opacity-100 transition">
           View →

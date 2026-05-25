@@ -3,8 +3,8 @@
 @theme {
   --color-bg: #000000;
   --color-fg: #FFFFFF;
-  --color-primary: #E82127;
-  --color-primary-hover: #FF3B41;
+  --color-primary: #FFFFFF;
+  --color-primary-hover: #E5E5E5;
   --color-muted: #6E6E6E;
   --color-muted-2: #A0A0A0;
   --color-border: #1A1A1A;
@@ -19,8 +19,8 @@
 :root {
   --bg: #000000;
   --fg: #FFFFFF;
-  --primary: #E82127;
-  --primary-hover: #FF3B41;
+  --primary: #FFFFFF;
+  --primary-hover: #E5E5E5;
   --muted: #6E6E6E;
   --muted-2: #A0A0A0;
   --border: #1A1A1A;
@@ -47,7 +47,7 @@ body {
 .font-mono { font-family: var(--font-mono); }
 .font-display { font-family: var(--font-display); font-weight: 800; }
 
-::selection { background: var(--primary); color: #fff; }
+::selection { background: var(--fg); color: var(--bg); }
 
 /* SpaceX/Tesla typography — ultra-tight, all-caps, heavy weight display */
 .display {
@@ -107,8 +107,8 @@ body {
 .btn-ghost:hover { background: var(--fg); color: var(--bg); }
 
 .btn-danger {
-  background: var(--primary);
-  color: #fff;
+  background: var(--fg);
+  color: var(--bg);
   transition: background 300ms ease-out;
   text-transform: uppercase;
   letter-spacing: 0.15em;

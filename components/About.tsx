@@ -9,14 +9,10 @@ export function About() {
             alt="Dawson Russell"
             className="absolute inset-0 h-full w-full object-cover grayscale contrast-110"
           />
-          <div className="absolute bottom-4 left-4 right-4 flex justify-between font-mono text-[10px] tracking-[0.25em] text-white/70 uppercase">
-            <span>OPERATOR · 001</span>
-            <span>AUSTIN, TX</span>
-          </div>
         </div>
       </div>
       <div className="md:col-span-7 space-y-8">
-        <div className="spec-label">// FOUNDER STATEMENT</div>
+        <div className="spec-label">Founder</div>
         <p className="display-thin text-3xl md:text-4xl text-white">
           I'm Dawson. Creative director, ex-capital-raise marketer, building
           AI-native ad creative for founders who'd rather ship than wait.
@@ -28,9 +24,9 @@ export function About() {
           the workflow from scratch.
         </p>
         <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[var(--border-strong)]">
-          <Stat n="48hr" l="QUOTE TURNAROUND" />
-          <Stat n="5–7d" l="PROJECT DELIVERY" />
-          <Stat n="10×" l="VS AGENCY COST" />
+          <Stat n="48hr" l="Quote turnaround" />
+          <Stat n="5–7d" l="Project delivery" />
+          <Stat n="10×" l="vs Agency cost" />
         </div>
       </div>
     </div>

@@ -108,8 +108,8 @@ export default async function WorkPage({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
             <div className="md:col-span-8">
               <div className="eyebrow mb-6 flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-[var(--primary)]" />
-                CASE STUDY · {meta.year}
+                <span className="inline-block w-8 h-px bg-white" />
+                Case study · {meta.year}
               </div>
               <h1 className="display text-5xl md:text-7xl lg:text-9xl text-white">
                 {meta.title}
@@ -133,8 +133,8 @@ export default async function WorkPage({
                 className="group inline-flex flex-col gap-3"
               >
                 <div className="eyebrow flex items-center gap-3">
-                  <span className="inline-block w-8 h-px bg-[var(--primary)]" />
-                  NEXT PROJECT
+                  <span className="inline-block w-8 h-px bg-white" />
+                  Next project
                 </div>
                 <div className="display text-4xl md:text-7xl text-white group-hover:text-[var(--primary)] transition-colors">
                   {next.title} →
@@ -152,7 +152,7 @@ export default async function WorkPage({
 function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div className="border-t border-[var(--border-strong)] pt-4">
-      <div className="spec-label mb-2">// {label}</div>
+      <div className="spec-label mb-2">{label}</div>
       <div className="text-white text-sm uppercase tracking-wider">{value}</div>
     </div>
   );

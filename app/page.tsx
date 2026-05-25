@@ -18,8 +18,8 @@ export default function HomePage() {
         <Hero />
         <Section
           id="work"
-          eyebrow="SELECTED WORK · 003"
-          heading="Recent missions."
+          eyebrow="Selected work"
+          heading="Recent work."
           subheading="A short list of recent projects. Full reel available on request."
         >
           <WorkGrid />
@@ -27,15 +27,15 @@ export default function HomePage() {
 
         <Section
           id="process"
-          eyebrow="OPERATIONS · PROTOCOL"
+          eyebrow="How it works"
           heading="The process."
-          subheading="Three phases from brief to finished cut. No retainer required to launch."
+          subheading="Three steps from brief to finished cut. No retainer required to start."
         >
           <Process />
         </Section>
 
         <Section
-          eyebrow="STACK · OPERATIONAL"
+          eyebrow="The stack"
           heading="The toolkit."
           subheading="I work where the cutting edge is. These are the tools that ship the work."
         >
@@ -44,18 +44,18 @@ export default function HomePage() {
 
         <Section
           id="services"
-          eyebrow="ENGAGEMENT · TIERS"
+          eyebrow="Engagements"
           heading="Work with me."
-          subheading="Three ways to launch. All include strategy, generation, edit, and delivery."
+          subheading="Three ways to start. All include strategy, generation, edit, and delivery."
         >
           <Services />
         </Section>
 
-        <Section id="about" eyebrow="OPERATOR · 001" heading="Who's behind this.">
+        <Section id="about" eyebrow="About" heading="Who's behind this.">
           <About />
         </Section>
 
-        <Section eyebrow="FIELD REPORTS" heading="What clients say.">
+        <Section eyebrow="Testimonials" heading="What clients say.">
           <Testimonials />
         </Section>
 

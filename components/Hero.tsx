@@ -18,28 +18,8 @@ export function Hero() {
         <source src="/hero-reel.mp4" type="video/mp4" />
       </video>
 
-      {/* Layered gradients for legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
       <div className="absolute inset-0 vignette pointer-events-none" />
-
-      {/* HUD top-left telemetry */}
-      <div className="absolute top-24 left-6 md:left-10 z-10 hidden md:block">
-        <div className="font-mono text-[10px] tracking-[0.25em] text-white/50 uppercase space-y-1.5">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-1.5 h-1.5 bg-[var(--primary)] rounded-full animate-pulse" />
-            LIVE · AUSTIN, TX · 30.27°N 97.74°W
-          </div>
-          <div>STUDIO STATUS — ACCEPTING PROJECTS</div>
-        </div>
-      </div>
-
-      {/* HUD top-right */}
-      <div className="absolute top-24 right-6 md:right-10 z-10 hidden md:block text-right">
-        <div className="font-mono text-[10px] tracking-[0.25em] text-white/50 uppercase space-y-1.5">
-          <div>UNIT 001 / DAWSON RUSSELL</div>
-          <div>AI-NATIVE VIDEO PRODUCTION</div>
-        </div>
-      </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10 h-full flex flex-col justify-end pb-20 md:pb-28">
         <motion.div
@@ -48,13 +28,13 @@ export function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="eyebrow mb-8 flex items-center gap-3">
-            <span className="inline-block w-10 h-px bg-[var(--primary)]" />
-            AI VIDEO AD AGENCY
+            <span className="inline-block w-10 h-px bg-white" />
+            AI Video Ad Agency — Austin, TX
           </div>
           <h1 className="display text-[clamp(3.5rem,11vw,11rem)] text-white">
-            Ads at the
+            AI-powered ads.
             <br />
-            speed of <span className="text-[var(--primary)]">thought.</span>
+            Shipped in days.
           </h1>
           <p className="mt-10 max-w-xl text-base md:text-lg text-white/70 leading-relaxed">
             What used to take agencies eight weeks and two hundred grand —
@@ -80,10 +60,9 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom corner spec ticks */}
       <div className="absolute bottom-6 left-6 md:left-10 right-6 md:right-10 z-10 flex justify-between items-end font-mono text-[10px] tracking-[0.25em] text-white/40 uppercase">
-        <div>↓ SCROLL TO ENGAGE</div>
-        <div className="hidden md:block">v2026.05 · ALL SYSTEMS NOMINAL</div>
+        <div>↓ Scroll</div>
+        <div className="hidden md:block">Studio currently accepting projects</div>
       </div>
     </section>
   );

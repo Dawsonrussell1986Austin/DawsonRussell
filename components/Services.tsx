@@ -1,7 +1,7 @@
 const tiers = [
   {
     name: 'Single Ad',
-    code: 'TIER-01',
+    code: '— 01',
     price: '$4,500',
     unit: 'STARTING',
     body: 'One finished ad in 5–7 days. Script, storyboard, generation, edit, captions, delivery.',
@@ -9,7 +9,7 @@ const tiers = [
   },
   {
     name: 'Campaign',
-    code: 'TIER-02',
+    code: '— 02',
     price: '$12,000',
     unit: 'STARTING',
     body: 'Three to five ads from one block of generation. Best for testing creative.',
@@ -18,7 +18,7 @@ const tiers = [
   },
   {
     name: 'Retainer',
-    code: 'TIER-03',
+    code: '— 03',
     price: '$8,000',
     unit: 'PER MONTH',
     body: 'Two ads per month, ongoing strategy, unlimited revisions. Best for brands shipping constantly.',
@@ -42,8 +42,8 @@ export function Services() {
           <div className="flex items-center justify-between mb-10">
             <span className="spec-label">{t.code}</span>
             {t.featured && (
-              <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--primary)] uppercase">
-                ● Recommended
+              <span className="font-mono text-[10px] tracking-[0.25em] text-white uppercase">
+                Most popular
               </span>
             )}
           </div>

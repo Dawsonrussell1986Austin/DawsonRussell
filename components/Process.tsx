@@ -7,19 +7,19 @@ const steps = [
     n: '01',
     title: 'Strategy',
     body: 'Script, storyboard, and shot list. Locked in days, not weeks.',
-    spec: 'DAY 1–2',
+    spec: 'Day 1–2',
   },
   {
     n: '02',
     title: 'Production',
     body: 'Cinematic AI-generated footage, scored, edited, and color-graded.',
-    spec: 'DAY 3–6',
+    spec: 'Day 3–6',
   },
   {
     n: '03',
     title: 'Delivery',
     body: 'Final cuts for every platform. Stills. Captions. Done.',
-    spec: 'DAY 7',
+    spec: 'Day 7',
   },
 ];
 
@@ -38,8 +38,8 @@ export function Process() {
           }`}
         >
           <div className="flex items-center justify-between mb-10">
-            <span className="font-mono text-xs tracking-[0.25em] text-[var(--primary)]">
-              / {s.n}
+            <span className="font-mono text-xs tracking-[0.25em] text-white">
+              — {s.n}
             </span>
             <span className="spec-label">{s.spec}</span>
           </div>

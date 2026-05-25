@@ -31,7 +31,7 @@ export function Testimonials() {
           className="bg-black p-8 md:p-10 flex flex-col"
         >
           <div className="spec-label mb-8">
-            // CLIENT · {String(i + 1).padStart(2, '0')}
+            — {String(i + 1).padStart(2, '0')}
           </div>
           <blockquote className="display-thin text-xl md:text-2xl leading-snug text-white flex-1">
             "{t.quote}"
