@@ -3,7 +3,6 @@ import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { WorkGrid } from '@/components/WorkGrid';
 import { Process } from '@/components/Process';
-import { Toolkit } from '@/components/Toolkit';
 import { Services } from '@/components/Services';
 import { About } from '@/components/About';
 import { Testimonials } from '@/components/Testimonials';
@@ -32,14 +31,6 @@ export default function HomePage() {
           subheading="Three steps from brief to finished cut. No retainer required to start."
         >
           <Process />
-        </Section>
-
-        <Section
-          eyebrow="The stack"
-          heading="The toolkit."
-          subheading="I work where the cutting edge is. These are the tools that ship the work."
-        >
-          <Toolkit />
         </Section>
 
         <Section
