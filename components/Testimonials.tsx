@@ -8,7 +8,7 @@ const testimonials = [
   },
   {
     quote:
-      'Looks like a Super Bowl spot. Costs less than our last photoshoot. I don\'t know how he does it.',
+      'Looks like a Super Bowl spot. Genuinely some of the best creative we\'ve ever run.',
     name: 'John Smith',
     role: 'Founder',
     company: 'Series A SaaS',

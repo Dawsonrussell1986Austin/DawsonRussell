@@ -20,15 +20,15 @@ export function About() {
             not next quarter.
           </p>
           <p className="text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-xl">
-            The future of ad production is AI-native. Traditional agencies are
-            bloated. Founders should test ten ideas in a month, not one. The
-            tools finally caught up. This studio is what happens when you
-            build the workflow from scratch.
+            The future of ad production is AI-native — and the bar is
+            higher, not lower. Every frame is designed, directed, and
+            finished with the same care as a traditional spot. The tools
+            finally caught up to the craft.
           </p>
           <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[var(--border-strong)]">
-            <Stat n="48hr" l="Quote turnaround" />
-            <Stat n="2–3wk" l="Project delivery" />
-            <Stat n="10×" l="vs Agency cost" />
+            <Stat n="48hr" l="Reply turnaround" />
+            <Stat n="2–3wk" l="From brief to final cut" />
+            <Stat n="∞" l="Revisions on every project" />
           </div>
         </div>
       </div>
