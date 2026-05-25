@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0A0A0A;
+  --color-fg: #F5F5F0;
+  --color-primary: #D4714E;
+  --color-primary-hover: #E08862;
+  --color-muted: #888888;
+  --color-border: #1F1F1F;
+  --color-accent: #F5E6D3;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+:root {
+  --bg: #0A0A0A;
+  --fg: #F5F5F0;
+  --primary: #D4714E;
+  --primary-hover: #E08862;
+  --muted: #888888;
+  --border: #1F1F1F;
+  --accent: #F5E6D3;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+}
+
+.font-serif { font-family: var(--font-serif); font-feature-settings: "ss01", "ss02"; }
+.font-mono { font-family: var(--font-mono); }
+
+::selection { background: var(--primary); color: var(--bg); }
+
+.hero-headline {
+  font-family: var(--font-serif);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  font-weight: 600;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  letter-spacing: -0.025em;
+  line-height: 1.0;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #0A0A0A;
+  transition: background 400ms ease-out, transform 400ms ease-out;
+}
+.btn-primary:hover { background: var(--primary-hover); }
+
+.btn-ghost {
+  border: 1px solid rgba(245,245,240,0.18);
+  color: var(--fg);
+  transition: border-color 400ms ease-out, background 400ms ease-out;
+}
+.btn-ghost:hover { border-color: var(--fg); background: rgba(245,245,240,0.04); }
+
+.card-work video, .card-work img {
+  transition: transform 600ms ease-out, filter 600ms ease-out;
+}
+.card-work:hover video, .card-work:hover img {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+}
