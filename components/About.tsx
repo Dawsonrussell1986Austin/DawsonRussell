@@ -15,15 +15,20 @@ export function About() {
         <div className="md:col-span-7 space-y-8">
           <div className="spec-label">Founder</div>
           <p className="display-thin text-2xl md:text-3xl text-white">
-            I'm Dawson. Creative director, ex-capital-raise marketer, making
-            award-grade AI-native ad creative for brands that want it now —
-            not next quarter.
+            I'm Dawson. I fell in love with video the day my parents brought
+            home our first iMac — the big purple one, sixth grade, sue me.
           </p>
           <p className="text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-xl">
-            The future of ad production is AI-native — and the bar is
-            higher, not lower. Every frame is designed, directed, and
-            finished with the same care as a traditional spot. The tools
-            finally caught up to the craft.
+            High school was Jackass-knockoff shoots with my friends and
+            late nights in iMovie — and a couple of media-tech awards
+            along the way. College pulled me into marketing, turning that
+            creative instinct into something brands would pay for.
+          </p>
+          <p className="text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-xl">
+            Now I've come back to my roots — the story, the art of telling
+            it, the craft of building something from a blank page. AI has
+            made it possible to do that in a way that wasn't possible
+            before. That's what this studio is.
           </p>
           <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[var(--border-strong)]">
             <Stat n="48hr" l="Reply turnaround" />
