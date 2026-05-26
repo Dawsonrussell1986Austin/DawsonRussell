@@ -22,10 +22,11 @@ export function Manifesto() {
             ambition, original craft, and the speed of the new tools.
           </p>
           <p className="mt-10 text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-2xl">
-            We don't just make ads. Brand films, product demos, launch
-            campaigns, founder stories, social spots, anthems — anything
-            with a story worth telling on camera. Ventures of every size,
-            every category, every walk of life are welcome here.
+            Call it a brand film, an ad, a product demo, a launch
+            campaign, a founder story, an anthem. We call it something
+            else: a moment people remember, share, and act on. Ventures
+            of every size, every category, every walk of life are welcome
+            here.
           </p>
         </motion.div>
       </Container>
