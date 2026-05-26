@@ -42,7 +42,8 @@ export function NavBar() {
                 <img
                   src="/headshot.jpg"
                   alt="Dawson Russell"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover scale-125"
+                  style={{ objectPosition: 'center 35%' }}
                 />
               </span>
               <span>Dawson Russell</span>
