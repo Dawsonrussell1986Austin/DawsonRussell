@@ -19,10 +19,7 @@ export function Manifesto() {
             Dawson Russell is a full-service, AI-native film studio based
             in Austin, Texas. We partner with brands and founders who have
             something worth saying — and tell their stories with cinematic
-            ambition, original craft, and the speed of the new tools. Most
-            of what we make leans into humor: sharp, deadpan, occasionally
-            absurd. Because the work people share is almost always the
-            work that made them laugh.
+            ambition, original craft, and the speed of the new tools.
           </p>
           <p className="mt-10 text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-2xl">
             We don't just make ads. Brand films, product demos, launch
