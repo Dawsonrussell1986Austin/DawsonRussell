@@ -16,7 +16,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'rego-brix',
-    title: 'Rego-Brix',
+    title: 'Live on it with Rego-Brix.',
     client: 'Boxabl',
     year: 2026,
     role: 'Creative Direction, Script, AI Video Production',
