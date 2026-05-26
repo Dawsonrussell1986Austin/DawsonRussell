@@ -28,8 +28,8 @@ export function Footer() {
               <a href="#apply" className="hover:text-white transition text-[13px] text-white/70">Apply</a>
               <a href="mailto:dawson@dawsonrussell.com" className="hover:text-white transition text-[13px] text-white/70">Email</a>
               <a href="https://instagram.com/dawsonrussell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">Instagram</a>
-              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">X / Twitter</a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">LinkedIn</a>
+              <a href="https://x.com/dawsonrussell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">X / Twitter</a>
+              <a href="https://linkedin.com/in/dawsonrussell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">LinkedIn</a>
             </div>
           </div>
           <div className="mt-14 pt-6 border-t border-[var(--border-strong)] flex flex-col md:flex-row justify-between gap-4 text-[10px] font-mono tracking-[0.25em] text-[var(--muted)] uppercase">
