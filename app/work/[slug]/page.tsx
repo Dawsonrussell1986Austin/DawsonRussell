@@ -11,6 +11,7 @@ import { Container } from '@/components/Container';
 import { caseStudies, getCaseStudy, getNextCaseStudy } from '@/lib/work';
 import { Media, MediaRow, Tile, Reel, Caption, PullQuote } from '@/components/mdx/Media';
 import { MuxVideo } from '@/components/mdx/MuxVideo';
+import { CaseStudyHeroMux } from '@/components/CaseStudyHeroMux';
 
 export async function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -101,17 +102,21 @@ export default async function WorkPage({
         <section className="pt-28 md:pt-32 pb-4">
           <Container>
             <div className="relative w-full overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9] max-h-[88vh]">
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={meta.poster}
-              >
-                <source src={meta.heroVideo} type="video/mp4" />
-              </video>
+              {meta.muxPlaybackId ? (
+                <CaseStudyHeroMux playbackId={meta.muxPlaybackId} poster={meta.poster} />
+              ) : (
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={meta.poster}
+                >
+                  <source src={meta.heroVideo} type="video/mp4" />
+                </video>
+              )}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(11,11,14,0.55)]" />
               <div className="absolute bottom-6 left-6 md:bottom-8 md:left-10 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>

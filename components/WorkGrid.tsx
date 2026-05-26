@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useRef } from 'react';
-import { caseStudies } from '@/lib/work';
+import MuxPlayer from '@mux/mux-player-react/lazy';
+import { caseStudies, type CaseStudy } from '@/lib/work';
 
 export function WorkGrid() {
   return (
@@ -16,42 +17,70 @@ export function WorkGrid() {
 
 function WorkCard({
   c,
-  index,
   featured,
 }: {
-  c: (typeof caseStudies)[number];
+  c: CaseStudy;
   index: number;
   featured?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const onEnter = () => {
+    if (c.muxPlaybackId || c.autoplay) return;
+    videoRef.current?.play().catch(() => {});
+  };
+  const onLeave = () => {
+    if (c.muxPlaybackId || c.autoplay) return;
+    const v = videoRef.current;
+    if (v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+  };
+
   return (
     <Link
       href={`/work/${c.slug}`}
       className={`card-work group block surface overflow-hidden ${
         featured ? 'md:col-span-2 lg:col-span-2' : ''
       }`}
-      onMouseEnter={() => videoRef.current?.play().catch(() => {})}
-      onMouseLeave={() => {
-        const v = videoRef.current;
-        if (v) {
-          v.pause();
-          v.currentTime = 0;
-        }
-      }}
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
     >
       <div className="relative aspect-video w-full overflow-hidden">
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={c.poster}
-        >
-          <source src={c.heroVideo} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+        {c.muxPlaybackId ? (
+          <MuxPlayer
+            playbackId={c.muxPlaybackId}
+            autoPlay={c.autoplay ? 'muted' : false}
+            loop
+            muted
+            playsInline
+            poster={
+              c.poster ||
+              `https://image.mux.com/${c.muxPlaybackId}/thumbnail.webp`
+            }
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              '--controls': 'none',
+              '--media-object-fit': 'cover',
+            }}
+          />
+        ) : (
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={c.poster}
+          >
+            <source src={c.heroVideo} type="video/mp4" />
+          </video>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
       </div>
       <div className="p-6 md:p-7 flex items-baseline justify-between">
         <div>

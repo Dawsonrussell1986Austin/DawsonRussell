@@ -7,6 +7,10 @@ export type CaseStudy = {
   heroVideo: string;
   poster: string;
   excerpt: string;
+  /** Mux playback ID — if set, used in the work grid instead of heroVideo. */
+  muxPlaybackId?: string;
+  /** If true, the grid card autoplays muted/looped instead of waiting for hover. */
+  autoplay?: boolean;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -19,17 +23,19 @@ export const caseStudies: CaseStudy[] = [
     heroVideo: '/work/rego-brix/hero.mp4',
     poster: '/work/rego-brix/poster.jpg',
     excerpt:
-      'A fictional lunar adaptation of Boxabl\'s flat-pack housing — pitched as if it were real.',
+      "A fictional lunar adaptation of Boxabl's flat-pack housing — pitched as if it were real.",
   },
   {
-    slug: 'placeholder-two',
-    title: 'Untitled Campaign',
-    client: 'Confidential DTC',
+    slug: 'soccer-com',
+    title: 'The pitch is coming for you.',
+    client: 'Soccer.com',
     year: 2026,
-    role: 'Creative Direction',
-    heroVideo: '/work/placeholder-two/hero.mp4',
-    poster: '/work/placeholder-two/poster.jpg',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    role: 'Creative Direction, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: '5MKxPgAnQSci00JCP1upQJYehYCsdQ6LHzD8yVMcaAXM',
+    autoplay: true,
+    excerpt: 'A cinematic brand spot for Soccer.com.',
   },
   {
     slug: 'placeholder-three',
