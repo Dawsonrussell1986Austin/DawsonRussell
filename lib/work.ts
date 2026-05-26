@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     inProduction: true,
     badge: 'Spec Ad — Coming Soon',
     excerpt:
-      'A spec film for 44 Farms — Texas ranching, grass-fed cattle, and the people behind the herd.',
+      'A Netflix-doc style interview. Except the subject is a cow. She made the cut, and she knows it.',
   },
 ];
 
