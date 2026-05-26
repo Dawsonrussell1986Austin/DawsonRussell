@@ -15,8 +15,8 @@ export function About() {
         <div className="md:col-span-7 space-y-8">
           <div className="spec-label">Founder</div>
           <p className="display-thin text-2xl md:text-3xl text-white">
-            I'm Dawson. I fell in love with video the day my parents brought
-            home our first iMac — the big purple one, sixth grade, sue me.
+            I'm Dawson. I fell in love with video in sixth grade, the day I
+            got my first iMac — the big purple one.
           </p>
           <p className="text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-xl">
             High school was Jackass-knockoff shoots with my friends and
