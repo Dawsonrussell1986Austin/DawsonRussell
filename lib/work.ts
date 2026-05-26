@@ -13,6 +13,8 @@ export type CaseStudy = {
   autoplay?: boolean;
   /** If true, the case study page shows a "Coming soon / In Production" state. */
   inProduction?: boolean;
+  /** Short tag shown on the grid card (e.g. "Spec Ad — Coming Soon"). */
+  badge?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -30,6 +32,19 @@ export const caseStudies: CaseStudy[] = [
       "A fictional lunar adaptation of Boxabl's flat-pack housing — pitched as if it were real.",
   },
   {
+    slug: 'housing-market',
+    title: 'The Housing Market is F*****',
+    client: 'Boxabl',
+    year: 2025,
+    role: 'Creative Direction, Script, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'XQWSNlmZCcmYx8sfdp9t3vVdhScJoyVHER8T36h6sQk',
+    autoplay: true,
+    excerpt:
+      'A blunt cultural read on the housing crisis — and the case for Boxabl as the answer.',
+  },
+  {
     slug: 'soccer-com',
     title: 'The pitch is coming for you.',
     client: 'Soccer.com',
@@ -40,19 +55,22 @@ export const caseStudies: CaseStudy[] = [
     muxPlaybackId: '5MKxPgAnQSci00JCP1upQJYehYCsdQ6LHzD8yVMcaAXM',
     autoplay: true,
     inProduction: true,
-    excerpt: 'A cinematic brand spot for Soccer.com.',
+    badge: 'Spec Ad — Coming Soon',
+    excerpt:
+      "A spec brand spot positioning Soccer.com as the heartbeat of the sport — the gear, the culture, the obsession.",
   },
   {
-    slug: 'housing-market',
-    title: 'The Housing Market is F*****',
-    client: 'Boxabl',
-    year: 2025,
+    slug: 'the-herd',
+    title: '#47291',
+    client: '44 Farms',
+    year: 2026,
     role: 'Creative Direction, Script, AI Video Production',
     heroVideo: '',
     poster: '',
-    muxPlaybackId: 'XQWSNlmZCcmYx8sfdp9t3vVdhScJoyVHER8T36h6sQk',
-    autoplay: true,
-    excerpt: 'A blunt take on the housing crisis — and Boxabl as the answer.',
+    inProduction: true,
+    badge: 'Spec Ad — Coming Soon',
+    excerpt:
+      'A spec film for 44 Farms — Texas ranching, grass-fed cattle, and the people behind the herd.',
   },
 ];
 
