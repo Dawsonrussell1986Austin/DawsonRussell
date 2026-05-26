@@ -6,8 +6,8 @@ export function About() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-[var(--surface-2)] border border-[var(--border)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/dawson.jpg"
-              alt="Dawson Russell"
+              src="/1990s_photogrpahy_of_young_daw_Nano_Banana_Pro_40094.png"
+              alt="Dawson Russell as a kid at his purple iMac"
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
