@@ -40,14 +40,16 @@ export const caseStudies: CaseStudy[] = [
     excerpt: 'A cinematic brand spot for Soccer.com.',
   },
   {
-    slug: 'placeholder-three',
-    title: 'Series of Spots',
-    client: 'B2B SaaS',
+    slug: 'housing-market',
+    title: 'The Housing Market is F*****',
+    client: 'Boxabl',
     year: 2026,
-    role: 'Creative Direction',
-    heroVideo: '/work/placeholder-three/hero.mp4',
-    poster: '/work/placeholder-three/poster.jpg',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    role: 'Creative Direction, Script, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'XQWSNlmZCcmYx8sfdp9t3vVdhScJoyVHER8T36h6sQk',
+    autoplay: true,
+    excerpt: 'A blunt take on the housing crisis — and Boxabl as the answer.',
   },
 ];
 
