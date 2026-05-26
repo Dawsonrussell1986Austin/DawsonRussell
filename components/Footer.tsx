@@ -27,7 +27,7 @@ export function Footer() {
               <div className="spec-label mb-2">Connect</div>
               <a href="#apply" className="hover:text-white transition text-[13px] text-white/70">Apply</a>
               <a href="mailto:dawson@dawsonrussell.com" className="hover:text-white transition text-[13px] text-white/70">Email</a>
-              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">Instagram</a>
+              <a href="https://instagram.com/dawsonrussell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">Instagram</a>
               <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">X / Twitter</a>
               <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">LinkedIn</a>
             </div>
