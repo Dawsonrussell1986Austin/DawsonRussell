@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 
 type Status = 'idle' | 'submitting' | 'sent' | 'error';
 
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
 export function ApplicationForm() {
   const [status, setStatus] = useState<Status>('idle');
 
@@ -13,11 +15,27 @@ export function ApplicationForm() {
     setStatus('submitting');
     const form = e.currentTarget;
     const data = new FormData(form);
+    const obj = Object.fromEntries(data.entries()) as Record<string, string>;
+
     try {
-      const res = await fetch('/api/apply', {
+      // Direct browser-side POST to Web3Forms. Serverless IPs are blocked
+      // by their Cloudflare bot protection, so we go straight from the
+      // user's browser — which is what these free services expect.
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(data.entries())),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          subject: `New application — ${obj.name}${obj.company ? ` (${obj.company})` : ''}`,
+          from_name: 'Dawson Russell site',
+          name: obj.name,
+          email: obj.email,
+          company: obj.company || '',
+          website: obj.website || '',
+          budget: obj.budget || '',
+          timeline: obj.timeline || '',
+          project: obj.project,
+        }),
       });
       if (!res.ok) throw new Error('Bad response');
       setStatus('sent');
