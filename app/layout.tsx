@@ -22,7 +22,12 @@ export const metadata: Metadata = {
     title: 'Dawson Russell — Award-winning, AI-powered brand films.',
     description: 'AI-native video ad agency.',
   },
-  icons: { icon: '/favicon.ico' },
+  icons: {
+    icon: [
+      { url: '/headshot.jpg', type: 'image/jpeg' },
+    ],
+    apple: '/headshot.jpg',
+  },
 };
 
 export default function RootLayout({

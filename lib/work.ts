@@ -20,8 +20,10 @@ export const caseStudies: CaseStudy[] = [
     client: 'Boxabl',
     year: 2026,
     role: 'Creative Direction, Script, AI Video Production',
-    heroVideo: '/work/rego-brix/hero.mp4',
-    poster: '/work/rego-brix/poster.jpg',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'yR01QTpUq2jb01RycmhG36oZWAy6lhOTY00Cbk7iB7Yics',
+    autoplay: true,
     excerpt:
       "A fictional lunar adaptation of Boxabl's flat-pack housing — pitched as if it were real.",
   },
