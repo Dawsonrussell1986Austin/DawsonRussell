@@ -1,21 +1,21 @@
 const testimonials = [
   {
     quote:
-      'We had a finished ad in our inbox two weeks after the kickoff call. The thing actually performed.',
-    name: 'Jane Doe',
-    role: 'Head of Growth',
-    company: 'Stealth DTC',
+      "OMG f*cking legend. Well done. Will blast this sucker. Surprisingly I have no other comment. Love the Boxabl shoutout snuck in too. Dang.",
+    name: 'Paolo Tiramani',
+    role: 'Founder',
+    company: 'Boxabl',
   },
   {
     quote:
-      'Looks like a Super Bowl spot. Genuinely some of the best creative we\'ve ever run.',
+      "Looks like a Super Bowl spot. Genuinely some of the best creative we've ever run.",
     name: 'John Smith',
     role: 'Founder',
     company: 'Series A SaaS',
   },
   {
     quote:
-      'Dawson rewrote what I thought an ad agency was supposed to be. We won\'t go back.',
+      "Dawson rewrote what I thought an ad agency was supposed to be. We won't go back.",
     name: 'Alex Chen',
     role: 'CMO',
     company: 'Growth-stage brand',
