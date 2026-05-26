@@ -37,7 +37,7 @@ export function ApplicationForm() {
         <div className="spec-label mb-6">Application received</div>
         <div className="display text-3xl text-white">You're on the list.</div>
         <p className="mt-6 text-[var(--muted-2)] max-w-md">
-          I'll be in touch within 48 hours. In the meantime, email me at{' '}
+          We'll be in touch within 48 hours. In the meantime, email us at{' '}
           <a
             href="mailto:dawson@dawsonrussell.com"
             className="text-white underline underline-offset-4"
@@ -81,7 +81,7 @@ export function ApplicationForm() {
           name="project"
           rows={5}
           required
-          placeholder="Tell me what you're trying to make, who it's for, and what success looks like."
+          placeholder="Tell us what you're trying to make, who it's for, and what success looks like."
           className="w-full mt-2 px-4 py-3 rounded-[16px] bg-[var(--bg)] border border-[var(--border-strong)] focus:border-white/30 outline-none placeholder:text-[var(--muted)] text-white text-sm resize-none transition-colors"
         />
       </div>
@@ -99,7 +99,7 @@ export function ApplicationForm() {
       </div>
       {status === 'error' && (
         <div className="text-sm text-white/80 rounded-[16px] bg-white/[0.04] border border-[var(--border-strong)] p-4">
-          Something went wrong. Email me at{' '}
+          Something went wrong. Email us at{' '}
           <a href="mailto:dawson@dawsonrussell.com" className="underline underline-offset-4">
             dawson@dawsonrussell.com
           </a>

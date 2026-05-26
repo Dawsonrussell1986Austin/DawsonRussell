@@ -7,7 +7,7 @@ const steps = [
     n: '01',
     title: 'Strategy',
     spec: 'Week 1',
-    body: 'We lock the idea before a single frame is generated. I write the concept, story, and full shooting script with you — then translate it into a shot-by-shot blueprint with locked visual direction.',
+    body: 'We lock the idea before a single frame is generated. The concept, story, and full shooting script are written with you — then translated into a shot-by-shot blueprint with locked visual direction.',
     deliverables: [
       'Concept development',
       'Story & script',
@@ -19,7 +19,7 @@ const steps = [
     n: '02',
     title: 'Production',
     spec: 'Week 2',
-    body: 'I generate, direct, and assemble every shot — same craft as a traditional set, just with a different camera. Voice, music, and sound design are all original, scored and mixed for the film.',
+    body: 'Every shot is generated, directed, and assembled with the same craft as a traditional set — just a different camera. Voice, music, and sound design are all original, scored and mixed for the film.',
     deliverables: [
       'Image & video generation',
       'Voice casting & voiceover',

@@ -15,8 +15,8 @@ export function FinalCTA() {
               </h2>
               <p className="mt-8 text-base md:text-lg max-w-md leading-relaxed text-white/70">
                 Brand film, ad, product launch, founder story — whatever
-                you're trying to make, send me a quick brief. If it's a
-                fit, I'll reply within 48 hours with next steps.
+                you're trying to make, send us a quick brief. If it's a
+                fit, we'll reply within 48 hours with next steps.
               </p>
               <div className="mt-8 spec-label">
                 Or email{' '}

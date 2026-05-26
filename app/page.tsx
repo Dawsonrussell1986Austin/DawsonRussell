@@ -27,7 +27,7 @@ export default function HomePage() {
           id="process"
           eyebrow="How it works"
           heading="The process."
-          subheading="Three phases from brief to finished campaign. Every project is full-service — I handle the whole thing end-to-end."
+          subheading="Three phases from brief to finished campaign. Every project is full-service, end-to-end."
         >
           <Process />
         </Section>
