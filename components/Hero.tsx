@@ -39,9 +39,9 @@ export function Hero() {
             >
               <div className="eyebrow mb-8">AI Video Ad Agency — Austin, TX</div>
               <h1 className="display text-[clamp(2.5rem,7vw,7rem)] text-white">
-                Award-winning storytelling.
+                Award-winning,
                 <br />
-                Shipped in weeks.
+                AI-powered brand films.
               </h1>
               <p className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-white/70 leading-relaxed">
                 Cinematic ad creative, written and produced with the cutting

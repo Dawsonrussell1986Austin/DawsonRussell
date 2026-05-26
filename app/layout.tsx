@@ -4,13 +4,13 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://dawsonrussell.com'),
   title: {
-    default: 'Dawson Russell — Award-winning storytelling, shipped in weeks.',
+    default: 'Dawson Russell — Award-winning, AI-powered brand films.',
     template: '%s · Dawson Russell',
   },
   description:
     'Cinematic ad creative, written and produced with the cutting edge of AI. Months of agency work in weeks.',
   openGraph: {
-    title: 'Dawson Russell — Award-winning storytelling, shipped in weeks.',
+    title: 'Dawson Russell — Award-winning, AI-powered brand films.',
     description:
       'AI-native video ad agency. Cinematic creative in days, not months.',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dawson Russell — Award-winning storytelling, shipped in weeks.',
+    title: 'Dawson Russell — Award-winning, AI-powered brand films.',
     description: 'AI-native video ad agency.',
   },
   icons: { icon: '/favicon.ico' },
