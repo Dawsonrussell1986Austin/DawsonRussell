@@ -24,7 +24,6 @@ export function NavBar() {
             href="/"
             className="flex items-center gap-3 pl-3 pr-2 text-sm font-medium text-white"
           >
-            <span className="inline-block w-7 h-7 rounded-full bg-gradient-to-br from-white/80 to-white/20 ring-1 ring-white/30" />
             <span className="hidden sm:inline">Dawson Russell</span>
           </Link>
           <div className="hidden md:flex items-center gap-1 text-sm text-white/70">
