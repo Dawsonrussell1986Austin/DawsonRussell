@@ -29,7 +29,7 @@ export const caseStudies: CaseStudy[] = [
     muxPlaybackId: 'yR01QTpUq2jb01RycmhG36oZWAy6lhOTY00Cbk7iB7Yics',
     autoplay: true,
     excerpt:
-      "A fictional lunar adaptation of Boxabl's flat-pack housing — pitched as if it were real.",
+      "A product-launch brand film for a fictional Boxabl moon division — Rego-Brix habitats, lunar ovens, and a round of golf on the surface.",
   },
   {
     slug: 'housing-market',
