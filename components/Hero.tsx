@@ -37,7 +37,7 @@ export function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-5xl"
             >
-              <div className="eyebrow mb-8">AI Video Agency  based in Austin, TX</div>
+              <div className="eyebrow mb-8 whitespace-nowrap text-[9px] tracking-[0.18em] sm:text-[11px] sm:tracking-[0.22em]">AI Video Agency  based in Austin, TX</div>
               <h1 className="display text-[clamp(2.5rem,7vw,7rem)] text-white leading-[1.25] pb-[0.15em]">
                 <span className="block pb-[0.18em]">Award-winning,</span>
                 <span className="block">AI-powered brand films.</span>
