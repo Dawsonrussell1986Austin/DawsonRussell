@@ -13,9 +13,10 @@ export async function POST(req: Request) {
 
     const to = process.env.CONTACT_TO || 'dawson@dawsonrussell.com';
     const resendKey = process.env.RESEND_API_KEY;
+    const web3formsKey = process.env.WEB3FORMS_ACCESS_KEY;
 
     const subject = `New application — ${name}${company ? ` (${company})` : ''}`;
-    const fields = [
+    const textBody = [
       `Name: ${name}`,
       `Email: ${email}`,
       `Company: ${company || '—'}`,
@@ -25,10 +26,9 @@ export async function POST(req: Request) {
       '',
       'Project:',
       project,
-    ];
-    const textBody = fields.join('\n');
+    ].join('\n');
 
-    // Priority 1: Resend (if API key configured)
+    // Priority 1: Resend (best — your own domain `from:` address once verified)
     if (resendKey) {
       const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -44,44 +44,40 @@ export async function POST(req: Request) {
           text: textBody,
         }),
       });
-      if (!res.ok) {
-        const text = await res.text();
-        console.error('Resend error:', res.status, text);
-        return NextResponse.json({ ok: false }, { status: 502 });
-      }
-      return NextResponse.json({ ok: true });
+      if (res.ok) return NextResponse.json({ ok: true });
+      console.error('Resend error:', res.status, await res.text());
     }
 
-    // Priority 2: FormSubmit.co (free, no signup — server-side avoids browser blocklists)
-    const formSubmitRes = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        company: company || '',
-        website: website || '',
-        budget: budget || '',
-        timeline: timeline || '',
-        project,
-        _subject: subject,
-        _replyto: email,
-        _template: 'table',
-      }),
-    });
-
-    if (!formSubmitRes.ok) {
-      const text = await formSubmitRes.text();
-      console.error('FormSubmit error:', formSubmitRes.status, text);
-      // Don't fail the user — still log the submission server-side
-      console.log('NEW APPLICATION (FormSubmit failed)', { name, email, company, website, budget, timeline, project });
+    // Priority 2: Web3Forms (free, works from serverless, no domain verification)
+    if (web3formsKey) {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: web3formsKey,
+          subject,
+          from_name: 'Dawson Russell site',
+          email,
+          message: textBody,
+          name,
+          company: company || '',
+          website: website || '',
+          budget: budget || '',
+          timeline: timeline || '',
+          project,
+        }),
+      });
+      if (res.ok) return NextResponse.json({ ok: true });
+      console.error('Web3Forms error:', res.status, await res.text());
       return NextResponse.json({ ok: false }, { status: 502 });
     }
 
-    return NextResponse.json({ ok: true });
+    // No service configured — log and surface the issue so leads aren't lost silently
+    console.error(
+      'CONTACT FORM NOT CONFIGURED — set WEB3FORMS_ACCESS_KEY or RESEND_API_KEY in Vercel env vars.',
+      { name, email, company, website, budget, timeline, project },
+    );
+    return NextResponse.json({ ok: false, error: 'Email service not configured' }, { status: 503 });
   } catch (err) {
     console.error('apply route error', err);
     return NextResponse.json({ ok: false }, { status: 500 });
