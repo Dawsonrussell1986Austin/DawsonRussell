@@ -67,6 +67,8 @@ export const caseStudies: CaseStudy[] = [
     role: 'Creative Direction, Script, AI Video Production',
     heroVideo: '',
     poster: '',
+    muxPlaybackId: 'UKMvYOYeiHH7b86CMUAMxJ9wcM7FLSjBvy5Ccx28CVM',
+    autoplay: true,
     inProduction: true,
     badge: 'Spec Ad — Coming Soon',
     excerpt:
