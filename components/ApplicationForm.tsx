@@ -67,7 +67,7 @@ export function ApplicationForm() {
         <SelectField
           label="Budget"
           name="budget"
-          options={['Under $5k', '$5k – $15k', '$15k – $40k', '$40k+', 'Not sure yet']}
+          options={['Under $10k', '$10k – $25k', '$25k – $50k', '$50k+', 'Not sure yet']}
         />
         <SelectField
           label="Timeline"
