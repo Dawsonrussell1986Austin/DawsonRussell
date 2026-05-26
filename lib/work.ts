@@ -46,7 +46,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'housing-market',
     title: 'The Housing Market is F*****',
     client: 'Boxabl',
-    year: 2026,
+    year: 2025,
     role: 'Creative Direction, Script, AI Video Production',
     heroVideo: '',
     poster: '',
