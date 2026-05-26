@@ -38,7 +38,7 @@ export function Hero() {
               className="max-w-5xl"
             >
               <div className="eyebrow mb-8">AI Video Ad Agency — Austin, TX</div>
-              <h1 className="display text-[clamp(2.5rem,7vw,7rem)] text-white">
+              <h1 className="display text-[clamp(2.5rem,7vw,7rem)] text-white leading-[1.15]">
                 Award-winning,
                 <br />
                 AI-powered brand films.
