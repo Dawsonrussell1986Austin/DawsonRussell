@@ -36,22 +36,8 @@ export function About() {
             made it possible to do that in a way that wasn't possible
             before. That's what this studio is.
           </p>
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[var(--border-strong)]">
-            <Stat n="48hr" l="Reply turnaround" />
-            <Stat n="2–3wk" l="From brief to final cut" />
-            <Stat n="∞" l="Revisions on every project" />
-          </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Stat({ n, l }: { n: string; l: string }) {
-  return (
-    <div>
-      <div className="display text-3xl md:text-4xl text-white">{n}</div>
-      <div className="spec-label mt-2">{l}</div>
     </div>
   );
 }
