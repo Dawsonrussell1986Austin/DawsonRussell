@@ -44,9 +44,9 @@ export function Hero() {
                 AI-powered brand films.
               </h1>
               <p className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-white/70 leading-relaxed">
-                Cinematic ad creative, written and produced with the cutting
-                edge of AI. The work agencies take months to ship — done in
-                weeks, without compromise.
+                Cinematic brand films, written and produced at the cutting
+                edge. The work agencies take months to ship — done in weeks,
+                without compromise.
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
                 <a
