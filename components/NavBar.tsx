@@ -35,9 +35,17 @@ export function NavBar() {
           <div className="h-[56px] pl-5 pr-2 flex items-center justify-between gap-3 md:gap-6">
             <Link
               href="/"
-              className="text-sm font-medium text-white whitespace-nowrap"
+              className="flex items-center gap-2.5 text-sm font-medium text-white whitespace-nowrap"
             >
-              Dawson Russell
+              <span className="relative w-8 h-8 rounded-full overflow-hidden ring-1 ring-white/15 bg-[var(--surface-2)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/headshot.jpg"
+                  alt="Dawson Russell"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </span>
+              <span>Dawson Russell</span>
             </Link>
 
             <div className="hidden md:flex items-center gap-1 text-sm text-white/70">
