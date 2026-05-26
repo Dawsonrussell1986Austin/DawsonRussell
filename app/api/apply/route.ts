@@ -14,9 +14,21 @@ export async function POST(req: Request) {
     const to = process.env.CONTACT_TO || 'dawson@dawsonrussell.com';
     const resendKey = process.env.RESEND_API_KEY;
 
-    // If a Resend key is configured, send via Resend. Otherwise log to console
-    // so deploys without env vars don't 500 — the submission is still captured
-    // in the platform logs.
+    const subject = `New application — ${name}${company ? ` (${company})` : ''}`;
+    const fields = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Company: ${company || '—'}`,
+      `Website: ${website || '—'}`,
+      `Budget: ${budget || '—'}`,
+      `Timeline: ${timeline || '—'}`,
+      '',
+      'Project:',
+      project,
+    ];
+    const textBody = fields.join('\n');
+
+    // Priority 1: Resend (if API key configured)
     if (resendKey) {
       const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -28,18 +40,8 @@ export async function POST(req: Request) {
           from: 'Dawson Russell <noreply@dawsonrussell.com>',
           to: [to],
           reply_to: email,
-          subject: `New application — ${name}${company ? ` (${company})` : ''}`,
-          text: [
-            `Name: ${name}`,
-            `Email: ${email}`,
-            `Company: ${company || '—'}`,
-            `Website: ${website || '—'}`,
-            `Budget: ${budget || '—'}`,
-            `Timeline: ${timeline || '—'}`,
-            '',
-            'Project:',
-            project,
-          ].join('\n'),
+          subject,
+          text: textBody,
         }),
       });
       if (!res.ok) {
@@ -47,8 +49,36 @@ export async function POST(req: Request) {
         console.error('Resend error:', res.status, text);
         return NextResponse.json({ ok: false }, { status: 502 });
       }
-    } else {
-      console.log('NEW APPLICATION', { name, email, company, website, budget, timeline, project });
+      return NextResponse.json({ ok: true });
+    }
+
+    // Priority 2: FormSubmit.co (free, no signup — server-side avoids browser blocklists)
+    const formSubmitRes = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        company: company || '',
+        website: website || '',
+        budget: budget || '',
+        timeline: timeline || '',
+        project,
+        _subject: subject,
+        _replyto: email,
+        _template: 'table',
+      }),
+    });
+
+    if (!formSubmitRes.ok) {
+      const text = await formSubmitRes.text();
+      console.error('FormSubmit error:', formSubmitRes.status, text);
+      // Don't fail the user — still log the submission server-side
+      console.log('NEW APPLICATION (FormSubmit failed)', { name, email, company, website, budget, timeline, project });
+      return NextResponse.json({ ok: false }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
