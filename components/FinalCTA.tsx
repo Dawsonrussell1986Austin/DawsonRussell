@@ -11,11 +11,12 @@ export function FinalCTA() {
             <div className="lg:col-span-5">
               <div className="eyebrow mb-6">Apply to work together</div>
               <h2 className="display text-[clamp(2.5rem,6vw,5.5rem)] text-white">
-                Got an ad to make?
+                Got a story to tell?
               </h2>
               <p className="mt-8 text-base md:text-lg max-w-md leading-relaxed text-white/70">
-                Send me a quick brief. If it's a fit, I'll reply within 48
-                hours with next steps.
+                Brand film, ad, product launch, founder story — whatever
+                you're trying to make, send me a quick brief. If it's a
+                fit, I'll reply within 48 hours with next steps.
               </p>
               <div className="mt-8 spec-label">
                 Or email{' '}
