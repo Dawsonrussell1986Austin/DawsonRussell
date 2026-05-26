@@ -3,23 +3,29 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Container } from './Container';
+import { MuxHero } from './mdx/MuxVideo';
+import { heroPlaybackId, heroPoster } from '@/lib/site';
 
 export function Hero() {
   return (
     <section className="pt-28 md:pt-32 pb-4">
       <Container>
         <div className="relative w-full overflow-hidden rounded-[36px] md:rounded-[44px] border border-[var(--border)] bg-[var(--surface)] h-[80vh] min-h-[640px]">
-          <video
-            className="absolute inset-0 h-full w-full object-cover opacity-90"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/hero-poster.jpg"
-          >
-            <source src="/hero-reel.mp4" type="video/mp4" />
-          </video>
+          {heroPlaybackId ? (
+            <MuxHero playbackId={heroPlaybackId} poster={heroPoster} />
+          ) : (
+            <video
+              className="absolute inset-0 h-full w-full object-cover opacity-90"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/hero-poster.jpg"
+            >
+              <source src="/hero-reel.mp4" type="video/mp4" />
+            </video>
+          )}
 
           <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,14,0.55)] via-[rgba(11,11,14,0.4)] to-[rgba(11,11,14,0.95)]" />
           <div className="absolute inset-0 vignette pointer-events-none" />

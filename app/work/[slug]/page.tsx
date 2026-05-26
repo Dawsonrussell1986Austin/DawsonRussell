@@ -10,6 +10,7 @@ import { Footer } from '@/components/Footer';
 import { Container } from '@/components/Container';
 import { caseStudies, getCaseStudy, getNextCaseStudy } from '@/lib/work';
 import { Media, MediaRow, Tile, Reel, Caption, PullQuote } from '@/components/mdx/Media';
+import { MuxVideo } from '@/components/mdx/MuxVideo';
 
 export async function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -77,6 +78,7 @@ const mdxComponents = {
   Reel,
   Caption,
   PullQuote,
+  MuxVideo,
 };
 
 export default async function WorkPage({
