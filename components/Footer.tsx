@@ -21,7 +21,7 @@ export function Footer() {
               <div className="spec-label mb-2">Site</div>
               <Link href="/#work" className="hover:text-white transition text-[13px] text-white/70">Work</Link>
               <Link href="/#process" className="hover:text-white transition text-[13px] text-white/70">Process</Link>
-              <Link href="/#about" className="hover:text-white transition text-[13px] text-white/70">About</Link>
+              <Link href="/about" className="hover:text-white transition text-[13px] text-white/70">About</Link>
             </div>
             <div className="flex flex-col gap-3 text-sm">
               <div className="spec-label mb-2">Connect</div>

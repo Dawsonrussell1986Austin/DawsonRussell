@@ -29,7 +29,7 @@ export function NavBar() {
           <div className="hidden md:flex items-center gap-1 text-sm text-white/70">
             <Pill href="/#work">Work</Pill>
             <Pill href="/#process">Process</Pill>
-            <Pill href="/#about">About</Pill>
+            <Pill href="/about">About</Pill>
           </div>
           <a
             href="#apply"
