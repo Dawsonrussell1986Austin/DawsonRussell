@@ -25,6 +25,12 @@ export function About() {
             creative instinct into something brands would pay for.
           </p>
           <p className="text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-xl">
+            Sixteen-plus years marketing for private equity firms,
+            alternative investment funds, and capital-raise teams taught me
+            the highest-stakes version of storytelling — how to make
+            someone believe a story enough to write a check.
+          </p>
+          <p className="text-base md:text-lg text-[var(--muted-2)] leading-relaxed max-w-xl">
             Now I've come back to my roots — the story, the art of telling
             it, the craft of building something from a blank page. AI has
             made it possible to do that in a way that wasn't possible
