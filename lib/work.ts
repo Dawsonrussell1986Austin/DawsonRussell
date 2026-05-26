@@ -11,6 +11,8 @@ export type CaseStudy = {
   muxPlaybackId?: string;
   /** If true, the grid card autoplays muted/looped instead of waiting for hover. */
   autoplay?: boolean;
+  /** If true, the case study page shows a "Coming soon / In Production" state. */
+  inProduction?: boolean;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -37,6 +39,7 @@ export const caseStudies: CaseStudy[] = [
     poster: '',
     muxPlaybackId: '5MKxPgAnQSci00JCP1upQJYehYCsdQ6LHzD8yVMcaAXM',
     autoplay: true,
+    inProduction: true,
     excerpt: 'A cinematic brand spot for Soccer.com.',
   },
   {
