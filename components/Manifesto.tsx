@@ -15,7 +15,7 @@ export function Manifesto() {
           className="max-w-5xl"
         >
           <div className="eyebrow mb-8">The studio</div>
-          <p className="display-thin text-3xl md:text-5xl lg:text-6xl text-white leading-[1.15] tracking-tight">
+          <p className="display-thin text-2xl md:text-3xl lg:text-4xl text-white leading-[1.25] tracking-tight">
             Dawson Russell is a full-service, AI-native film studio based
             in Austin, Texas. We partner with brands and founders who have
             something worth saying — and tell their stories with cinematic
