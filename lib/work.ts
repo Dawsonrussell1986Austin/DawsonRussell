@@ -60,6 +60,20 @@ export const caseStudies: CaseStudy[] = [
       "A spec brand spot positioning Soccer.com as the heartbeat of the sport — the gear, the culture, the obsession.",
   },
   {
+    slug: 'whataburger',
+    title: 'After A Rough Night',
+    client: 'Whataburger',
+    year: 2026,
+    role: 'Creative Direction, Script, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'K01uJTdNMktOPtx9B01S4iN3i02sn8yDlrchHMCHZTsMd00',
+    autoplay: true,
+    badge: 'Spec Ad',
+    excerpt:
+      'The Statue of Liberty walks into Whataburger after a rough night.',
+  },
+  {
     slug: 'the-herd',
     title: '#47291',
     client: '44 Farms',
