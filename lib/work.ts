@@ -46,7 +46,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'soccer-com',
-    title: 'The pitch is coming for you.',
+    title: 'Finally Part of the Club',
     client: 'Soccer.com',
     year: 2026,
     role: 'Creative Direction, AI Video Production',
