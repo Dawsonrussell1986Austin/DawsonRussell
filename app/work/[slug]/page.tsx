@@ -44,7 +44,7 @@ export default async function WorkPage({
       <main>
         <section className="pt-28 md:pt-32 pb-16 md:pb-24">
           <Container>
-            <div className="relative w-full overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9] max-h-[88vh]">
+            <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9]">
               {meta.inProduction ? (
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                   <div className="eyebrow mb-6">In production</div>
