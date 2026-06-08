@@ -32,32 +32,6 @@ export const caseStudies: CaseStudy[] = [
       "A product-launch brand film for a fictional Boxabl moon division — Rego-Brix habitats, lunar ovens, and a round of golf on the surface.",
   },
   {
-    slug: 'housing-market',
-    title: 'The Housing Market is F*****',
-    client: 'Boxabl',
-    year: 2025,
-    role: 'Creative Direction, Script, AI Video Production',
-    heroVideo: '',
-    poster: '',
-    muxPlaybackId: 'XQWSNlmZCcmYx8sfdp9t3vVdhScJoyVHER8T36h6sQk',
-    autoplay: true,
-    excerpt:
-      'A blunt cultural read on the housing crisis — and the case for Boxabl as the answer.',
-  },
-  {
-    slug: 'soccer-com',
-    title: 'Finally Part of the Club',
-    client: 'Soccer.com',
-    year: 2026,
-    role: 'Creative Direction, AI Video Production',
-    heroVideo: '',
-    poster: '',
-    muxPlaybackId: 'A00areZUtRW018xc9Su5kBPVqpDnrSddglJwFsepAB4MQ',
-    autoplay: true,
-    excerpt:
-      "A spec brand spot positioning Soccer.com as the heartbeat of the sport — the gear, the culture, the obsession.",
-  },
-  {
     slug: 'ufo',
     title: 'UFO',
     client: 'Boxabl',
@@ -69,6 +43,32 @@ export const caseStudies: CaseStudy[] = [
     autoplay: true,
     excerpt:
       'Unfolding Houses on the Moon — a tongue-in-cheek launch film for Boxabl.',
+  },
+  {
+    slug: 'soccer-com',
+    title: 'World Cup Soccer Ad',
+    client: 'Spec project',
+    year: 2026,
+    role: 'Creative Direction, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'A00areZUtRW018xc9Su5kBPVqpDnrSddglJwFsepAB4MQ',
+    autoplay: true,
+    excerpt:
+      'A spec brand spot built around the World Cup — gear, culture, obsession.',
+  },
+  {
+    slug: 'housing-market',
+    title: 'The Housing Market is F*****',
+    client: 'Boxabl',
+    year: 2025,
+    role: 'Creative Direction, Script, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'XQWSNlmZCcmYx8sfdp9t3vVdhScJoyVHER8T36h6sQk',
+    autoplay: true,
+    excerpt:
+      'A blunt cultural read on the housing crisis — and the case for Boxabl as the answer.',
   },
   {
     slug: 'whataburger',

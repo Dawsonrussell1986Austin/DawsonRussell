@@ -44,8 +44,8 @@ export default async function WorkPage({
       <main>
         <section className="pt-28 md:pt-32 pb-16 md:pb-24">
           <Container>
-            <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9]">
-              {meta.inProduction ? (
+            {meta.inProduction ? (
+              <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9]">
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
                   <div className="eyebrow mb-6">In production</div>
                   <div className="display text-4xl md:text-6xl lg:text-7xl text-white">
@@ -55,9 +55,11 @@ export default async function WorkPage({
                     {meta.title} — {meta.client}. Currently in production. Check back shortly.
                   </p>
                 </div>
-              ) : meta.muxPlaybackId ? (
-                <CaseStudyHeroMux playbackId={meta.muxPlaybackId} poster={meta.poster} />
-              ) : (
+              </div>
+            ) : meta.muxPlaybackId ? (
+              <CaseStudyHeroMux playbackId={meta.muxPlaybackId} poster={meta.poster} />
+            ) : (
+              <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-[28px] md:rounded-[40px] border border-[var(--border)] bg-[var(--surface)] aspect-[16/9]">
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
                   autoPlay
@@ -69,8 +71,8 @@ export default async function WorkPage({
                 >
                   <source src={meta.heroVideo} type="video/mp4" />
                 </video>
-              )}
-            </div>
+              </div>
+            )}
           </Container>
         </section>
       </main>

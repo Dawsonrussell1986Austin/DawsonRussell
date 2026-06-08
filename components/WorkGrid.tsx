@@ -91,7 +91,7 @@ function WorkCard({ c }: { c: CaseStudy }) {
         <div className="flex items-baseline justify-between gap-4">
           <div className="min-w-0">
             <div className="spec-label mb-2">{c.client}</div>
-            <h3 className="display text-2xl md:text-3xl text-white truncate">
+            <h3 className="display text-2xl md:text-3xl text-white leading-[1.15] pb-[0.12em]">
               {c.title}
             </h3>
           </div>
