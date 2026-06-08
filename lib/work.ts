@@ -26,7 +26,7 @@ export const caseStudies: CaseStudy[] = [
     role: 'Creative Direction, Script, AI Video Production',
     heroVideo: '',
     poster: '',
-    muxPlaybackId: 'VRI02yNDt6fgizqg9UoGz4LfgvpaLuF6dgrCTf6Rorc8',
+    muxPlaybackId: 'TjJbteW7FaZxxNF8mDdCOBuX1gBIER1La6WuDqViyZ8',
     autoplay: true,
     excerpt:
       "A product-launch brand film for a fictional Boxabl moon division — Rego-Brix habitats, lunar ovens, and a round of golf on the surface.",
