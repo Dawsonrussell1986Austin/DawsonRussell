@@ -14,15 +14,14 @@ export function CaseStudyHeroMux({
       playbackId={playbackId}
       autoPlay="muted"
       loop
-      muted
       playsInline
       poster={poster || `https://image.mux.com/${playbackId}/thumbnail.webp`}
+      accentColor="#FFFFFF"
       style={{
         position: 'absolute',
         inset: 0,
         width: '100%',
         height: '100%',
-        '--controls': 'none',
         '--media-object-fit': 'cover',
       }}
     />
