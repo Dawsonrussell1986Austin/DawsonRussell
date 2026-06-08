@@ -54,8 +54,7 @@ export const caseStudies: CaseStudy[] = [
     poster: '',
     muxPlaybackId: 'A00areZUtRW018xc9Su5kBPVqpDnrSddglJwFsepAB4MQ',
     autoplay: true,
-    inProduction: true,
-    badge: 'Spec Ad — Coming Soon',
+    badge: 'Spec Ad',
     excerpt:
       "A spec brand spot positioning Soccer.com as the heartbeat of the sport — the gear, the culture, the obsession.",
   },
