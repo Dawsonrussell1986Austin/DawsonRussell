@@ -60,6 +60,19 @@ export const caseStudies: CaseStudy[] = [
       "A spec brand spot positioning Soccer.com as the heartbeat of the sport — the gear, the culture, the obsession.",
   },
   {
+    slug: 'ufo',
+    title: 'UFO',
+    client: 'Boxabl',
+    year: 2026,
+    role: 'Creative Direction, Script, AI Video Production',
+    heroVideo: '',
+    poster: '',
+    muxPlaybackId: 'leFe7nnnGnqlIFdAhqVLB02kIyXfZR01mimUnEw7kResU',
+    autoplay: true,
+    excerpt:
+      'Unfolding Houses on the Moon — a tongue-in-cheek launch film for Boxabl.',
+  },
+  {
     slug: 'whataburger',
     title: 'After A Rough Night',
     client: 'Whataburger',
