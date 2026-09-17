@@ -19,13 +19,13 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-3 text-sm">
               <div className="spec-label mb-2">Site</div>
-              <Link href="/#work" className="hover:text-white transition text-[13px] text-white/70">Work</Link>
-              <Link href="/#process" className="hover:text-white transition text-[13px] text-white/70">Process</Link>
+              <Link href="/studio#work" className="hover:text-white transition text-[13px] text-white/70">Work</Link>
+              <Link href="/studio#process" className="hover:text-white transition text-[13px] text-white/70">Process</Link>
               <Link href="/about" className="hover:text-white transition text-[13px] text-white/70">About</Link>
             </div>
             <div className="flex flex-col gap-3 text-sm">
               <div className="spec-label mb-2">Connect</div>
-              <a href="#apply" className="hover:text-white transition text-[13px] text-white/70">Apply</a>
+              <a href="/studio#apply" className="hover:text-white transition text-[13px] text-white/70">Apply</a>
               <a href="mailto:dawson@dawsonrussell.com" className="hover:text-white transition text-[13px] text-white/70">Email</a>
               <a href="https://instagram.com/dawsonrussell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">Instagram</a>
               <a href="https://x.com/dawsonrussell" target="_blank" rel="noopener noreferrer" className="hover:text-white transition text-[13px] text-white/70">X / Twitter</a>

@@ -1,39 +1,55 @@
-import type { Metadata } from 'next';
-import { NavBar } from '@/components/NavBar';
-import { Footer } from '@/components/Footer';
-import { Container } from '@/components/Container';
-import { About } from '@/components/About';
-import { FinalCTA } from '@/components/FinalCTA';
-
-export const metadata: Metadata = {
-  title: 'About',
+import Link from "next/link";
+import { Header, Footer } from "@/components/field-notes/Chrome";
+export const metadata = {
+  title: "About",
   description:
-    'Dawson Russell — founder of an AI-native film studio in Austin, Texas.',
+    "Dawson Russell: agency owner, builder, and creator based in Austin, Texas.",
 };
-
-export default function AboutPage() {
+export default function About() {
   return (
-    <>
-      <NavBar />
-      <main>
-        <section className="pt-36 md:pt-44 pb-12 md:pb-20">
-          <Container>
-            <div className="max-w-4xl">
-              <div className="eyebrow mb-6">About</div>
-              <h1 className="display text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05]">
-                The studio, the story, the person behind it.
-              </h1>
-            </div>
-          </Container>
-        </section>
-
-        <Container className="pb-20 md:pb-32">
-          <About />
-        </Container>
-
-        <FinalCTA />
-      </main>
-      <Footer />
-    </>
+    <div className="field-site">
+      <div className="fn-shell">
+        <Header />
+        <main className="article">
+          <p className="eyebrow">Hello, I’m Dawson</p>
+          <h1>I love creating.</h1>
+          <img
+            src="/headshot.jpg"
+            alt="Dawson Russell"
+            width="280"
+            height="300"
+            style={{ objectFit: "cover", borderRadius: 4, margin: "30px 0" }}
+          />
+          <p className="lede">
+            I’m an agency owner and builder based in Austin, Texas.
+          </p>
+          <p>
+            I make films, build apps, and put new AI tools to work in my
+            business. I’m interested in what happens when you take the tools
+            beyond a demo and use them on something that actually needs to get
+            done.
+          </p>
+          <p>
+            Field Notes is where I share that process: practical workflows,
+            creative experiments, and honest notes about what worked and what
+            still needs work.
+          </p>
+          <p>
+            Most of what I write is about business and AI. There’s room here for
+            occasional personal reflections on faith and how we choose to work,
+            too.
+          </p>
+          <p>
+            If you’re running an agency, building a business, or trying to
+            understand what these tools can do for your day, you’re in the right
+            place.
+          </p>
+          <Link className="text-link" href="/notes">
+            Read the field notes ↗
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }

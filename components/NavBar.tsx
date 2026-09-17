@@ -50,14 +50,14 @@ export function NavBar() {
             </Link>
 
             <div className="hidden md:flex items-center gap-1 text-sm text-white/70">
-              <Pill href="/#work">Work</Pill>
-              <Pill href="/#process">Process</Pill>
+              <Pill href="/studio#work">Work</Pill>
+              <Pill href="/studio#process">Process</Pill>
               <Pill href="/about">About</Pill>
             </div>
 
             <div className="flex items-center gap-2">
               <a
-                href="#apply"
+                href="/studio#apply"
                 className="btn-primary inline-flex items-center px-4 md:px-5 py-2.5"
               >
                 Apply
@@ -88,10 +88,10 @@ export function NavBar() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col">
-              <MobileLink href="/#work" onClose={() => setOpen(false)}>Work</MobileLink>
-              <MobileLink href="/#process" onClose={() => setOpen(false)}>Process</MobileLink>
+              <MobileLink href="/studio#work" onClose={() => setOpen(false)}>Work</MobileLink>
+              <MobileLink href="/studio#process" onClose={() => setOpen(false)}>Process</MobileLink>
               <MobileLink href="/about" onClose={() => setOpen(false)}>About</MobileLink>
-              <MobileLink href="#apply" onClose={() => setOpen(false)}>Apply</MobileLink>
+              <MobileLink href="/studio#apply" onClose={() => setOpen(false)}>Apply</MobileLink>
             </div>
           </div>
         </div>

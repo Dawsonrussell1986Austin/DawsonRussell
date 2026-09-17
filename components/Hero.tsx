@@ -21,7 +21,7 @@ export function Hero() {
               loop
               playsInline
               preload="metadata"
-              poster="/hero-poster.jpg"
+              poster="https://image.mux.com/VRI02yNDt6fgizqg9UoGz4LfgvpaLuF6dgrCTf6Rorc8/thumbnail.jpg?time=0"
             >
               <source src="/hero-reel.mp4" type="video/mp4" />
             </video>
