@@ -5,23 +5,23 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://dawsonrussell.com'),
   title: {
-    default: 'Dawson Russell — AI, put to work.',
+    default: 'Dawson Russell',
     template: '%s · Dawson Russell',
   },
   description:
-    'Field notes from running an agency, building apps, and putting new AI to work.',
+    'I run RaiseLaunch, build apps, and make films in Austin, Texas.',
   openGraph: {
-    title: 'Dawson Russell — AI, put to work.',
+    title: 'Dawson Russell',
     description:
-      'Real work, useful experiments, and field notes from Dawson Russell.',
+      'Agency owner, app builder, and filmmaker based in Austin, Texas.',
     type: 'website',
     url: 'https://dawsonrussell.com',
     siteName: 'Dawson Russell',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dawson Russell — AI, put to work.',
-    description: 'AI, put to work in a real business.',
+    title: 'Dawson Russell',
+    description: 'Agency owner, app builder, and filmmaker based in Austin, Texas.',
   },
   icons: {
     icon: [
