@@ -1,47 +1,35 @@
-import { NavBar } from '@/components/NavBar';
-import { Hero } from '@/components/Hero';
-import { Section } from '@/components/Section';
-import { WorkGrid } from '@/components/WorkGrid';
-import { Process } from '@/components/Process';
-import { Manifesto } from '@/components/Manifesto';
-import { Testimonials } from '@/components/Testimonials';
-import { FinalCTA } from '@/components/FinalCTA';
-import { Footer } from '@/components/Footer';
+import Link from "next/link";
+import { Header, Footer } from "@/components/field-notes/Chrome";
+import { caseStudies } from "@/lib/work";
 
-export default function HomePage() {
+export const metadata = {
+  title: "Films & work",
+  description: "Selected films and creative work by Dawson Russell.",
+};
+
+export default function StudioPage() {
   return (
-    <>
-      <NavBar />
-      <main>
-        <Hero />
-
-        <Manifesto />
-
-        <Section
-          id="work"
-          eyebrow="Selected work"
-          heading="Recent work."
-          subheading="A short list of recent projects. Full reel available on request."
-        >
-          <WorkGrid />
-        </Section>
-
-        <Section
-          id="process"
-          eyebrow="How it works"
-          heading="The process."
-          subheading="Three phases from brief to finished campaign. Every project is full-service, end-to-end."
-        >
-          <Process />
-        </Section>
-
-        <Section eyebrow="Testimonials" heading="What clients say.">
-          <Testimonials />
-        </Section>
-
-        <FinalCTA />
-      </main>
-      <Footer />
-    </>
+    <div className="field-site">
+      <div className="fn-shell">
+        <Header />
+        <main className="article">
+          <p className="eyebrow">Films & work</p>
+          <h1>Selected work.</h1>
+          <p className="lede">Brand films, campaigns, and creative experiments.</p>
+          <div className="work-list">
+            {caseStudies.map((work) => (
+              <Link href={"/work/" + work.slug} key={work.slug}>
+                <span>
+                  <strong>{work.title}</strong>
+                  <small>{work.client}{work.badge ? " · " + work.badge : ""}</small>
+                </span>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }
