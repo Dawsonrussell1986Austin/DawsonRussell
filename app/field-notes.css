@@ -354,3 +354,59 @@
     gap: 12px;
   }
 }
+
+/* Training confirmation page */
+.training h1,
+.training .lede {
+  text-wrap: balance;
+}
+
+.training-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 32px 0 8px;
+}
+
+.field-site .training-actions a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid #111;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.field-site .training-actions a:first-child {
+  background: #111;
+  color: #fff;
+}
+
+.field-site .training-actions a:hover {
+  text-decoration: none;
+  background: #f4f4f4;
+  color: #111;
+}
+
+.training ul {
+  margin: 12px 0 0;
+  padding-left: 22px;
+  list-style: disc;
+}
+
+.training p,
+.training li {
+  text-wrap: pretty;
+}
+
+.training li {
+  margin: 10px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .training-actions {
+    grid-template-columns: 1fr;
+  }
+}

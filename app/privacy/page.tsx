@@ -14,6 +14,14 @@ export default function Privacy() {
             each newsletter.
           </p>
           <p>
+            If you sign up for the free live training through a Facebook or
+            Instagram form, the name, email address, phone number and answers
+            you submit are used to send your training link, reminders and
+            related follow-up by email and text. Message and data rates may
+            apply. Reply STOP to any text to opt out, or use the unsubscribe
+            link in any email.
+          </p>
+          <p>
             This site uses Google Analytics to understand visits and website
             usage. Embedded films are delivered through Mux, and fonts are
             loaded from Google Fonts. Those services receive the technical
