@@ -7,6 +7,12 @@ const nextConfig = {
   experimental: {
     mdxRs: false,
   },
+  async redirects() {
+    return [
+      // The Facebook lead form links to /privacy-policy.
+      { source: '/privacy-policy', destination: '/privacy', permanent: true },
+    ];
+  },
 };
 
 const withMDX = createMDX({});
